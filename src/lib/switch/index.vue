@@ -1,6 +1,10 @@
 <template>
   <div>
-    <button :class="{ checked: modelValue }" @click="toggle">
+    <button
+      :class="{ checked: modelValue }"
+      @click="toggle"
+      :style="{ background: modelValue ? inactiveColor : activeColor }"
+    >
       <span></span>
     </button>
   </div>
@@ -14,8 +18,17 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  activeColor: {
+    type: String,
+    default: "#18a058",
+  },
+  inactiveColor: {
+    type: String,
+    default: "#dbdbdb",
+  },
 });
 
+console.log({ props });
 const emit = defineEmits(["update:modelValue"]);
 
 const checked = ref(false);
@@ -35,6 +48,10 @@ button {
   border-radius: calc($h2 / 1.5);
   position: relative;
   cursor: pointer;
+  /* 解决移动端点击时有边框 */
+  outline: none;
+  -webkit-tap-highlight-color: #fff;
+  -webkit-tap-highlight-color: transparent;
 
   > span {
     position: absolute;

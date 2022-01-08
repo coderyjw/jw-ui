@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Switch v-model="checked" />
+    <Switch v-model="checked" active-color="red" inactive-color="pink" />
   </div>
 </template>
 
