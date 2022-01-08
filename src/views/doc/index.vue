@@ -27,9 +27,9 @@ const asideVisible = inject("asideVisible");
           </ol>
         </aside>
       </transition>
-      <!-- <main>
-          <router-view />
-        </main> -->
+      <main>
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
@@ -43,8 +43,8 @@ const asideVisible = inject("asideVisible");
   }
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
+    padding-top: 63px;
+    padding-left: 150px;
     @media (max-width: 500px) {
       padding-left: 0;
     }

@@ -37,7 +37,10 @@ const toggleAside = () => {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px rgb(239, 239, 245);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
 
   .logo {
