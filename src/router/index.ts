@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/home/index.vue";
 import Doc from "@/views/doc/index.vue";
 import Switch from "@/components/SwitchDemo.vue";
+import Button from "@/components/ButtonDemo.vue";
 
 const history = createWebHistory();
 const router = createRouter({
@@ -19,7 +20,7 @@ const router = createRouter({
         },
         {
           path: "button",
-          component: Switch,
+          component: Button,
         },
         {
           path: "dialog",
