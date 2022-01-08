@@ -22,6 +22,8 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px rgb(239, 239, 245);
+  position: relative;
+  z-index: 10;
 
   .ui-logo {
     span {
