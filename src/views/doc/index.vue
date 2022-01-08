@@ -11,23 +11,25 @@ const toggleAside = () => {
   <div class="layout">
     <Topnav class="nav" />
     <div class="content">
-      <transition name="fade" v-show="asideVisible">
-        <aside>
-          <h2>组件列表</h2>
-          <ol>
-            <li>
-              <router-link to="/doc/switch">Switch 组件</router-link>
-            </li>
-            <li>
-              <router-link to="/doc/button">Button 组件</router-link>
-            </li>
-            <li>
-              <router-link to="/doc/dialog">Dialog 组件</router-link>
-            </li>
-            <li>
-              <router-link to="/doc/tabs">Tabs 组件</router-link>
-            </li>
-          </ol>
+      <transition name="fade">
+        <aside v-show="asideVisible">
+          <div class="menu">
+            <div class="menu-group">
+              <span class="menu-group-title text-overflow"> 通用组件 (4) </span>
+              <router-link class="menu-item text-overflow" to="/doc/switch"
+                >Switch 组件</router-link
+              >
+              <router-link class="menu-item text-overflow" to="/doc/button"
+                >Button 组件</router-link
+              >
+              <router-link class="menu-item text-overflow" to="/doc/dialog"
+                >Dialog 组件</router-link
+              >
+              <router-link class="menu-item text-overflow" to="/doc/tabs"
+                >Tabs 组件</router-link
+              >
+            </div>
+          </div>
         </aside>
       </transition>
       <div
@@ -82,13 +84,46 @@ aside {
   padding: 16px;
   background-color: #fff;
   border-right: 1px solid #efeff5;
-  > h2 {
-    margin-bottom: 4px;
+
+  .menu,
+  .menu-group {
+    width: 100%;
   }
-  > ol {
-    > li {
-      padding: 4px 0;
+
+  .menu-group-title,
+  .menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-group-title {
+    height: 36px;
+    padding-left: 32px;
+    font-size: 13px;
+    color: rgb(118, 124, 130);
+    overflow: hidden;
+
+    &:hover {
+      cursor: default;
     }
+  }
+
+  .menu-item {
+    height: 44px;
+    padding-left: 48px;
+    color: rgb(51, 54, 57);
+    font-size: 14px;
+
+    &:hover {
+      color: #18a058 !important;
+    }
+  }
+
+  .router-link-exact-active {
+    color: #18a058 !important;
+    background-color: #e7f5ee;
+    border-radius: 3px;
   }
 }
 
@@ -126,8 +161,6 @@ main {
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease;
-  overflow: none;
-  padding: 16px;
 }
 
 .fade-enter-from,
@@ -135,5 +168,10 @@ main {
   opacity: 0;
   width: 0;
   padding: 0;
+}
+
+.fade-leave-from {
+  width: 272px;
+  padding: 16px;
 }
 </style>

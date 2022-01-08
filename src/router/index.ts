@@ -9,19 +9,29 @@ const router = createRouter({
   routes: [
     { path: "/", redirect: "/home" },
     { path: "/home", component: Home },
-    { 
-      path: "/doc", component: Doc,
+    {
+      path: "/doc",
+      component: Doc,
       children: [
         {
-          path: 'switch',
-          component: Switch
-        }
-      ]
+          path: "switch",
+          component: Switch,
+        },
+        {
+          path: "button",
+          component: Switch,
+        },
+        {
+          path: "dialog",
+          component: Switch,
+        },
+        {
+          path: "tabs",
+          component: Switch,
+        },
+      ],
     },
   ],
 });
-
-
-
 
 export default router;

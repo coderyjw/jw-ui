@@ -11,7 +11,7 @@ a {
   text-decoration: none;
   color: inherit;
   &:hover {
-    border-bottom: 1px solid;
+    // border-bottom: 1px solid;
     cursor: pointer;
   }
 }
@@ -65,4 +65,11 @@ body {
   height: 50px;
   background-color: #9f9f9f;
   -webkit-border-radius: 4px;
+}
+
+/* 文字溢出省略 */
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
