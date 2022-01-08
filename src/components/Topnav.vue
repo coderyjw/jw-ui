@@ -1,6 +1,15 @@
+<script setup lang="ts">
+import { type Ref, inject } from "vue";
+
+const asideVisible = inject<Ref<boolean>>("asideVisible");
+
+const toggleAside = () => {
+  asideVisible.value = !asideVisible.value;
+};
+</script>
 <template>
   <div class="topnav">
-    <a class="ui-logo" href="/home">
+    <a class="ui-logo" @click="toggleAside">
       <img src="" alt="" />
       <span>JW UI</span>
     </a>

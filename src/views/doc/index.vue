@@ -1,10 +1,13 @@
-<script setup>
-import Topnav from "@/components/Topnav";
+<script setup lang="ts">
+import Topnav from "@/components/Topnav.vue";
+import { inject } from "vue";
+
+const asideVisible = inject("asideVisible");
 </script>
 <template>
   <div class="layout">
     <Topnav class="nav" />
-    <div class="content">
+    <div class="content" v-if="asideVisible">
       <aside>
         <h2>组件列表</h2>
         <ol>
