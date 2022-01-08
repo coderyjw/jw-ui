@@ -9,16 +9,17 @@ const toggleAside = () => {
 </script>
 <template>
   <div class="topnav">
-    <a class="ui-logo" @click="toggleAside">
+    <a class="logo" @click="toggleAside">
       <img src="" alt="" />
       <span>JW UI</span>
     </a>
-    <div class="right-wrapper">
+    <div class="menu">
       <router-link exact to="/home">首页</router-link>
       <router-link to="/doc">文档</router-link>
       <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
       <span>1.0.0</span>
     </div>
+    <span class="toggle-aside"></span>
   </div>
 </template>
 
@@ -34,7 +35,7 @@ const toggleAside = () => {
   position: relative;
   z-index: 10;
 
-  .ui-logo {
+  .logo {
     span {
       color: rgb(31, 34, 37);
       cursor: pointer;
@@ -46,7 +47,7 @@ const toggleAside = () => {
     }
   }
 
-  .right-wrapper {
+  .menu {
     a {
       display: inline-block;
       text-decoration: none;
@@ -68,6 +69,15 @@ const toggleAside = () => {
     span {
       color: rgb(51, 54, 57);
       font-size: 14px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }
