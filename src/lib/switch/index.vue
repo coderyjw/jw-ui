@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="{ checked: value }" @click="toggle">
+    <button :class="{ checked: modelValue }" @click="toggle">
       <span></span>
     </button>
   </div>
@@ -10,20 +10,18 @@
 import { ref } from "vue";
 
 const props = defineProps({
-  value: {
+  modelValue: {
     type: Boolean,
-    default: false
-  }
-})
+    default: false,
+  },
+});
 
-const emit = defineEmits(['input'])
+const emit = defineEmits(["update:modelValue"]);
 
 const checked = ref(false);
 const toggle = () => {
-  emit('input', !props.value)
+  emit("update:modelValue", !props.modelValue);
 };
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -56,6 +54,20 @@ button {
     }
   }
 
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
+  }
+  &.checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
+  }
 }
 </style>

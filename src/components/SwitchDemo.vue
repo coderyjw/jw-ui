@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Switch :value="checked" @input="checked = $event" />
+    <Switch v-model="checked" />
   </div>
 </template>
 
