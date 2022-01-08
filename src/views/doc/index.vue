@@ -7,27 +7,29 @@ const asideVisible = inject("asideVisible");
 <template>
   <div class="layout">
     <Topnav class="nav" />
-    <div class="content" v-if="asideVisible">
-      <aside>
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
-          </li>
-        </ol>
-      </aside>
+    <div class="content">
+      <transition name="fade" v-show="asideVisible">
+        <aside>
+          <h2>组件列表</h2>
+          <ol>
+            <li>
+              <router-link to="/doc/switch">Switch 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/button">Button 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/dialog">Dialog 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/tabs">Tabs 组件</router-link>
+            </li>
+          </ol>
+        </aside>
+      </transition>
       <!-- <main>
-        <router-view />
-      </main> -->
+          <router-view />
+        </main> -->
     </div>
   </div>
 </template>
@@ -79,5 +81,16 @@ aside {
 }
 main {
   overflow: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  left: -150px;
 }
 </style>

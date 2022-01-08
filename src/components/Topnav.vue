@@ -5,21 +5,26 @@ const asideVisible = inject<Ref<boolean>>("asideVisible");
 
 const toggleAside = () => {
   asideVisible.value = !asideVisible.value;
+  console.log(asideVisible.value);
 };
 </script>
 <template>
   <div class="topnav">
-    <a class="logo" @click="toggleAside">
-      <img src="" alt="" />
+    <img
+      class="toggle-aside"
+      src="@/assets/svg/列表.svg"
+      @click="toggleAside"
+    />
+    <div class="logo">
+      <!-- <img src="" alt="" /> -->
       <span>JW UI</span>
-    </a>
+    </div>
     <div class="menu">
       <router-link exact to="/home">首页</router-link>
       <router-link to="/doc">文档</router-link>
       <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
       <span>1.0.0</span>
     </div>
-    <span class="toggle-aside"></span>
   </div>
 </template>
 
@@ -36,11 +41,14 @@ const toggleAside = () => {
   z-index: 10;
 
   .logo {
+    height: 28px;
+
     span {
       color: rgb(31, 34, 37);
       cursor: pointer;
       font-size: 18px;
-      line-height: 28.8px;
+      line-height: 28px;
+      height: 28px;
     }
     &:hover {
       border-bottom: none;
@@ -72,12 +80,22 @@ const toggleAside = () => {
     }
   }
 
+  .toggle-aside {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+  }
+
   @media (max-width: 500px) {
     > .menu {
       display: none;
     }
     > .logo {
       margin: 0 auto;
+    }
+    > .toggle-aside {
+      display: inline-block;
     }
   }
 }
