@@ -3,6 +3,7 @@ import Home from "@/views/home/index.vue";
 import Doc from "@/views/doc/index.vue";
 import Switch from "@/components/SwitchDemo.vue";
 import Button from "@/components/ButtonDemo.vue";
+import Dialog from "@/components/DialogDemo.vue";
 
 const history = createWebHistory();
 const router = createRouter({
@@ -24,7 +25,7 @@ const router = createRouter({
         },
         {
           path: "dialog",
-          component: Switch,
+          component: Dialog,
         },
         {
           path: "tabs",
