@@ -1,25 +1,31 @@
 <template>
   <template v-if="modelValue">
-    <div class="jw-dialog-overlay" v-if="overlay" @click="onOverlayClick"></div>
-    <div class="jw-dialog-wrapper">
-      <div class="jw-dialog">
-        <header>
-          <slot name="title">{{ title }}</slot>
-          <span class="jw-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot>
-            <p>这是一条消息</p>
-          </slot>
-        </main>
-        <footer>
-          <slot name="footer">
-            <Button @click="cancle">Cancel</Button>
-            <Button theme="primary" @click="confirm">Primary</Button>
-          </slot>
-        </footer>
+    <Teleport to="body">
+      <div
+        class="jw-dialog-overlay"
+        v-if="overlay"
+        @click="onOverlayClick"
+      ></div>
+      <div class="jw-dialog-wrapper">
+        <div class="jw-dialog">
+          <header>
+            <slot name="title">{{ title }}</slot>
+            <span class="jw-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot>
+              <p>这是一条消息</p>
+            </slot>
+          </main>
+          <footer>
+            <slot name="footer">
+              <Button @click="cancle">Cancel</Button>
+              <Button theme="primary" @click="confirm">Primary</Button>
+            </slot>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
