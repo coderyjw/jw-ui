@@ -19,7 +19,7 @@
           </main>
           <footer>
             <slot name="footer">
-              <Button @click="cancle">Cancel</Button>
+              <Button @click="cancel">Cancel</Button>
               <Button theme="primary" @click="confirm">Primary</Button>
             </slot>
           </footer>
@@ -52,7 +52,7 @@ const props = defineProps({
   confirm: {
     type: Function,
   },
-  cancle: {
+  cancel: {
     type: Function,
   },
 });
@@ -70,13 +70,13 @@ const onOverlayClick = () => {
 };
 
 const confirm = () => {
-  if (props.confirm?.()) {
+  if (props.confirm?.() !== false) {
     close();
   }
 };
 
-const cancle = () => {
-  if (props.cancle?.()) {
+const cancel = () => {
+  if (props.cancel?.() !== false) {
     close();
   }
 };
