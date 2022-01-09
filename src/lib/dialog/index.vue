@@ -4,14 +4,19 @@
     <div class="jw-dialog-wrapper">
       <div class="jw-dialog">
         <header>
-          {{ title }}<span class="jw-dialog-close" @click="close"></span>
+          <slot name="title">{{ title }}</slot>
+          <span class="jw-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>这是一条消息</p>
+          <slot>
+            <p>这是一条消息</p>
+          </slot>
         </main>
         <footer>
-          <Button @click="cancle">Cancel</Button>
-          <Button theme="primary" @click="confirm">Primary</Button>
+          <slot name="footer">
+            <Button @click="cancle">Cancel</Button>
+            <Button theme="primary" @click="confirm">Primary</Button>
+          </slot>
         </footer>
       </div>
     </div>
