@@ -1,7 +1,8 @@
 <template>
   <div>
     <button
-      :class="{ checked: modelValue }"
+      class="jw-swtich"
+      :class="{ 'jw-checked': modelValue }"
       @click="toggle"
       :style="{ background: modelValue ? inactiveColor : activeColor }"
     >
@@ -28,7 +29,6 @@ const props = defineProps({
   },
 });
 
-console.log({ props });
 const emit = defineEmits(["update:modelValue"]);
 
 const checked = ref(false);
@@ -40,7 +40,7 @@ const toggle = () => {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-button {
+.jw-swtich {
   height: $h;
   width: $h * 2;
   border: none;
@@ -64,7 +64,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.jw-checked {
     background: #18a058;
     > span {
       left: calc(100% - $h2 - 2px);
@@ -80,7 +80,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.jw-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
