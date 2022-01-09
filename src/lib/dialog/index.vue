@@ -1,21 +1,74 @@
 <template>
-  <div class="jw-dialog-overlay"></div>
-  <div class="jw-dialog-wrapper">
-    <div class="jw-dialog">
-      <header>标题<span class="jw-dialog-close"></span></header>
-      <main>
-        <p>这是一条消息</p>
-      </main>
-      <footer>
-        <Button>Cancel</Button>
-        <Button theme="primary">Primary</Button>
-      </footer>
+  <template v-if="modelValue">
+    <div class="jw-dialog-overlay" v-if="overlay" @click="onOverlayClick"></div>
+    <div class="jw-dialog-wrapper">
+      <div class="jw-dialog">
+        <header>
+          {{ title }}<span class="jw-dialog-close" @click="close"></span>
+        </header>
+        <main>
+          <p>这是一条消息</p>
+        </main>
+        <footer>
+          <Button @click="cancle">Cancel</Button>
+          <Button theme="primary" @click="confirm">Primary</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/button/index";
+import Button from "@/lib/button/index.vue";
+
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  overlay: {
+    type: true,
+    default: true,
+  },
+  title: {
+    type: String,
+    default: "标题",
+  },
+  closeOnClickOverlay: {
+    type: Boolean,
+    default: true,
+  },
+  confirm: {
+    type: Function,
+  },
+  cancle: {
+    type: Function,
+  },
+});
+
+const emit = defineEmits(["update:modelValue"]);
+
+const close = () => {
+  emit("update:modelValue", false);
+};
+
+const onOverlayClick = () => {
+  if (props.closeOnClickOverlay) {
+    close();
+  }
+};
+
+const confirm = () => {
+  if (props.confirm?.()) {
+    close();
+  }
+};
+
+const cancle = () => {
+  if (props.cancle?.()) {
+    close();
+  }
+};
 </script>
 
 <style lang="scss">
