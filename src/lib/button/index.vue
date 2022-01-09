@@ -130,6 +130,9 @@ $green: #18a058;
           darken($green, 20%) transparent;
       }
     }
+    &.jw-theme-dashed {
+      border-style: dashed;
+    }
     > .jw-loadingIndicator {
       border-style: dashed;
       border-color: $default-color $default-color $default-color transparent;

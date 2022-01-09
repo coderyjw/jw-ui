@@ -12,7 +12,7 @@
   <div>
     <h1>虚线按钮</h1>
     <div class="example-showcase">
-      <Button theme="default" dashed loading />&nbsp;&nbsp;
+      <Button theme="default" dashed />&nbsp;&nbsp;
       <Button theme="primary" dashed />&nbsp;&nbsp;
       <Button theme="info" dashed />&nbsp;&nbsp;
       <Button theme="success" dashed />&nbsp;&nbsp;
