@@ -40,7 +40,8 @@ const slots = useSlots().default();
 const emits = defineEmits(["update:modelValue"]);
 
 slots.forEach((tag) => {
-  if (tag.type !== Tab) {
+  // @ts-ignore
+  if (tag.type.name !== Tab.name) {
     throw new Error("Tabs 子标签必须是Tab");
   }
 });
