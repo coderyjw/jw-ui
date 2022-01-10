@@ -15,6 +15,18 @@ const toggleAside = () => {
         <aside v-show="asideVisible">
           <div class="menu">
             <div class="menu-group">
+              <span class="menu-group-title text-overflow"> 文档 </span>
+              <router-link class="menu-item text-overflow" to="/doc/intro"
+                >介绍</router-link
+              >
+              <router-link class="menu-item text-overflow" to="/doc/install"
+                >安装</router-link
+              >
+              <router-link class="menu-item text-overflow" to="/doc/get-started"
+                >开始使用</router-link
+              >
+            </div>
+            <div class="menu-group">
               <span class="menu-group-title text-overflow"> 通用组件 (4) </span>
               <router-link class="menu-item text-overflow" to="/doc/switch"
                 >Switch 组件</router-link

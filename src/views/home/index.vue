@@ -1,6 +1,6 @@
 <script setup>
-import Topnav from "@/components/Topnav";
-import Button from "@/lib/button/index";
+import Topnav from "@/components/Topnav.vue";
+import Button from "@/lib/button/index.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
