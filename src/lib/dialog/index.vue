@@ -6,8 +6,8 @@
         v-if="overlay"
         @click="onOverlayClick"
       ></div>
-      <div class="jw-dialog-wrapper">
-        <div class="jw-dialog">
+      <div class="jw-dialog">
+        <div class="jw-dialog-wrapper">
           <header>
             <slot name="title">{{ title }}</slot>
             <span class="jw-dialog-close" @click="close"></span>
@@ -88,11 +88,9 @@ $border-color: #d9d9d9;
 $primary-color: #36ad6a;
 
 .jw-dialog {
-  background: white;
+  box-sizing: border-box;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
-  min-width: 30em;
-  max-width: 90%;
 
   &-overlay {
     background-color: #00000080;
@@ -111,52 +109,55 @@ $primary-color: #36ad6a;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 11;
-  }
+    max-width: calc(100vw - 32px);
+    width: 446px;
+    background: white;
 
-  > header {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 20px;
-  }
-  > main {
-    padding: 30px 20px;
-  }
-  > footer {
-    padding: 20px;
-    text-align: right;
+    > header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 20px;
+    }
+    > main {
+      padding: 30px 20px;
+    }
+    > footer {
+      padding: 20px;
+      text-align: right;
 
-    .jw-button + .jw-button {
-      margin-left: 12px;
+      .jw-button + .jw-button {
+        margin-left: 12px;
+      }
     }
-  }
-  &-close {
-    position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      height: 1px;
-      background: black;
-      width: 100%;
-      top: 50%;
-      left: 50%;
-    }
-    &::before {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-    &::after {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
+    &-close {
+      position: relative;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        background: black;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
 
-    &:hover::before,
-    &:hover:after {
-      background: $primary-color;
+      &:hover::before,
+      &:hover:after {
+        background: $primary-color;
+      }
     }
   }
 }

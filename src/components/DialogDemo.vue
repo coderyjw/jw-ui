@@ -24,9 +24,7 @@ const toggle = () => {
   visible.value = !visible.value;
 };
 
-const confirm = () => {
-  return false;
-};
+const confirm = () => {};
 
 const cancel = () => {};
 
