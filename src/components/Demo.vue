@@ -43,6 +43,8 @@ $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0px 32px;
+  max-width: 700px;
+  min-width: 300px;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;
@@ -68,6 +70,7 @@ $border-color: #d9d9d9;
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
+      background-color: #fff;
     }
   }
 }

@@ -66,6 +66,9 @@ const linkTo = (params) => {
 
 .banner {
   padding: 170px 0 0;
+  @media (max-width: 500px) {
+    padding: 120px 0 0;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

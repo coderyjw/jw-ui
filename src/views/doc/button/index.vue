@@ -1,5 +1,13 @@
 <template>
-  <div class="button-doc-wrapper"></div>
+  <div class="button-doc-wrapper">
+    <h1>Button示例</h1>
+    <Demo :component="ButtonDemo1" />
+    <Demo :component="ButtonDemo2" />
+    <Demo :component="ButtonDemo3" />
+    <Demo :component="ButtonDemo4" />
+    <Demo :component="ButtonDemo5" />
+    <Demo :component="ButtonDemo6" />
+  </div>
 </template>
 
 <script setup lang="ts">
