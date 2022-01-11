@@ -1,21 +1,3 @@
-<script setup>
-import Topnav from "@/components/Topnav.vue";
-import Button from "@/lib/button/index.vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const linkTo = (params) => {
-  if (params === "github") {
-    window.open("https://github.com/coderyjw/jw-ui", "_blank");
-  } else if (params === "getStart") {
-    router.push({
-      path: "/doc",
-    });
-  }
-};
-</script>
-
 <template>
   <div class="topnavAndBanner">
     <Topnav :toggleMenuButton="false" />
@@ -55,7 +37,23 @@ const linkTo = (params) => {
     </ul>
   </div>
 </template>
+<script setup>
+import Topnav from "@/components/Topnav.vue";
+import Button from "@/lib/button/index.vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+const linkTo = (params) => {
+  if (params === "github") {
+    window.open("https://github.com/coderyjw/jw-ui", "_blank");
+  } else if (params === "getStart") {
+    router.push({
+      path: "/doc",
+    });
+  }
+};
+</script>
 <style lang="scss" scoped>
 .topnavAndBanner {
   /* background: linear-gradient(

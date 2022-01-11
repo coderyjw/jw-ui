@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import Topnav from "@/components/Topnav.vue";
-import { inject, type Ref } from "vue";
-
-const asideVisible = inject<Ref<boolean>>("asideVisible");
-const toggleAside = () => {
-  asideVisible.value = !asideVisible.value;
-};
-</script>
 <template>
   <div class="layout">
     <Topnav class="nav" />
@@ -62,6 +53,15 @@ const toggleAside = () => {
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import Topnav from "@/components/Topnav.vue";
+import { inject, type Ref } from "vue";
+
+const asideVisible = inject<Ref<boolean>>("asideVisible");
+const toggleAside = () => {
+  asideVisible.value = !asideVisible.value;
+};
+</script>
 <style lang="scss" scoped>
 .layout {
   display: flex;
@@ -153,7 +153,7 @@ aside {
   top: 240px;
   background-color: #fff;
   box-shadow: 0 2px 4px 0px rgb(0 0 0 / 6%);
-  transition: left 0.5s ease, transform 0.1s ease;
+  transition: left 250ms ease, transform 0.1s ease;
 
   > img {
     width: 12px;
@@ -172,7 +172,7 @@ main {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s ease;
+  transition: all 250ms ease;
 }
 
 .fade-enter-from,
