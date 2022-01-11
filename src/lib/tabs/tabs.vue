@@ -1,5 +1,5 @@
 <template>
-  <div class="jw-tabs">
+  <div class="jw-tabs" :class="classes">
     <div class="jw-tabs-header" ref="container">
       <div
         class="jw-tabs-header-item"
@@ -7,15 +7,15 @@
         v-for="(title, index) in titles"
         :key="index"
         @click="handleTabsItemClick(title)"
-        :ref="
-          (e) => {
-            if (title === modelValue) selectedItem = e;
-          }
-        "
+        :ref="getHeaderItemRef(title)"
       >
         {{ title }}
       </div>
-      <div class="jw-tabs-header-indicator" ref="indicator"></div>
+      <div
+        class="jw-tabs-header-indicator"
+        v-if="type === 'line'"
+        ref="indicator"
+      ></div>
     </div>
     <div class="jw-tabs-content">
       <component
@@ -35,9 +35,18 @@ const props = defineProps({
   modelValue: {
     type: String,
   },
+  type: {
+    type: String,
+    default: "line",
+  },
 });
+
 const slots = useSlots().default();
 const emits = defineEmits(["update:modelValue"]);
+const { type } = props;
+const classes = {
+  [`jw-tabs-${type}`]: type,
+};
 
 slots.forEach((tag) => {
   // @ts-ignore
@@ -57,14 +66,14 @@ onMounted(() => {
 });
 
 const renderIndicator = () => {
-  if (selectedItem.value) {
+  if (selectedItem.value && props.type === "line") {
     const { width } = selectedItem.value.getBoundingClientRect();
     indicator.value.style.width = width + "px";
 
     const { left: left1 } = container.value.getBoundingClientRect();
 
     const { left: left2 } = selectedItem.value.getBoundingClientRect();
-
+    console.log({ width, left1, left2 });
     const left = left2 - left1;
     indicator.value.style.left = left + "px";
   }
@@ -78,23 +87,35 @@ const current = computed(() => {
 const handleTabsItemClick = (title: string) => {
   emits("update:modelValue", title);
 };
+
+const getHeaderItemRef = (title) => {
+  return (e) => {
+    if (title === props.modelValue) selectedItem.value = e;
+  };
+};
 </script>
 
 <style lang="scss">
 $active-color: #36ad6a;
 $color: #333;
 $border-color: #d9d9d9;
-.jw-tabs {
-  &-header {
+$card-background: #f7f7fa;
+$white: #fff;
+$radius: 3px;
+$h: 40px;
+
+.jw-tabs.jw-tabs-line {
+  .jw-tabs-header {
     display: flex;
     border-bottom: 1px solid $border-color;
     color: $color;
     position: relative;
+    height: $h;
 
     &-item {
       margin: 0 16px;
-      height: 40px;
-      line-height: 40px;
+      height: $h;
+      line-height: $h;
       font-size: 14px;
       cursor: pointer;
 
@@ -116,9 +137,40 @@ $border-color: #d9d9d9;
       transition: all 250ms;
     }
   }
+}
 
-  &-content {
-    padding: 8px 0;
+.jw-tabs.jw-tabs-card {
+  .jw-tabs-header {
+    display: flex;
+    background-color: $card-background;
+    border-radius: $radius;
+    $color: #333;
+    align-items: center;
+    height: $h;
+    padding: 3px;
+    &-item {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $radius;
+      height: 100%;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 250ms ease;
+
+      &.is-active {
+        background-color: $white;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+      }
+    }
   }
+}
+
+.jw-tabs-content {
+  padding: 8px 0;
 }
 </style>

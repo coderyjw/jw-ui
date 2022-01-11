@@ -6,7 +6,7 @@ import Doc from "@/views/doc/index.vue";
 import SwitchDoc from "@/views/doc/switch/index.vue";
 import ButtonDoc from "@/views/doc/button/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
-import TabsDemo from "@/components/TabsDemo.vue";
+import TabsDoc from "@/views/doc/tabs/index.vue";
 
 import Markdown from "@/components/Markdown.vue";
 const md = (filename) =>
@@ -28,7 +28,7 @@ const router = createRouter({
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },
-        { path: "tabs", component: TabsDemo },
+        { path: "tabs", component: TabsDoc },
       ],
     },
   ],
