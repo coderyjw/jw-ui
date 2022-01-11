@@ -39,7 +39,7 @@ const getStart = () => {
       <router-link exact to="/home">首页</router-link>
       <router-link to="/doc">文档</router-link>
       <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
-      <span>1.0.0</span>
+      <span>0.0.1</span>
     </div>
   </div>
 </template>

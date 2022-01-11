@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import Demo from "@/components/Demo";
+import Demo from "@/components/Demo.vue";
 import ButtonDemo1 from "./ButtonDemo1.demo.vue";
 import ButtonDemo2 from "./ButtonDemo2.demo.vue";
 import ButtonDemo3 from "./ButtonDemo3.demo.vue";

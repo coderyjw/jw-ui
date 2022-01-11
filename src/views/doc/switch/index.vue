@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import Demo from "@/components/Demo";
+import Demo from "@/components/Demo.vue";
 import SwitchDemo1 from "./SwitchDemo1.demo.vue";
 import SwitchDemo2 from "./SwitchDemo2.demo.vue";
 import SwitchDemo3 from "./SwitchDemo3.demo.vue";

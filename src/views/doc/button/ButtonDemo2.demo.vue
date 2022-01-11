@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/button/index";
+import Button from "@/lib/button/index.vue";
 </script>
