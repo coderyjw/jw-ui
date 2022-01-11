@@ -4,7 +4,6 @@ import Button from "@/lib/button/index.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-console.log(router);
 
 const linkTo = (params) => {
   if (params === "github") {

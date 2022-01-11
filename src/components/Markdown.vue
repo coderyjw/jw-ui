@@ -12,7 +12,6 @@ const props = defineProps({
 });
 
 const content = ref<string>(null);
-console.log(props.path);
 import(/* @vite-ignore */ props.path).then((result) => {
   content.value = result.html;
 });

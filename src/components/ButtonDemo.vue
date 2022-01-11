@@ -1,8 +1,9 @@
 <template>
+  <Demo :component="Button1" />
   <div>
     <h1>基础</h1>
     <div class="example-showcase">
-      <Button theme="default" @click="hello" />&nbsp;&nbsp;
+      <Button theme="default" />&nbsp;&nbsp;
       <Button theme="primary" />&nbsp;&nbsp; <Button theme="info" />&nbsp;&nbsp;
       <Button theme="success" />&nbsp;&nbsp;
       <Button theme="warning" />&nbsp;&nbsp;
@@ -70,10 +71,8 @@
 
 <script setup lang="ts">
 import Button from "@/lib/button/index.vue";
-
-const hello = () => {
-  console.log("hello");
-};
+import Demo from "./Demo.vue";
+import Button1 from "./Button1.demo.vue";
 </script>
 
 <style scoped>
