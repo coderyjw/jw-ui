@@ -1,11 +1,13 @@
 <template>
   <div class="topnav">
-    <img
+    <svg
+      class="icon toggle-aside"
+      aria-hidden="true"
       v-if="toggleMenuButton"
-      class="toggle-aside"
-      src="@/assets/svg/列表.svg"
       @click="toggleAside"
-    />
+    >
+      <use xlink:href="#icon-list"></use>
+    </svg>
     <div class="logo" @click="getHome">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-leaf"></use>

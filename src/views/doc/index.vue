@@ -34,7 +34,9 @@
         </div>
       </aside>
       <div class="toggle-button" @click="toggleAside" :style="toggleAsidStyle">
-        <img src="@/assets/svg/箭头 右.svg" alt="" />
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-arrow-right"></use>
+        </svg>
       </div>
       <main :style="mainStyle">
         <router-view />
@@ -172,7 +174,7 @@ const mainStyle = computed(() => {
   transition: left 250ms ease, transform 0.1s ease;
   z-index: 10;
 
-  > img {
+  > .icon {
     width: 12px;
     height: 12px;
   }
