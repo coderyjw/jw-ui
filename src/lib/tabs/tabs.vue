@@ -73,7 +73,6 @@ const renderIndicator = () => {
     const { left: left1 } = container.value.getBoundingClientRect();
 
     const { left: left2 } = selectedItem.value.getBoundingClientRect();
-    console.log({ width, left1, left2 });
     const left = left2 - left1;
     indicator.value.style.left = left + "px";
   }

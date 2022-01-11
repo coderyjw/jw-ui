@@ -1,19 +1,23 @@
 <script setup>
 import { ref, provide } from "vue";
 import router from "./router";
+const clientWidth = ref(null);
 
-let width = document.documentElement.clientWidth;
-const asideVisible = ref(width <= 500 ? false : true);
+clientWidth.value = document.documentElement.clientWidth;
+const asideVisible = ref(clientWidth.value <= 500 ? false : true);
+
 provide("asideVisible", asideVisible);
+provide("clientWidth", clientWidth);
+
 router.afterEach(() => {
-  if (width <= 500) {
+  if (clientWidth.value <= 500) {
     asideVisible.value = false;
   }
 });
 
 window.onresize = () => {
-  width = document.body.clientWidth;
-  if (width <= 500) {
+  clientWidth.value = document.body.clientWidth;
+  if (clientWidth.value <= 500) {
     asideVisible.value = false;
   } else {
     asideVisible.value = true;
