@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import Button from "@/lib/button/index.vue";
-import { openDialog } from "@/lib/dialog/useDialog.ts";
+import { openDialog } from "@/lib/dialog/openDialog.ts";
 const toggle = () => {
   openDialog();
 };
