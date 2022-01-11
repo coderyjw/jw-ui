@@ -8,20 +8,18 @@ import { baseParse } from "@vue/compiler-core";
 const vitePluginVue = {
   name: "demo",
   transform(code, id) {
-    if (!/vue&type=demo/.test(id)) {
+    if (
+      !/\/src\/views\/doc\/.*\.demo\.vue/.test(id) ||
+      !/vue&type=demo/.test(id)
+    ) {
       return;
     }
-    const file = fs
-      .readFileSync("./src/components/Button1.demo.vue")
-      .toString();
+    let path = `.${id.match(/\/src\/views\/doc\/.*\.demo\.vue/)[0]}`;
+    const file = fs.readFileSync(path).toString();
     const parsed = baseParse(file).children.find((n) => n.tag === "demo");
     const title = parsed.children[0].content;
     const main = file.split(parsed.loc.source).join("").trim();
-    console.log({ code, id, file, parsed, title, main });
-    // const file = fs.readFileSync(path).toString();
-    // const parsed = baseParse(file).children.find((n) => n.tag === "demo");
-    // const title = parsed.children[0].content;
-    // const main = file.split(parsed.loc.source).join("").trim();
+
     return `export default function (Component) {
       Component.__sourceCode = ${JSON.stringify(main)}
       Component.__sourceCodeTitle = ${JSON.stringify(title)}
