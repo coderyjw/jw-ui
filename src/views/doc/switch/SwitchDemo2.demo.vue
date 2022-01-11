@@ -2,7 +2,7 @@
 自定义颜色
 </demo>
 <template>
-  <Switch v-model="checked" active-color="red" inactive-color="pink" />
+  <Switch v-model="checked" active-color="pink" inactive-color="red" />
 </template>
 
 <script setup lang="ts">

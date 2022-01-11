@@ -5,7 +5,7 @@ import Home from "@/views/home/index.vue";
 import Doc from "@/views/doc/index.vue";
 import SwitchDoc from "@/views/doc/switch/index.vue";
 import ButtonDoc from "@/views/doc/button/index.vue";
-import DialogDemo from "@/components/DialogDemo.vue";
+import DialogDoc from "@/views/doc/dialog/index.vue";
 import TabsDemo from "@/components/TabsDemo.vue";
 
 import Markdown from "@/components/Markdown.vue";
@@ -27,7 +27,7 @@ const router = createRouter({
         { path: "get-started", component: md("get-started") },
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
-        { path: "dialog", component: DialogDemo },
+        { path: "dialog", component: DialogDoc },
         { path: "tabs", component: TabsDemo },
       ],
     },
