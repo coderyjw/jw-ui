@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
     mdPlugin.plugin({
-      mode: ["html"],
+      mode: ["html", "vue"],
     }),
     vitePluginVue,
   ],

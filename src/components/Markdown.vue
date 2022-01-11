@@ -3,16 +3,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 const props = defineProps({
-  path: {
+  content: {
     type: String,
     required: true,
   },
 });
-
-const content = ref<string>(null);
-import(/* @vite-ignore */ props.path).then((result) => {
-  content.value = result.html;
-});
+console.log(props.content);
 </script>

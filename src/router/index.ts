@@ -8,9 +8,12 @@ import ButtonDoc from "@/views/doc/button/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
 import TabsDoc from "@/views/doc/tabs/index.vue";
 
+import { html as GetStarted } from "../../markdown/get-started.md";
+import { html as Install } from "../../markdown/install.md";
+import { html as Intro } from "../../markdown/intro.md";
+
 import Markdown from "@/components/Markdown.vue";
-const md = (filename) =>
-  h(Markdown, { path: `../../markdown/${filename}.md`, key: filename });
+const md = (string) => h(Markdown, { content: string, key: string });
 
 const history = createWebHistory();
 const router = createRouter({
@@ -23,9 +26,9 @@ const router = createRouter({
       redirect: "/doc/intro",
       component: Doc,
       children: [
-        { path: "intro", component: md("intro") },
-        { path: "install", component: md("install") },
-        { path: "get-started", component: md("get-started") },
+        { path: "intro", component: md(Intro) },
+        { path: "install", component: md(Install) },
+        { path: "get-started", component: md(GetStarted) },
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },

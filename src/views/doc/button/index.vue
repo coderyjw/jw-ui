@@ -1,13 +1,5 @@
 <template>
-  <h1>Button 示例</h1>
-  <div class="demo-wrapper">
-    <Demo :component="ButtonDemo1" />
-    <Demo :component="ButtonDemo2" />
-    <Demo :component="ButtonDemo3" />
-    <Demo :component="ButtonDemo4" />
-    <Demo :component="ButtonDemo5" />
-    <Demo :component="ButtonDemo6" />
-  </div>
+  <div class="button-doc-wrapper"></div>
 </template>
 
 <script setup lang="ts">
@@ -21,8 +13,10 @@ import ButtonDemo6 from "./ButtonDemo6.demo.vue";
 </script>
 
 <style lang="scss">
-.jw-button + .jw-button {
-  margin-left: 8px;
-  margin-top: 8px;
+.button-doc-wrapper {
+  .jw-button + .jw-button {
+    margin-left: 8px;
+    margin-top: 8px;
+  }
 }
 </style>
