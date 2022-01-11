@@ -1,13 +1,14 @@
 <template>
   <div class="demo">
-    <h2>{{ component.__sourceCodeTitle }}</h2>
+    <h2>
+      {{ component.__sourceCodeTitle }}
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </h2>
     <div class="demo-component">
       <component :is="component" />
     </div>
-    <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
+
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="html" />
     </div>
@@ -46,6 +47,8 @@ $border-color: #d9d9d9;
     font-size: 20px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
   }
 
   &-component {

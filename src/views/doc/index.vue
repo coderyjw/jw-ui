@@ -29,16 +29,16 @@ const toggleAside = () => {
             <div class="menu-group">
               <span class="menu-group-title text-overflow"> 通用组件 (4) </span>
               <router-link class="menu-item text-overflow" to="/doc/switch"
-                >Switch 组件</router-link
+                >Switch 开关</router-link
               >
               <router-link class="menu-item text-overflow" to="/doc/button"
-                >Button 组件</router-link
+                >Button 按钮</router-link
               >
               <router-link class="menu-item text-overflow" to="/doc/dialog"
-                >Dialog 组件</router-link
+                >Dialog 对话框</router-link
               >
               <router-link class="menu-item text-overflow" to="/doc/tabs"
-                >Tabs 组件</router-link
+                >Tabs 标签页</router-link
               >
             </div>
           </div>
