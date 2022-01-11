@@ -15,18 +15,15 @@
 </template>
 
 <script setup lang="ts">
-import Button from "../lib/button/index";
+import Button from "@/lib/button/index.vue";
 import "prismjs";
 import "prismjs/themes/prism.css";
 import { computed, ref } from "vue";
 const Prism = (window as any).Prism;
-import { onMounted } from "vue";
 const props = defineProps({
   component: Object,
 });
-onMounted(() => {
-  console.log(props.component);
-});
+
 const html = computed(() => {
   return Prism.highlight(
     props.component.__sourceCode,
