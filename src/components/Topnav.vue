@@ -1,3 +1,25 @@
+<template>
+  <div class="topnav">
+    <img
+      v-if="toggleMenuButton"
+      class="toggle-aside"
+      src="@/assets/svg/列表.svg"
+      @click="toggleAside"
+    />
+    <div class="logo" @click="getHome">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-leaf"></use>
+      </svg>
+      <!-- <span>JW UI</span> -->
+    </div>
+    <div class="menu">
+      <router-link exact to="/home">首页</router-link>
+      <router-link to="/doc">文档</router-link>
+      <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
+      <span>0.0.1</span>
+    </div>
+  </div>
+</template>
 <script setup lang="ts">
 import { type Ref, inject } from "vue";
 import { useRouter } from "vue-router";
@@ -15,35 +37,12 @@ const toggleAside = () => {
   asideVisible.value = !asideVisible.value;
 };
 
-const getStart = () => {
+const getHome = () => {
   router.push({
-    path: "/doc",
+    path: "/",
   });
 };
 </script>
-<template>
-  <div class="topnav">
-    <img
-      v-if="toggleMenuButton"
-      class="toggle-aside"
-      src="@/assets/svg/列表.svg"
-      @click="toggleAside"
-    />
-    <div class="logo" @click="getStart">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-leaf"></use>
-      </svg>
-      <!-- <span>JW UI</span> -->
-    </div>
-    <div class="menu">
-      <router-link exact to="/home">首页</router-link>
-      <router-link to="/doc">文档</router-link>
-      <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
-      <span>0.0.1</span>
-    </div>
-  </div>
-</template>
-
 <style lang="scss">
 .topnav {
   height: 63px;

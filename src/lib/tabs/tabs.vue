@@ -118,6 +118,7 @@ $h: 40px;
       line-height: $h;
       font-size: 14px;
       cursor: pointer;
+      white-space: nowrap;
 
       &.is-active,
       &:hover {
