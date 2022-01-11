@@ -170,6 +170,7 @@ const mainStyle = computed(() => {
   background-color: #fff;
   box-shadow: 0 2px 4px 0px rgb(0 0 0 / 6%);
   transition: left 250ms ease, transform 0.1s ease;
+  z-index: 10;
 
   > img {
     width: 12px;
