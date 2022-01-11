@@ -9,5 +9,4 @@ const props = defineProps({
     required: true,
   },
 });
-console.log(props.content);
 </script>

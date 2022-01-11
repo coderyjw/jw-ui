@@ -1,5 +1,9 @@
 import { h } from "vue";
-import { createWebHistory, createRouter } from "vue-router";
+import {
+  createWebHistory,
+  createRouter,
+  createWebHashHistory,
+} from "vue-router";
 
 import Home from "@/views/home/index.vue";
 import Doc from "@/views/doc/index.vue";
@@ -15,7 +19,7 @@ import { html as Intro } from "../../markdown/intro.md";
 import Markdown from "@/components/Markdown.vue";
 const md = (string) => h(Markdown, { content: string, key: string });
 
-const history = createWebHistory();
+const history = createWebHashHistory();
 const router = createRouter({
   history,
   routes: [
