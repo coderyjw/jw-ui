@@ -6,6 +6,7 @@
 
 ```
 import {Button, Tabs, Switch, Dialog} from "yjw-ui"
+import 'yw-ui/lib/jw-ui.css'
 ```
 
 就可以使用我提供的组件了。
