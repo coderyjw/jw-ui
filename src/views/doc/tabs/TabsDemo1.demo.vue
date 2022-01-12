@@ -10,8 +10,8 @@
   </Tabs>
 </template>
 <script setup lang="ts">
-import Tabs from "@/lib/tabs/tabs.vue";
-import Tab from "@/lib/tabs/tab.vue";
+import Tabs from "@/lib/tabs/index.vue";
+import Tab from "@/lib/tab/index.vue";
 import { ref } from "vue";
 
 const selected = ref("干嘛");

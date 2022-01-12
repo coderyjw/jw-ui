@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, toRefs } from "vue";
+import { computed, toRefs } from "vue";
 
 const props = defineProps({
   modelValue: {
