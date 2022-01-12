@@ -1,13 +1,12 @@
 <demo>圆角</demo>
 <template>
-  <Button theme="default" round />
-  <Button theme="primary" round />
-  <Button theme="info" round />
-  <Button theme="success" round />
-  <Button theme="warning" round />
-  <Button theme="error" round />
+  <jw-button theme="default" round />
+  <jw-button theme="primary" round />
+  <jw-button theme="info" round />
+  <jw-button theme="success" round />
+  <jw-button theme="warning" round />
+  <jw-button theme="error" round />
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/button/index.vue";
 </script>

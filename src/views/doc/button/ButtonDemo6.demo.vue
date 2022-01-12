@@ -1,14 +1,13 @@
 <demo>加载</demo>
 <template>
-  <Button theme="default" loading>loading</Button>
-  <Button theme="primary" loading>loading</Button>
-  <Button theme="info" loading>loading</Button>
-  <Button theme="success" loading>loading</Button>
-  <Button theme="warning" loading>loading</Button>
-  <Button theme="error" loading>loading</Button>
-  <Button theme="primary">loaded</Button>
+  <jw-button theme="default" loading>loading</jw-button>
+  <jw-button theme="primary" loading>loading</jw-button>
+  <jw-button theme="info" loading>loading</jw-button>
+  <jw-button theme="success" loading>loading</jw-button>
+  <jw-button theme="warning" loading>loading</jw-button>
+  <jw-button theme="error" loading>loading</jw-button>
+  <jw-button theme="primary">loaded</jw-button>
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/button/index.vue";
 </script>

@@ -1,18 +1,16 @@
 <template>
   <div>
     <h1>基础用例</h1>
-    <Tabs v-model="selected">
-      <Tab title="干嘛">干嘛</Tab>
-      <Tab title="听">听</Tab>
-      <Tab title="苦情歌">苦情歌</Tab>
-      <Tab title="以为多烂漫">以为多烂漫</Tab>
-    </Tabs>
+    <jw-tabs v-model="selected">
+      <jw-tab title="干嘛">干嘛</jw-tab>
+      <jw-tab title="听">听</jw-tab>
+      <jw-tab title="苦情歌">苦情歌</jw-tab>
+      <jw-tab title="以为多烂漫">以为多烂漫</jw-tab>
+    </jw-tabs>
   </div>
 </template>
 
 <script setup lang="ts">
-import Tabs from "@/lib/tabs/index.vue";
-import Tab from "@/lib/tab/index.vue";
 import { ref } from "vue";
 
 const selected = ref("干嘛");

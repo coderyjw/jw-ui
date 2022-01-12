@@ -1,13 +1,11 @@
 <demo>基础</demo>
 <template>
-  <Button theme="default" />
-  <Button theme="primary" />
-  <Button theme="info" />
-  <Button theme="success" />
-  <Button theme="warning" />
-  <Button theme="error" />
+  <jw-button theme="default" />
+  <jw-button theme="primary" />
+  <jw-button theme="info" />
+  <jw-button theme="success" />
+  <jw-button theme="warning" />
+  <jw-button theme="error" />
 </template>
 
-<script setup lang="ts">
-import Button from "@/lib/button/index.vue";
-</script>
+<script setup lang="ts"></script>

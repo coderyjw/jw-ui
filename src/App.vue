@@ -1,6 +1,11 @@
+<template>
+  <router-view></router-view>
+</template>
+
 <script setup>
 import { ref, provide } from "vue";
 import router from "./router";
+
 const clientWidth = ref(null);
 
 clientWidth.value = document.documentElement.clientWidth;
@@ -24,9 +29,5 @@ window.onresize = () => {
   }
 };
 </script>
-
-<template>
-  <router-view></router-view>
-</template>
 
 <style lang="scss" scoped></style>

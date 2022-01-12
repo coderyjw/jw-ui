@@ -53,6 +53,11 @@ const classes = computed(() => {
   };
 });
 </script>
+<script lang="ts">
+export default {
+  name: "JwSwitch",
+};
+</script>
 
 <style lang="scss" scoped>
 $default-h: 22px;

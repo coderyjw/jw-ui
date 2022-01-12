@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { useSlots, computed, ref, onMounted, watchEffect } from "vue";
-import Tab from "../tab/index.vue";
+import JwTab from "../tab/index.vue";
 
 const props = defineProps({
   modelValue: {
@@ -50,8 +50,8 @@ const classes = {
 
 slots.forEach((tag) => {
   // @ts-ignore
-  if (tag.type.name !== Tab.name) {
-    throw new Error("Tabs 子标签必须是Tab");
+  if (tag.type.name !== JwTab.name) {
+    throw new Error("JwTabs 子标签必须是JwTab");
   }
 });
 
@@ -91,6 +91,11 @@ const getHeaderItemRef = (title) => {
   return (e) => {
     if (title === props.modelValue) selectedItem.value = e;
   };
+};
+</script>
+<script lang="ts">
+export default {
+  name: "JwTabs",
 };
 </script>
 

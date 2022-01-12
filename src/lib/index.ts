@@ -1,6 +1,20 @@
-export { default as Switch } from "./switch/index.vue";
-export { default as Button } from "./button/index.vue";
-export { default as Tabs } from "./tabs/index.vue";
-export { default as Tab } from "./tab/index.vue";
-export { default as Dialog } from "./dialog/index.vue";
-export { openDialog as openDialog } from "./dialog/openDialog";
+import { App } from "vue";
+
+import JwSwitch from "./switch/index.vue";
+import JwButton from "./button/index.vue";
+import JwTabs from "./tabs/index.vue";
+import JwTab from "./tab/index.vue";
+import JwDialog from "./dialog/index.vue";
+import { openDialog } from "./dialog/openDialog";
+
+export { JwSwitch, JwButton, JwTabs, JwTab, JwDialog, openDialog };
+
+const components = [JwButton, JwSwitch, JwTabs, JwTab, JwDialog];
+
+export function registerJwUi(app: App): void {
+  for (const component of components) {
+    app.component(component.name, component);
+  }
+}
+
+export default registerJwUi;

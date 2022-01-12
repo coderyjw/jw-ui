@@ -19,8 +19,8 @@
           </main>
           <footer>
             <slot name="footer">
-              <Button @click="cancel">Cancel</Button>
-              <Button theme="primary" @click="confirm">Primary</Button>
+              <jw-button @click="cancel">Cancel</jw-button>
+              <jw-button theme="primary" @click="confirm">Primary</jw-button>
             </slot>
           </footer>
         </div>
@@ -30,8 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/button/index.vue";
-
+import JwButton from "@/lib/button/index.vue";
 const props = defineProps({
   modelValue: {
     type: Boolean,
@@ -79,6 +78,11 @@ const cancel = () => {
   if (props.cancel?.() !== false) {
     close();
   }
+};
+</script>
+<script lang="ts">
+export default {
+  name: "JwDialog",
 };
 </script>
 
