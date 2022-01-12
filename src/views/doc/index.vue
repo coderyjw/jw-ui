@@ -13,7 +13,7 @@
               >安装</router-link
             >
             <router-link class="menu-item text-overflow" to="/doc/get-started"
-              >开始使用</router-link
+              >快速使用</router-link
             >
           </div>
           <div class="menu-group">

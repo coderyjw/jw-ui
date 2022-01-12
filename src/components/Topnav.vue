@@ -18,7 +18,7 @@
       <router-link exact to="/home">首页</router-link>
       <router-link to="/doc">文档</router-link>
       <a href="https://github.com/coderyjw/jw-ui" target="_blank">GitHub</a>
-      <span>0.0.3</span>
+      <span>0.0.4</span>
     </div>
   </div>
 </template>

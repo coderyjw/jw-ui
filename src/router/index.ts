@@ -18,8 +18,11 @@ import { html as Intro } from "../../markdown/intro.md";
 
 import Markdown from "@/components/Markdown.vue";
 const md = (string) => h(Markdown, { content: string, key: string });
-
+const IntroDoc = md(Intro);
+const GetStartedDoc = md(GetStarted);
+const InstallDoc = md(Install);
 const history = createWebHashHistory();
+
 const router = createRouter({
   history,
   routes: [
@@ -30,9 +33,9 @@ const router = createRouter({
       redirect: "/doc/intro",
       component: Doc,
       children: [
-        { path: "intro", component: md(Intro) },
-        { path: "install", component: md(Install) },
-        { path: "get-started", component: md(GetStarted) },
+        { path: "intro", component: IntroDoc },
+        { path: "install", component: InstallDoc },
+        { path: "get-started", component: GetStartedDoc },
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },

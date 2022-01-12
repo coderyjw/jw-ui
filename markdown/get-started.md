@@ -1,27 +1,41 @@
-# 开始使用
+# 快速使用
 
 请先[安装](#/doc/install)本组件库。
 
-然后在你的代码中写入下面的代码
+### 完整引入
 
+如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便。
+
+```javascript
+// main.ts
+import { createApp } from "vue";
+import App from "./App.vue";
+import JwUi from "yjw-ui";
+import "yjw-ui/dist/lib/yjw-ui.css";
+
+const app = createApp(App);
+
+app.use(JwUi);
+app.mount("#app");
 ```
-import {Button, Tabs, Switch, Dialog} from "yjw-ui"
-import 'yw-ui/lib/jw-ui.css'
+
+### 按需引入
+
+```javascript
+import { JwButton } from "yjw-ui";
+import "yjw-ui/dist/lib/yjw-ui.css";
 ```
 
-就可以使用我提供的组件了。
+完成引入就可以使用我提供的组件啦。
 
-## Vue 单文件组件
+#### Vue 单文件组件
 
 代码示例：
 
-```
+```html
 <template>
   <div>
-    <Button>按钮</Button>
+    <jw-button>按钮</jw-button>
   </div>
 </template>
-<script setup lang="ts">
-import {Button, Tabs, Switch, Dialog} from "yjw-ui"
-</script>
 ```

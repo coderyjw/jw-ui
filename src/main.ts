@@ -1,7 +1,7 @@
 import "@/lib/jw.scss";
 import "@/assets/css/index.scss";
 import "github-markdown-css";
-import JwUi from "./lib/index";
+import JwUi from "@/lib/index";
 
 import { createApp } from "vue";
 import App from "./App.vue";

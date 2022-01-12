@@ -1,15 +1,24 @@
 # 安装
 
-打开终端运行下列命令：
+选择一个你喜欢的包管理器：
 
-```
-npm install yjw-ui
+```shell
+# NPM
+$ npm install yjw-ui
 ```
 
 或
 
-```
-yarn add yjw-ui
+```shell
+# Yarn
+$ yarn add yjw-ui
 ```
 
-下一节：[开始使用](#/doc/get-started)
+或
+
+```shell
+# pnpm
+$ pnpm install yjw-ui
+```
+
+下一节：[快速使用](#/doc/get-started)
