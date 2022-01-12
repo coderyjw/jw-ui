@@ -112,6 +112,7 @@ const linkTo = (params) => {
     font-size: 16px;
     height: 25px;
     line-height: 25px;
+    margin-bottom: 5px;
 
     &:last-of-type {
       margin-bottom: 20px;
