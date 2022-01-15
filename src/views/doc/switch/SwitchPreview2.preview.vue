@@ -1,6 +1,6 @@
-<demo>
+<preview>
 自定义颜色
-</demo>
+</preview>
 <template>
   <jw-switch v-model="checked" active-color="pink" inactive-color="red" />
 </template>

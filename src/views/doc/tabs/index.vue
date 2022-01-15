@@ -1,12 +1,12 @@
 <template>
   <h1>Tabs 标签页</h1>
-  <Demo :component="TabsDemo1" />
-  <Demo :component="TabsDemo2" />
+  <Preview :component="TabsPreview1" />
+  <Preview :component="TabsPreview2" />
 </template>
 
 <script setup lang="ts">
-import Demo from "@/components/Demo.vue";
-import TabsDemo1 from "./TabsDemo1.demo.vue";
-import TabsDemo2 from "./TabsDemo2.demo.vue";
+import Preview from "@/components/Preview.vue";
+import TabsPreview1 from "./TabsPreview1.preview.vue";
+import TabsPreview2 from "./TabsPreview2.preview.vue";
 </script>
 <style scoped></style>

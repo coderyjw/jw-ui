@@ -1,4 +1,4 @@
-<demo>虚线</demo>
+<preview>虚线</preview>
 <template>
   <jw-button theme="default" dashed />
   <jw-button theme="primary" dashed />

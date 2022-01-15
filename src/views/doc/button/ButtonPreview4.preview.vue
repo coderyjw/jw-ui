@@ -1,4 +1,4 @@
-<demo>尺寸</demo>
+<preview>尺寸</preview>
 <template>
   <jw-button theme="primary" size="large" />
   <jw-button theme="primary" size="default" />

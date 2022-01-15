@@ -1,4 +1,4 @@
-<demo>圆角</demo>
+<preview>圆角</preview>
 <template>
   <jw-button theme="default" round />
   <jw-button theme="primary" round />

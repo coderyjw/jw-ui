@@ -1,6 +1,6 @@
-<demo>
+<preview>
 尺寸
-</demo>
+</preview>
 <template>
   <jw-switch v-model="checked" size="small" />
   <jw-switch v-model="checked" size="default" />

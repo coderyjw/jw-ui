@@ -1,6 +1,6 @@
-<demo>
+<preview>
 基础用法
-</demo>
+</preview>
 <template>
   <jw-button theme="primary" @click="toggle">点击打开对话框</jw-button>
   <jw-dialog v-model="visible" :cancel="cancel" :confirm="confirm"> </jw-dialog>

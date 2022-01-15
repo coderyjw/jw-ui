@@ -1,6 +1,6 @@
-<demo>
+<preview>
 卡片风格
-</demo>
+</preview>
 <template>
   <jw-tabs v-model="selected" type="card">
     <jw-tab title="干嘛">干嘛</jw-tab>

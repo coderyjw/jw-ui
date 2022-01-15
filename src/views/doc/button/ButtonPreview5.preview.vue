@@ -1,4 +1,4 @@
-<demo>禁用</demo>
+<preview>禁用</preview>
 <template>
   <jw-button theme="primary" />
   <jw-button theme="primary" disabled />

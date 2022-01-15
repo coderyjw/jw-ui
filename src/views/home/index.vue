@@ -89,7 +89,7 @@ const linkTo = (params) => {
       content: " ";
       position: absolute;
       top: 10px;
-      left: 49px;
+      left: 3rem;
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -99,7 +99,7 @@ const linkTo = (params) => {
       content: " ";
       position: absolute;
       top: 10px;
-      left: 86px;
+      left: 5.4rem;
       width: 12px;
       height: 12px;
       border-radius: 50%;

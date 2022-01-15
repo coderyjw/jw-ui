@@ -1,6 +1,6 @@
-<demo>
+<preview>
 基础用法
-</demo>
+</preview>
 <template>
   <jw-tabs v-model="selected">
     <jw-tab title="干嘛">干嘛</jw-tab>

@@ -1,13 +1,13 @@
 <template>
   <h1>Dialog 对话框</h1>
-  <Demo :component="DialogDemo1Vue" />
-  <Demo :component="DialogDemo2Vue" />
+  <Preview :component="DialogPreview1" />
+  <Preview :component="DialogPreview2" />
 </template>
 
 <script setup lang="ts">
-import Demo from "@/components/Demo.vue";
-import DialogDemo1Vue from "./DialogDemo1.demo.vue";
-import DialogDemo2Vue from "./DialogDemo2.demo.vue";
+import Preview from "@/components/Preview.vue";
+import DialogPreview1 from "./DialogPreview1.preview.vue";
+import DialogPreview2 from "./DialogPreview2.preview.vue";
 </script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
-<demo>
+<preview>
 一句话打开Dialog
-</demo>
+</preview>
 <template>
   <jw-button theme="primary" @click="toggle">点击打开对话框</jw-button>
 </template>

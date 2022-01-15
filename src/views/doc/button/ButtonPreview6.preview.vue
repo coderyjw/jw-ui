@@ -1,4 +1,4 @@
-<demo>加载</demo>
+<preview>加载</preview>
 <template>
   <jw-button theme="default" loading>loading</jw-button>
   <jw-button theme="primary" loading>loading</jw-button>
