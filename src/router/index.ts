@@ -11,6 +11,7 @@ import SwitchDoc from "@/views/doc/switch/index.vue";
 import ButtonDoc from "@/views/doc/button/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
 import TabsDoc from "@/views/doc/tabs/index.vue";
+import AvatarDoc from "@/views/doc/avatar/index.vue";
 
 import { html as GetStarted } from "../../markdown/get-started.md";
 import { html as Install } from "../../markdown/install.md";
@@ -40,6 +41,7 @@ const router = createRouter({
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },
         { path: "tabs", component: TabsDoc },
+        { path: "avatar", component: AvatarDoc },
       ],
     },
   ],

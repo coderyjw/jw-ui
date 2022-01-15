@@ -18,6 +18,9 @@
           </div>
           <div class="menu-group">
             <span class="menu-group-title text-overflow"> 通用组件 (4) </span>
+            <router-link class="menu-item text-overflow" to="/doc/avatar"
+              >Avatar 头像</router-link
+            >
             <router-link class="menu-item text-overflow" to="/doc/switch"
               >Switch 开关</router-link
             >
