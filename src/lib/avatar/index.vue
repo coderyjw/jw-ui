@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 const props = defineProps({
   size: {
     type: [String, Number],
@@ -55,6 +55,12 @@ const styles = computed(() => {
     backgroundColor,
   };
 });
+
+// need reset hasLoadError to false if src changed
+watch(
+  () => props.src,
+  () => (hasLoadError.value = false)
+);
 
 const handleError = (e: Event) => {
   hasLoadError.value = true;

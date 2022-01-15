@@ -39,3 +39,5 @@ import "yjw-ui/dist/lib/yjw-ui.css";
   </div>
 </template>
 ```
+
+下一节：[Avatar 头像](#/doc/avatar)

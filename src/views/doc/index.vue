@@ -153,7 +153,7 @@ const mainStyle = computed(() => {
     > main {
       flex-grow: 1;
       box-sizing: border-box;
-      padding: 32px 24px 0px 36px;
+      padding: 32px 24px 100px 36px;
       transition: all 250ms ease;
       overflow: auto;
     }

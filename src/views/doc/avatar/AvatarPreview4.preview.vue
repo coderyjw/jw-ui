@@ -7,5 +7,6 @@
 <script setup lang="ts">
 const handleError = () => {
   console.log("图片加载失败");
+  return false;
 };
 </script>
