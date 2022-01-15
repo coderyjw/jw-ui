@@ -3,7 +3,7 @@
     class="jw-switch"
     :class="classes"
     @click="toggle"
-    :style="{ background: modelValue ? inactiveColor : activeColor }"
+    :style="{ background: modelValue ? activeColor : inactiveColor }"
   >
     <span></span>
   </button>
@@ -19,11 +19,11 @@ const props = defineProps({
   },
   activeColor: {
     type: String,
-    default: "",
+    default: "#18a058",
   },
   inactiveColor: {
     type: String,
-    default: "",
+    default: "#dbdbdb",
   },
   disabled: {
     type: Boolean,
