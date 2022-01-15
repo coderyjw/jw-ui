@@ -61,6 +61,11 @@ const handleError = (e: Event) => {
   emits("error", e);
 };
 </script>
+<script lang="ts">
+export default {
+  name: "JwAvatar",
+};
+</script>
 
 <style lang="scss">
 $font-size: 14px;
