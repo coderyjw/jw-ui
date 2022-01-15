@@ -29,7 +29,7 @@ const propDoc = [
   [
     "overlay-closebale",
     "是否可以通过点击overlay关闭对话框",
-    "Boolean",
+    "boolean",
     "-",
     "true",
   ],

@@ -1,14 +1,19 @@
 <template>
   <div class="next-and-prev-link">
-    <div class="pre" @click="handlePrevClick">
-      <svg class="icon" aria-hidden="true" style="transform: rotate(180deg)">
+    <div v-if="prev.name" class="pre" @click="handlePrevClick">
+      <svg
+        v-if="prev.name"
+        class="icon"
+        aria-hidden="true"
+        style="transform: rotate(180deg)"
+      >
         <use xlink:href="#icon-arrow-right"></use>
       </svg>
       <span> {{ prev.name }}</span>
     </div>
     <div class="next" @click="handleNextClick">
-      <span>{{ next.name }}</span>
-      <svg class="icon" aria-hidden="true">
+      <span v-if="next.name">{{ next.name }}</span>
+      <svg v-if="next.name" class="icon" aria-hidden="true">
         <use xlink:href="#icon-arrow-right"></use>
       </svg>
     </div>
