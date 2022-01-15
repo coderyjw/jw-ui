@@ -64,7 +64,7 @@ const mainStyle = computed(() => {
     : { "padding-left": asideVisible.value ? "302px" : "60px" };
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .layout {
   display: flex;
   flex-direction: column;
@@ -143,6 +143,14 @@ const mainStyle = computed(() => {
       padding: 32px 24px 100px 36px;
       transition: all 250ms ease;
       overflow: auto;
+
+      .preview-wrapper {
+        width: 80%;
+
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
     }
   }
 }

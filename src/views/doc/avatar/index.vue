@@ -11,7 +11,7 @@
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/get-started', name: '快速使用' }"
-        :next="{ path: '/doc/switch', name: 'Switch开关' }"
+        :next="{ path: '/doc/button', name: 'Button按钮' }"
       />
     </div>
   </div>
@@ -19,13 +19,13 @@
 
 <script setup lang="ts">
 import PrevAndNext from "@/components/PrevAndNext.vue";
+import Doc from "@/components/Doc";
 import Avatar from "@/lib/avatar/index.vue";
 import Preview from "@/components/Preview.vue";
 import AvatarPreview1 from "./AvatarPreview1.preview.vue";
 import AvatarPreview2 from "./AvatarPreview2.preview.vue";
 import AvatarPreview3 from "./AvatarPreview3.preview.vue";
 import AvatarPreview4 from "./AvatarPreview4.preview.vue";
-import Doc from "@/components/Doc";
 
 const propsDoc = [
   [
@@ -54,10 +54,6 @@ const slotDoc = [["default", "自定义头像展示内容"]];
   .jw-avatar + .jw-avatar {
     margin-left: 8px;
     margin-top: 8px;
-  }
-
-  .preview-wrapper {
-    width: 80%;
   }
 }
 </style>

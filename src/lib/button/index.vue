@@ -37,8 +37,8 @@ const { theme, dashed, size, round, disabled } = props;
 const classes = computed(() => {
   return {
     [`jw-theme-${theme}`]: theme,
-    [`jw-theme-dashed`]: dashed,
-    [`jw-size-${size}`]: size,
+    [`is-dashed`]: dashed,
+    [`jw-button-${size}`]: size,
     [`is-round`]: round,
     [`is-disabled`]: disabled,
   };
@@ -93,25 +93,13 @@ $green: #18a058;
   &::-moz-focus-inner {
     border: 0;
   }
-
-  &.jw-size-large {
-    font-size: 24px;
-    height: $h-large;
-    padding: 0 16px;
-  }
-  &.jw-size-small {
-    font-size: 12px;
-    height: $h-small;
-    padding: 0 8px;
-  }
-
-  &.is-round.jw-size-default {
+  &.is-round.jw-button-default {
     border-radius: calc($h-default / 2);
   }
-  &.is-round.jw-size-large {
+  &.is-round.jw-button-large {
     border-radius: calc($h-large / 2);
   }
-  &.is-round.jw-size-small {
+  &.is-round.jw-button-small {
     border-radius: calc($h-small / 2);
   }
 
@@ -135,7 +123,7 @@ $green: #18a058;
           darken($green, 20%) transparent;
       }
     }
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
     }
     > .jw-loadingIndicator {
@@ -167,7 +155,7 @@ $green: #18a058;
       }
     }
 
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
       background-color: $white !important;
       color: $primary-color;
@@ -202,7 +190,7 @@ $green: #18a058;
       }
     }
 
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
       background-color: $white !important;
       color: $info-color;
@@ -237,7 +225,7 @@ $green: #18a058;
       }
     }
 
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
       background-color: $white !important;
       color: $success-color;
@@ -272,7 +260,7 @@ $green: #18a058;
       }
     }
 
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
       background-color: $white !important;
       color: $warning-color;
@@ -307,7 +295,7 @@ $green: #18a058;
       }
     }
 
-    &.jw-theme-dashed {
+    &.is-dashed {
       border-style: dashed;
       background-color: $white !important;
       color: $error-color;
@@ -319,6 +307,16 @@ $green: #18a058;
     }
   }
 
+  &.jw-button-large {
+    font-size: 24px;
+    height: $h-large;
+    padding: 0 16px;
+  }
+  &.jw-button-small {
+    font-size: 12px;
+    height: $h-small;
+    padding: 0 8px;
+  }
   > .jw-loadingIndicator {
     width: 14px;
     height: 14px;
