@@ -4,34 +4,20 @@
     <div class="content">
       <aside :style="asideStyle">
         <div class="menu">
-          <div class="menu-group">
-            <span class="menu-group-title text-overflow"> 文档 </span>
-            <router-link class="menu-item text-overflow" to="/doc/intro"
-              >介绍</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/install"
-              >安装</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/get-started"
-              >快速使用</router-link
-            >
-          </div>
-          <div class="menu-group">
-            <span class="menu-group-title text-overflow"> 通用组件 (4) </span>
-            <router-link class="menu-item text-overflow" to="/doc/avatar"
-              >Avatar 头像</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/switch"
-              >Switch 开关</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/button"
-              >Button 按钮</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/dialog"
-              >Dialog 对话框</router-link
-            >
-            <router-link class="menu-item text-overflow" to="/doc/tabs"
-              >Tabs 标签页</router-link
+          <div
+            class="menu-group"
+            v-for="(itemx, index) in docRoutes"
+            :key="index"
+          >
+            <span class="menu-group-title text-overflow">
+              {{ index }}{{ index !== "文档" ? `（${itemx.length}）` : "" }}
+            </span>
+            <router-link
+              v-for="(itemy, indey) in itemx"
+              :key="indey"
+              class="menu-item text-overflow"
+              :to="`/doc/${itemy.path}`"
+              >{{ itemy.name }}</router-link
             >
           </div>
         </div>
@@ -50,7 +36,8 @@
 <script setup lang="ts">
 import Topnav from "@/components/Topnav.vue";
 import { inject, type Ref, computed } from "vue";
-
+import docRoutes from "@/router/doc-routes.ts";
+console.log({ docRoutes });
 const asideVisible = inject<Ref<boolean>>("asideVisible");
 const clientWidth = inject<Ref<number>>("clientWidth");
 
