@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import PrevAndNext from "@/components/PrevAndNext.vue";
-import Doc from "@/components/Doc";
+import Doc from "@/components/Doc.vue";
 import Preview from "@/components/Preview.vue";
 import SwitchPreview1 from "./SwitchPreview1.preview.vue";
 import SwitchPreview2 from "./SwitchPreview2.preview.vue";

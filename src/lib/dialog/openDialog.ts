@@ -7,9 +7,11 @@ export const openDialog = (
     content: () => "这是一条消息",
     confirm: () => {},
     cancel: () => {},
+    overlay: true,
+    overlayClosable: true,
   }
 ) => {
-  const { title, content, confirm, cancel } = options;
+  const { title, content, confirm, cancel, overlay, overlayClosable } = options;
   const div = document.createElement("div");
   document.body.appendChild(div);
   const close = () => {
@@ -30,6 +32,8 @@ export const openDialog = (
           },
           confirm,
           cancel,
+          overlay,
+          overlayClosable,
         },
         {
           title,

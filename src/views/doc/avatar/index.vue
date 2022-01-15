@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import PrevAndNext from "@/components/PrevAndNext.vue";
-import Doc from "@/components/Doc";
+import Doc from "@/components/Doc.vue";
 import Avatar from "@/lib/avatar/index.vue";
 import Preview from "@/components/Preview.vue";
 import AvatarPreview1 from "./AvatarPreview1.preview.vue";

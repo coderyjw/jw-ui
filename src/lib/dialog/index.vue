@@ -19,8 +19,8 @@
           </main>
           <footer>
             <slot name="footer">
-              <jw-button @click="cancel">Cancel</jw-button>
-              <jw-button theme="primary" @click="confirm">Primary</jw-button>
+              <jw-button @click="cancel">取消</jw-button>
+              <jw-button theme="primary" @click="confirm">确认</jw-button>
             </slot>
           </footer>
         </div>
@@ -30,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 import JwButton from "@/lib/button/index.vue";
 const props = defineProps({
   modelValue: {
@@ -44,7 +45,7 @@ const props = defineProps({
     type: String,
     default: "标题",
   },
-  closeOnClickOverlay: {
+  overlayClosable: {
     type: Boolean,
     default: true,
   },
@@ -56,16 +57,17 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "onOverlayClick"]);
 
 const close = () => {
   emit("update:modelValue", false);
 };
 
 const onOverlayClick = () => {
-  if (props.closeOnClickOverlay) {
+  if (props.overlayClosable) {
     close();
   }
+  emit("onOverlayClick");
 };
 
 const confirm = () => {

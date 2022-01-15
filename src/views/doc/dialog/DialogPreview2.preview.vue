@@ -1,9 +1,15 @@
 <preview>
-基础用法
+  点击遮罩
 </preview>
 <template>
   <jw-button theme="primary" @click="toggle">点击打开对话框</jw-button>
-  <jw-dialog v-model="visible" :cancel="cancel" :confirm="confirm"> </jw-dialog>
+  <jw-dialog
+    v-model="visible"
+    :overlay-closable="false"
+    @onOverlayClick="onOverlayClick"
+  >
+    我觉得用户应该聪明到点遮罩没用的时候就去点确认了。
+  </jw-dialog>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +21,7 @@ const toggle = () => {
   visible.value = !visible.value;
 };
 
-const confirm = () => {};
-
-const cancel = () => {};
+const onOverlayClick = () => {
+  console.log("我觉得用户应该聪明到点遮罩没用的时候就去点确认了。");
+};
 </script>

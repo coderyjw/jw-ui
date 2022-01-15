@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import PrevAndNext from "@/components/PrevAndNext.vue";
-import Doc from "@/components/Doc";
+import Doc from "@/components/Doc.vue";
 import Preview from "@/components/Preview.vue";
 import ButtonPreview1 from "./ButtonPreview1.preview.vue";
 import ButtonPreview2 from "./ButtonPreview2.preview.vue";
