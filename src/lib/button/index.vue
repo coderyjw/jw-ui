@@ -1,12 +1,19 @@
 <template>
   <button class="jw-button" :class="classes">
     <span v-if="loading" class="jw-loadingIndicator"></span>
-    <slot name="icon"></slot>
-    <slot> {{ theme }} </slot>
+
+    <div v-if="iconPlacement === 'left' && solts.icon" class="slot-icon-left">
+      <slot name="icon"></slot>
+    </div>
+
+    <slot></slot>
+    <div v-if="iconPlacement === 'right' && solts.icon" class="slot-icon-right">
+      <slot name="icon"></slot>
+    </div>
   </button>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useSlots } from "vue";
 const props = defineProps({
   theme: {
     type: String,
@@ -36,9 +43,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  iconPlacement: {
+    type: String,
+    default: "left",
+  },
 });
 
 const { theme, dashed, size, round, disabled, circle } = props;
+const solts = useSlots();
+console.log(solts);
 const classes = computed(() => {
   return {
     [`jw-theme-${theme}`]: theme,
@@ -58,8 +71,8 @@ export default {
 </script>
 
 <style lang="scss">
-$h-default: 32px;
-$h-small: 20px;
+$h-default: 40px;
+$h-small: 32px;
 $h-large: 48px;
 $white: #fff;
 $default-color: #333;
@@ -78,9 +91,9 @@ $green: #18a058;
 .jw-button {
   box-sizing: border-box;
   height: $h-default;
-
+  font-size: 14px;
   background-color: #fff;
-  padding: 0 12px;
+  padding: 12px 20px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -350,6 +363,12 @@ $green: #18a058;
     border-style: solid;
     border-width: 2px;
     animation: jw-spin 1s infinite linear;
+  }
+  > .slot-icon-left {
+    margin-right: 5px;
+  }
+  > .slot-icon-right {
+    margin-left: 5px;
   }
 }
 

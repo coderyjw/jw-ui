@@ -1,9 +1,6 @@
-<preview>虚线</preview>
+<preview>尺寸</preview>
 <template>
-  <jw-button theme="default" dashed />
-  <jw-button theme="primary" dashed />
-  <jw-button theme="info" dashed />
-  <jw-button theme="success" dashed />
-  <jw-button theme="warning" dashed />
-  <jw-button theme="error" dashed />
+  <jw-button theme="primary" size="small">小按钮</jw-button>
+  <jw-button theme="primary" size="default">默认按钮</jw-button>
+  <jw-button theme="primary" size="large">大按钮</jw-button>
 </template>

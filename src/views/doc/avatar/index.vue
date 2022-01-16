@@ -51,8 +51,8 @@ const slotDoc = [["default", "自定义头像展示内容"]];
 
 <style lang="scss">
 .avatar-doc-wrapper {
-  .jw-avatar + .jw-avatar {
-    margin-left: 8px;
+  .jw-avatar {
+    margin-right: 8px;
     margin-top: 8px;
   }
 }

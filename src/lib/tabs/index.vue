@@ -108,68 +108,70 @@ $white: #fff;
 $radius: 3px;
 $h: 40px;
 
-.jw-tabs.jw-tabs-line {
-  .jw-tabs-header {
-    display: flex;
-    border-bottom: 1px solid $border-color;
-    color: $color;
-    position: relative;
-    height: $h;
-
-    &-item {
-      margin: 0 16px;
+.jw-tabs {
+  width: 100%;
+  &.jw-tabs-line {
+    .jw-tabs-header {
+      display: flex;
+      border-bottom: 1px solid $border-color;
+      color: $color;
+      position: relative;
       height: $h;
-      line-height: $h;
-      font-size: 14px;
-      cursor: pointer;
-      white-space: nowrap;
 
-      &.is-active,
-      &:hover {
-        color: $active-color;
+      &-item {
+        margin: 0 16px;
+        height: $h;
+        line-height: $h;
+        font-size: 14px;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &.is-active,
+        &:hover {
+          color: $active-color;
+        }
+      }
+      &-item:first-of-type {
+        padding-left: 0;
+      }
+
+      &-indicator {
+        position: absolute;
+        height: 3px;
+        background: $active-color;
+        left: 0;
+        bottom: -1px;
+        transition: all 250ms;
       }
     }
-    &-item:first-of-type {
-      padding-left: 0;
-    }
-
-    &-indicator {
-      position: absolute;
-      height: 3px;
-      background: $active-color;
-      left: 0;
-      bottom: -1px;
-      transition: all 250ms;
-    }
   }
-}
-
-.jw-tabs.jw-tabs-card {
-  .jw-tabs-header {
-    display: flex;
-    background-color: $card-background;
-    border-radius: $radius;
-    $color: #333;
-    align-items: center;
-    height: $h;
-    padding: 3px;
-    &-item {
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-wrap: nowrap;
-      white-space: nowrap;
+  &.jw-tabs-card {
+    .jw-tabs-header {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: $card-background;
       border-radius: $radius;
-      height: 100%;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 250ms ease;
+      $color: #333;
+      align-items: center;
+      height: $h;
+      padding: 3px;
+      &-item {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $radius;
+        height: 100%;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 250ms ease;
 
-      &.is-active {
-        background-color: $white;
-        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+        &.is-active {
+          background-color: $white;
+          box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+        }
       }
     }
   }

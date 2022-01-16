@@ -53,6 +53,9 @@ $border-color: #d9d9d9;
 
   &-component {
     padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   &-actions {

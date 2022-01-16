@@ -50,8 +50,8 @@ const slotDoc = [["defalut", "自定义默认内容"]];
 
 <style lang="scss">
 .icon-doc-wrapper {
-  .jw-icon + .jw-icon {
-    margin-left: 8px;
+  .jw-icon {
+    margin-right: 8px;
     margin-top: 8px;
   }
   p {

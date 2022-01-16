@@ -3,7 +3,7 @@ import "@/assets/css/index.scss";
 import "github-markdown-css";
 
 import JwUi from "@/lib/index";
-import "yjw-ui/dist/lib/yjw-ui.css";
+// import "yjw-ui/dist/lib/yjw-ui.css";
 
 import { createApp } from "vue";
 import App from "./App.vue";

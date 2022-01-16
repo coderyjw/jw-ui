@@ -30,8 +30,8 @@ const propDoc = [
 </script>
 
 <style lang="scss">
-.jw-switch + .jw-switch {
-  margin-left: 8px;
+.jw-switch {
+  margin-right: 8px;
   margin-top: 8px;
 }
 </style>
