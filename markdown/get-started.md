@@ -10,6 +10,7 @@
 // main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
+
 import JwUi from "yjw-ui";
 import "yjw-ui/dist/lib/yjw-ui.css";
 
@@ -34,9 +35,7 @@ import "yjw-ui/dist/lib/yjw-ui.css";
 
 ```html
 <template>
-  <div>
-    <jw-button>按钮</jw-button>
-  </div>
+  <jw-button>按钮</jw-button>
 </template>
 ```
 

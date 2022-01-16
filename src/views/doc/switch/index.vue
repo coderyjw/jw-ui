@@ -1,5 +1,5 @@
 <template>
-  <h1>Switch 示例</h1>
+  <h1>Switch 开关</h1>
   <div class="preview-wrapper">
     <Preview :component="SwitchPreview1" />
     <Preview :component="SwitchPreview2" />

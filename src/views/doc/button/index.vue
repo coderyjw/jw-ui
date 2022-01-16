@@ -1,6 +1,6 @@
 <template>
   <div class="button-doc-wrapper">
-    <h1>Button示例</h1>
+    <h1>Button 按钮</h1>
     <div class="preview-wrapper">
       <Preview :component="ButtonPreview1" />
       <Preview :component="ButtonPreview2" />

@@ -8,6 +8,3 @@
   <jw-button theme="error" loading>loading</jw-button>
   <jw-button theme="primary">loaded</jw-button>
 </template>
-
-<script setup lang="ts">
-</script>

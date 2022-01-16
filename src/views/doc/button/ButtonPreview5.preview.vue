@@ -11,6 +11,3 @@
   <jw-button theme="error" />
   <jw-button theme="error" disabled />
 </template>
-
-<script setup lang="ts">
-</script>

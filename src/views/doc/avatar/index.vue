@@ -11,7 +11,7 @@
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/get-started', name: '快速使用' }"
-        :next="{ path: '/doc/button', name: 'Button按钮' }"
+        :next="{ path: '/doc/button', name: '按钮 Button' }"
       />
     </div>
   </div>

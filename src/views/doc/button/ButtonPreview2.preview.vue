@@ -7,5 +7,3 @@
   <jw-button theme="warning" dashed />
   <jw-button theme="error" dashed />
 </template>
-
-<script setup lang="ts"></script>

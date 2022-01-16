@@ -4,6 +4,3 @@
   <jw-button theme="primary" size="default" />
   <jw-button theme="primary" size="small" />
 </template>
-
-<script setup lang="ts">
-</script>

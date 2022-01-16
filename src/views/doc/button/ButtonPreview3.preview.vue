@@ -7,6 +7,3 @@
   <jw-button theme="warning" round />
   <jw-button theme="error" round />
 </template>
-
-<script setup lang="ts">
-</script>

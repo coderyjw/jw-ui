@@ -7,6 +7,7 @@ export const openDialog = (
     content: () => "这是一条消息",
     confirm: () => {},
     cancel: () => {},
+    footer: () => "",
     overlay: true,
     overlayClosable: true,
   }
@@ -19,6 +20,7 @@ export const openDialog = (
     div.remove();
   };
 
+  const foo = h("div");
   const app = createApp({
     render() {
       return h(
@@ -37,7 +39,7 @@ export const openDialog = (
         },
         {
           title,
-          content,
+          default: content,
         }
       );
     },
