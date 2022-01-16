@@ -878,6 +878,30 @@ vue@^3.2.25:
     "@vue/server-renderer" "3.2.26"
     "@vue/shared" "3.2.26"
 
+yjw-ui@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.6.tgz#eba16ee5b9c08725fd705ee3bbeac7a51ca63112"
+  integrity sha512-O6LxfEAsm1mQ9IvlYTfkC6GNehPvV5atJsqRkmpVZuTPQ++000Hh/qKTLG/fz3V1/23fOl1KRZfbMw79qaKMxA==
+  dependencies:
+    github-markdown-css "^5.1.0"
+    prismjs "^1.26.0"
+    vite-plugin-markdown "^2.0.2"
+    vue "^3.2.25"
+    vue-router "4"
+    yjw-ui "^0.0.5"
+
+yjw-ui@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.7.tgz#33885024b8d40d256ac2c0d27b88eec8ba25968a"
+  integrity sha512-iMxsdGRUe6FCXORxzjuXLgazN71Wf5/hZRCrxuFawGBxZQgv9W5sk6bnTqqbYPD0Yy4Vb4xDyeLQTmJyKdFOTg==
+  dependencies:
+    github-markdown-css "^5.1.0"
+    prismjs "^1.26.0"
+    vite-plugin-markdown "^2.0.2"
+    vue "^3.2.25"
+    vue-router "4"
+    yjw-ui "0.0.6"
+
 yjw-ui@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.4.tgz#cdf7b0df426abc4abb0a4b821d9a26123179bf60"

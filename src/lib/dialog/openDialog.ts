@@ -3,11 +3,10 @@ import { createApp, h } from "vue";
 
 export const openDialog = (
   options = {
-    title: () => "标题",
-    content: () => "这是一条消息",
+    title: () => "我是标题",
+    content: () => "我是内容",
     confirm: () => {},
     cancel: () => {},
-    footer: () => "",
     overlay: true,
     overlayClosable: true,
   }
