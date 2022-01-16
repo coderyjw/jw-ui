@@ -8,8 +8,8 @@
     <Doc title="插槽" type="slot" :body="slotDoc" />
     <Doc title="事件" type="event" :body="eventDoc" />
     <PrevAndNext
-      :prev="{ path: '/doc/avatar', name: 'Switch 开关 ' }"
-      :next="{ path: '/doc/switch', name: '标签页 Tabs' }"
+      :prev="{ path: '/doc/switch', name: 'Switch 开关 ' }"
+      :next="{ path: '/doc/tabs', name: '标签页 Tabs' }"
     />
   </div>
 </template>

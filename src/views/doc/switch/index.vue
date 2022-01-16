@@ -6,8 +6,8 @@
     <Preview :component="SwitchPreview3" />
     <Doc title="属性" type="prop" :body="propDoc" />
     <PrevAndNext
-      :prev="{ path: '/doc/avatar', name: 'Avatar 头像' }"
-      :next="{ path: '/doc/switch', name: '开关 Switch' }"
+      :prev="{ path: '/doc/button', name: 'Button 按钮' }"
+      :next="{ path: '/doc/dialog', name: '对话框 Dialog' }"
     />
   </div>
 </template>
