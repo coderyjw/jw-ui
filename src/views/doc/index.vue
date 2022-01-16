@@ -37,7 +37,6 @@
 import Topnav from "@/components/Topnav.vue";
 import { inject, type Ref, computed } from "vue";
 import docRoutes from "@/router/doc-routes.ts";
-console.log({ docRoutes });
 const asideVisible = inject<Ref<boolean>>("asideVisible");
 const clientWidth = inject<Ref<number>>("clientWidth");
 

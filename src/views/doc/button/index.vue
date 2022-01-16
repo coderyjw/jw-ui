@@ -12,7 +12,7 @@
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/avatar', name: 'Avatar 头像' }"
-        :next="{ path: '/doc/switch', name: '开关 Switch' }"
+        :next="{ path: '/doc/icon', name: '图标 Icon' }"
       />
     </div>
   </div>
