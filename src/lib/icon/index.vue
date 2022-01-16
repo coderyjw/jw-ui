@@ -22,4 +22,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.jw-icon {
+  display: inline-block;
+  > span {
+    display: inline-block;
+  }
+}
+</style>

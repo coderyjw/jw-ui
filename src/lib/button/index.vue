@@ -1,6 +1,7 @@
 <template>
   <button class="jw-button" :class="classes">
     <span v-if="loading" class="jw-loadingIndicator"></span>
+    <slot name="icon"></slot>
     <slot> {{ theme }} </slot>
   </button>
 </template>
@@ -23,6 +24,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  circle: {
+    type: Boolean,
+    default: false,
+  },
   disabled: {
     type: Boolean,
     default: false,
@@ -33,13 +38,14 @@ const props = defineProps({
   },
 });
 
-const { theme, dashed, size, round, disabled } = props;
+const { theme, dashed, size, round, disabled, circle } = props;
 const classes = computed(() => {
   return {
     [`jw-theme-${theme}`]: theme,
     [`is-dashed`]: dashed,
     [`jw-button-${size}`]: size,
     [`is-round`]: round,
+    [`is-circle`]: circle,
     [`is-disabled`]: disabled,
   };
 });
@@ -51,7 +57,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h-default: 32px;
 $h-small: 20px;
 $h-large: 48px;
@@ -72,6 +78,7 @@ $green: #18a058;
 .jw-button {
   box-sizing: border-box;
   height: $h-default;
+
   background-color: #fff;
   padding: 0 12px;
   cursor: pointer;
@@ -92,6 +99,22 @@ $green: #18a058;
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  &.is-circle.jw-button-default {
+    border-radius: 100%;
+    height: $h-default;
+    width: $h-default;
+  }
+  &.is-circle.jw-button-small {
+    border-radius: 100%;
+    height: $h-small;
+    width: $h-small;
+  }
+  &.is-circle.jw-button-large {
+    border-radius: 100%;
+    height: $h-large;
+    width: $h-large;
   }
   &.is-round.jw-button-default {
     border-radius: calc($h-default / 2);
