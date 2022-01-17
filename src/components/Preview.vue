@@ -1,15 +1,15 @@
 <template>
-  <div class="preview-wrapper">
+  <div class="preview-container">
     <h2>
       {{ component.__sourceCodeTitle }}
       <jw-button @click="hideCode" v-if="codeVisible">隐藏代码</jw-button>
       <jw-button @click="showCode" v-else>查看代码</jw-button>
     </h2>
-    <div class="preview-wrapper-component">
+    <div class="preview-container-component">
       <component :is="component" />
     </div>
 
-    <div class="preview-wrapper-code" v-if="codeVisible">
+    <div class="preview-container-code" v-if="codeVisible">
       <pre class="language-html" v-html="html" />
     </div>
   </div>
@@ -39,7 +39,7 @@ const codeVisible = ref(false);
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 
-.preview-wrapper {
+.preview-container {
   border: 1px solid $border-color;
   margin: 16px 0px 32px;
   min-width: 300px;
@@ -48,6 +48,7 @@ $border-color: #d9d9d9;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 

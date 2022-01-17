@@ -57,15 +57,6 @@ const linkTo = (params) => {
 };
 </script>
 <style lang="scss" scoped>
-.topnavAndBanner {
-  /* background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
-  ); */
-  /* clip-path: ellipse(80% 60% at 50% 40%); */
-}
-
 .banner {
   padding: 170px 0 0;
   @media (max-width: 500px) {
@@ -142,7 +133,6 @@ const linkTo = (params) => {
   @media (min-width: 800px) {
     width: 800px;
   }
-  /* background-color: pink; */
 
   @media (min-width: 1200px) {
     width: 1200px;

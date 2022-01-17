@@ -7,6 +7,7 @@ import JwTab from "./tab/index.vue";
 import JwDialog from "./dialog/index.vue";
 import Avatar from "./avatar/index.vue";
 import Icon from "./icon/index.vue";
+import Ellipsis from "./ellipsis/index.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -18,9 +19,19 @@ export {
   Avatar,
   Icon,
   openDialog,
+  Ellipsis,
 };
 
-const components = [JwButton, JwSwitch, JwTabs, JwTab, JwDialog, Icon, Avatar];
+const components = [
+  JwButton,
+  JwSwitch,
+  JwTabs,
+  JwTab,
+  JwDialog,
+  Icon,
+  Avatar,
+  Ellipsis,
+];
 
 export function registerJwUi(app: App): void {
   for (const component of components) {

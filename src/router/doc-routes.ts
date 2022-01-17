@@ -16,6 +16,7 @@ import DialogDoc from "@/views/doc/dialog/index.vue";
 import TabsDoc from "@/views/doc/tabs/index.vue";
 import AvatarDoc from "@/views/doc/avatar/index.vue";
 import IconDoc from "@/views/doc/icon/index.vue";
+import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 
 export default {
   文档: [
@@ -26,6 +27,7 @@ export default {
   通用组件: [
     { path: "avatar", component: AvatarDoc, name: "头像 Avatar" },
     { path: "button", component: ButtonDoc, name: "按钮 Button" },
+    { path: "ellipsis", component: EllipsisDoc, name: "文本省略 Ellipsis" },
     { path: "icon", component: IconDoc, name: "图标 Icon" },
   ],
   数据录入组件: [{ path: "switch", component: SwitchDoc, name: "开关 Switch" }],

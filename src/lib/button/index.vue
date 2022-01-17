@@ -51,7 +51,6 @@ const props = defineProps({
 
 const { theme, dashed, size, round, disabled, circle } = props;
 const solts = useSlots();
-console.log(solts);
 const classes = computed(() => {
   return {
     [`jw-theme-${theme}`]: theme,
