@@ -8,6 +8,7 @@ import JwDialog from "./dialog/index.vue";
 import Avatar from "./avatar/index.vue";
 import Icon from "./icon/index.vue";
 import Ellipsis from "./ellipsis/index.vue";
+import Link from "./link/index.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -18,8 +19,8 @@ export {
   JwDialog,
   Avatar,
   Icon,
-  openDialog,
   Ellipsis,
+  openDialog,
 };
 
 const components = [
@@ -31,6 +32,7 @@ const components = [
   Icon,
   Avatar,
   Ellipsis,
+  Link,
 ];
 
 export function registerJwUi(app: App): void {
