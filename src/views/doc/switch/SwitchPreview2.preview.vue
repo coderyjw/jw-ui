@@ -2,7 +2,7 @@
 自定义颜色
 </preview>
 <template>
-  <jw-switch v-model="checked" active-color="pink" inactive-color="red" />
+  <jw-switch v-model="checked" active-color="red" inactive-color="pink" />
 </template>
 
 <script setup lang="ts">

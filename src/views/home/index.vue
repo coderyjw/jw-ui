@@ -80,7 +80,7 @@ const linkTo = (params) => {
       content: " ";
       position: absolute;
       top: 10px;
-      left: 3rem;
+      left: 20%;
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -90,7 +90,7 @@ const linkTo = (params) => {
       content: " ";
       position: absolute;
       top: 10px;
-      left: 5.4rem;
+      left: 39%;
       width: 12px;
       height: 12px;
       border-radius: 50%;

@@ -4,8 +4,6 @@
 
 ### 完整引入
 
-如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便。
-
 ```javascript
 // main.ts
 import { createApp } from "vue";
@@ -20,7 +18,7 @@ app.use(JwUi);
 app.mount("#app");
 ```
 
-### 按需引入
+### 引入某个组件
 
 ```javascript
 import { JwButton } from "yjw-ui";
