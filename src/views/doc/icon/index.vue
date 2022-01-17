@@ -18,8 +18,8 @@
       <Doc title="属性" type="prop" :body="propDoc" />
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
-        :prev="{ path: '/doc/button', name: 'Button 按钮' }"
-        :next="{ path: '/doc/switch', name: '开关 Switch' }"
+        :prev="{ path: '/doc/ellipsis', name: '文本省略 Ellipsis' }"
+        :next="{ path: '/doc/link', name: '链接 Link' }"
       />
     </div>
   </div>
