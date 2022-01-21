@@ -5,10 +5,11 @@ import JwButton from "./button/index.vue";
 import JwTabs from "./tabs/index.vue";
 import JwTab from "./tab/index.vue";
 import JwDialog from "./dialog/index.vue";
-import Avatar from "./avatar/index.vue";
-import Icon from "./icon/index.vue";
-import Ellipsis from "./ellipsis/index.vue";
-import Link from "./link/index.vue";
+import JwAvatar from "./avatar/index.vue";
+import JwIcon from "./icon/index.vue";
+import JwEllipsis from "./ellipsis/index.vue";
+import JwLink from "./link/index.vue";
+import JwRadio from "./radio/index.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -17,9 +18,10 @@ export {
   JwTabs,
   JwTab,
   JwDialog,
-  Avatar,
-  Icon,
-  Ellipsis,
+  JwAvatar,
+  JwIcon,
+  JwEllipsis,
+  JwRadio,
   openDialog,
 };
 
@@ -29,10 +31,11 @@ const components = [
   JwTabs,
   JwTab,
   JwDialog,
-  Icon,
-  Avatar,
-  Ellipsis,
-  Link,
+  JwIcon,
+  JwAvatar,
+  JwEllipsis,
+  JwLink,
+  JwRadio,
 ];
 
 export function registerJwUi(app: App): void {

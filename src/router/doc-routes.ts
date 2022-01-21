@@ -18,6 +18,7 @@ import AvatarDoc from "@/views/doc/avatar/index.vue";
 import IconDoc from "@/views/doc/icon/index.vue";
 import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
+import RadioDoc from "@/views/doc/radio/index.vue";
 
 export default {
   文档: [
@@ -32,7 +33,10 @@ export default {
     { path: "icon", component: IconDoc, name: "图标 Icon" },
     { path: "link", component: LinkDoc, name: "链接 Link" },
   ],
-  数据录入组件: [{ path: "switch", component: SwitchDoc, name: "开关 Switch" }],
+  数据录入组件: [
+    { path: "radio", component: RadioDoc, name: "单选框 Radio" },
+    { path: "switch", component: SwitchDoc, name: "开关 Switch" },
+  ],
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
   导航组件: [{ path: "tabs", component: TabsDoc, name: "标签页 Tabs" }],
 };
