@@ -1,11 +1,28 @@
 <preview>基础用法</preview>
 <template>
-  <jw-radio v-model="radio" label="1">选项1</jw-radio>
-  <jw-radio v-model="radio" label="2">选项2</jw-radio>
+  <div style="width: 100%">
+    <jw-radio v-model="radio1" label="1" size="large">选项1</jw-radio>
+    <jw-radio v-model="radio1" label="2" size="large">选项2</jw-radio>
+  </div>
+  <div style="width: 100%">
+    <jw-radio v-model="radio2" label="1">选项1</jw-radio>
+    <jw-radio v-model="radio2" label="2">选项2</jw-radio>
+  </div>
+  <div style="width: 100%">
+    <jw-radio v-model="radio3" label="1" size="samll">选项1</jw-radio>
+    <jw-radio v-model="radio3" label="2" size="samll">选项2</jw-radio>
+  </div>
+  <div style="width: 100%">
+    <jw-radio v-model="radio4" label="1" size="samll" disabled>选项1</jw-radio>
+    <jw-radio v-model="radio4" label="2" size="samll" disabled>选项2</jw-radio>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 
-const radio = ref("1");
+const radio1 = ref("1");
+const radio2 = ref("1");
+const radio3 = ref("1");
+const radio4 = ref("1");
 </script>

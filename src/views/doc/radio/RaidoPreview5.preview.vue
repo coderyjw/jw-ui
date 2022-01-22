@@ -1,10 +1,16 @@
-<preview>单选框组</preview>
+<preview>是否有边框</preview>
 <template>
-  <jw-radio-group v-model="radio" size="large">
-    <jw-radio label="1">选项 A</jw-radio>
-    <jw-radio label="2">选项 B</jw-radio>
-    <jw-radio label="3" disabled>选项 C</jw-radio>
-  </jw-radio-group>
+  <jw-radio v-model="radio" label="1" size="small" border>选项1</jw-radio>
+  <jw-radio v-model="radio" label="2" border>选项2</jw-radio>
+  <jw-radio v-model="radio" label="3" size="large" border>选项3</jw-radio>
+
+  <jw-radio v-model="radio" label="1" size="small" border disabled
+    >选项1</jw-radio
+  >
+  <jw-radio v-model="radio" label="2" border disabled>选项2</jw-radio>
+  <jw-radio v-model="radio" label="3" size="large" border disabled
+    >选项3</jw-radio
+  >
 </template>
 
 <script setup lang="ts">
