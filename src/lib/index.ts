@@ -10,6 +10,7 @@ import JwIcon from "./icon/index.vue";
 import JwEllipsis from "./ellipsis/index.vue";
 import JwLink from "./link/index.vue";
 import JwRadio from "./radio/radio.vue";
+import JwRadioGroup from "./radio/radio-group.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -23,6 +24,7 @@ export {
   JwEllipsis,
   JwRadio,
   openDialog,
+  JwRadioGroup,
 };
 
 const components = [
@@ -36,6 +38,7 @@ const components = [
   JwEllipsis,
   JwLink,
   JwRadio,
+  JwRadioGroup,
 ];
 
 export function registerJwUi(app: App): void {

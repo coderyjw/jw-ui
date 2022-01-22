@@ -21,38 +21,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { useRadio, radioProps, radioEmits } from "./radio";
 
-const props = defineProps({
-  modelValue: {
-    type: [String, Number, Boolean],
-    default: "",
-  },
-  label: {
-    type: [String, Number, Boolean],
-    default: "",
-  },
-  disabled: Boolean,
-  size: String,
-  name: {
-    type: String,
-    default: "",
-  },
-  border: Boolean,
-});
+const props = defineProps(radioProps);
+const emits = defineEmits(radioEmits);
 
-const emits = defineEmits(["update:modelValue"]);
-
-const classes = computed(() => ({
-  "is-checked": props.modelValue === props.label,
-  "is-disabled": props.disabled,
-  [`jw-radio-${props.size}`]: props.size,
-  "is-bordered": props.border,
-}));
+const { modelValue, label, size, disabled, classes } = useRadio(props, emits);
 
 const handleChange = () => {
-  if (!props.disabled) {
-    emits("update:modelValue", props.label);
+  if (!disabled.value) {
+    modelValue.value = props.label;
   }
 };
 </script>
