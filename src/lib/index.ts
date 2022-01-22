@@ -9,7 +9,7 @@ import JwAvatar from "./avatar/index.vue";
 import JwIcon from "./icon/index.vue";
 import JwEllipsis from "./ellipsis/index.vue";
 import JwLink from "./link/index.vue";
-import JwRadio from "./radio/index.vue";
+import JwRadio from "./radio/radio.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
