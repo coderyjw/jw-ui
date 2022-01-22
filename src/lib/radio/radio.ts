@@ -18,9 +18,9 @@ export const radioProps = {
   border: Boolean,
 };
 
-export const radioEmits = ["update:modelValue"];
+export const radioEmits = ["update:modelValue", "change"];
 
-export const useRadio = (props, emit) => {
+export const useRadio = (props, emits) => {
   const radioGroupProp = inject("radioGroupKey", undefined);
   const isGroup = computed(() => !!radioGroupProp);
   const modelValue = computed({
@@ -31,7 +31,9 @@ export const useRadio = (props, emit) => {
       if (isGroup.value) {
         radioGroupProp!.changeEvent(val);
       } else {
-        emit("update:modelValue", val);
+        console.log("change", val);
+        emits("update:modelValue", val);
+        emits("change", val);
       }
     },
   });

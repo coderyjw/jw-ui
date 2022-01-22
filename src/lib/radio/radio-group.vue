@@ -6,12 +6,13 @@
 
 <script setup lang="ts">
 import { provide, reactive, toRefs } from "vue";
-import { radioGroupProps, radioGroupEmits } from "./radio-gropu";
+import { radioGroupProps, radioGroupEmits } from "./radio-grop";
 const props = defineProps(radioGroupProps);
 const emits = defineEmits(radioGroupEmits);
 
 const changeEvent = (value) => {
   emits("update:modelValue", value);
+  emits("change", value);
 };
 
 provide(
