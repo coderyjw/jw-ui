@@ -1,7 +1,7 @@
 <template>
   <div class="jw-radio" @click="handleChange" :class="classes">
     <span class="jw-radio-input" :class="classes"></span>
-    <span class="jw-radio-label">
+    <span class="jw-radio-label" :class="classes">
       <slot>{{ label }}</slot>
     </span>
   </div>
@@ -28,19 +28,25 @@ export default {
 </script>
 <style lang="scss">
 $checked-color: #36ad6a;
-$default-size: 16px;
-$default-inner-size: 10px;
-$large-size: 20px;
-$large-inner-size: 12px;
+
+$large-size: 16px;
+$default-size: 14px;
 $small-size: 12px;
-$small-inner-size: 7px;
+
+$large-inner-size: 10px;
+$default-inner-size: 8px;
+$small-inner-size: 6px;
+
+$large-height: 40px;
+$default-height: 32px;
+$small-height: 24px;
 
 .jw-radio {
   cursor: pointer;
   margin-right: 32px;
   display: inline-flex;
   align-items: center;
-  height: calc($default-size * 2.5);
+  height: $default-height;
   position: relative;
 
   &.is-bordered {
@@ -53,14 +59,14 @@ $small-inner-size: 7px;
     }
   }
   &.jw-radio-small {
-    height: calc($small-size * 2.5);
+    height: $small-height;
     &.is-bordered:not(.is-disabled) {
       padding: 0 10px;
     }
   }
 
   &.jw-radio-large {
-    height: calc($large-size * 2.5);
+    height: $large-height;
     &.is-bordered:not(.is-disabled) {
       padding: 0 18px;
     }
@@ -141,6 +147,16 @@ $small-inner-size: 7px;
 
   > .jw-radio-label {
     padding-left: 8px;
+    user-select: none;
+    font-size: $default-size;
+
+    &.jw-radio-large {
+      font-size: $large-size;
+    }
+
+    &.jw-radio-small {
+      font-size: $small-size;
+    }
   }
 }
 </style>

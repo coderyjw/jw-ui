@@ -12,6 +12,10 @@ import Preview from "@/components/Preview.vue";
 import CheckboxPreview1 from "./CheckboxPreviwx1.preview.vue";
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.checkbox-doc-wrapper {
+  .jw-checkbox {
+    margin-left: 10px;
+  }
+}
 </style>

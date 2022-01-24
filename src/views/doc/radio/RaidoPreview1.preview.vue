@@ -9,12 +9,12 @@
     <jw-radio v-model="radio2" label="2">选项2</jw-radio>
   </div>
   <div style="width: 100%">
-    <jw-radio v-model="radio3" label="1" size="samll">选项1</jw-radio>
-    <jw-radio v-model="radio3" label="2" size="samll">选项2</jw-radio>
+    <jw-radio v-model="radio3" label="1" size="small">选项1</jw-radio>
+    <jw-radio v-model="radio3" label="2" size="small">选项2</jw-radio>
   </div>
   <div style="width: 100%">
-    <jw-radio v-model="radio4" label="1" size="samll" disabled>选项1</jw-radio>
-    <jw-radio v-model="radio4" label="2" size="samll" disabled>选项2</jw-radio>
+    <jw-radio v-model="radio4" label="1" size="small" disabled>选项1</jw-radio>
+    <jw-radio v-model="radio4" label="2" size="small" disabled>选项2</jw-radio>
   </div>
 </template>
 
