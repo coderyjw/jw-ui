@@ -44,7 +44,6 @@ const radioPropDoc = [
   ["disabled", "是否禁用单选框", "boolean", "-", "false"],
   ["border", "是否显示边框", "boolean", "-", "false"],
   ["size", "	Radio 的尺寸", "string", "large / default /small", "-"],
-  ["name", "原生 name 属性", "string", "-", "-"],
 ];
 
 const radioEventDoc = [

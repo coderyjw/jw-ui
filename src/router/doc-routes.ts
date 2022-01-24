@@ -19,6 +19,7 @@ import IconDoc from "@/views/doc/icon/index.vue";
 import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
 import RadioDoc from "@/views/doc/radio/index.vue";
+import CheckboxDoc from "@/views/doc/checkbox/index.vue";
 
 export default {
   文档: [
@@ -34,6 +35,7 @@ export default {
     { path: "link", component: LinkDoc, name: "链接 Link" },
   ],
   数据录入组件: [
+    { path: "checkbox", component: CheckboxDoc, name: "复选框 Checkbox" },
     { path: "radio", component: RadioDoc, name: "单选框 Radio" },
     { path: "switch", component: SwitchDoc, name: "开关 Switch" },
   ],
