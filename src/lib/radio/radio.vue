@@ -1,19 +1,6 @@
 <template>
   <div class="jw-radio" @click="handleChange" :class="classes">
-    <span class="jw-radio-input" :class="classes">
-      <span class="jw-radio-inner" :class="classes"></span>
-      <input
-        type="radio"
-        :name="name"
-        ref="radioRef"
-        class="jw-radio__original"
-        v-model="modelValue"
-        :label="label"
-        :value="label"
-        @change="handleChange"
-      />
-    </span>
-
+    <span class="jw-radio-input" :class="classes"></span>
     <span class="jw-radio-label">
       <slot>{{ label }}</slot>
     </span>
@@ -85,81 +72,70 @@ $small-inner-size: 7px;
   }
 
   > .jw-radio-input {
+    width: $default-size;
+    height: $default-size;
     display: inline-flex;
-    align-items: center;
+    box-shadow: #e0e0e6 0px 0px 0px 1px;
+    border-radius: 100%;
+    position: relative;
 
-    > .jw-radio-inner {
-      width: $default-size;
-      height: $default-size;
-      display: inline-flex;
-      box-shadow: #e0e0e6 0px 0px 0px 1px;
-      border-radius: 100%;
-      position: relative;
-
-      &.jw-radio-small {
-        height: $small-size;
-        width: $small-size;
-        &:before {
-          left: calc($small-size / 2 - $small-inner-size / 2);
-          top: calc($small-size / 2 - $small-inner-size / 2);
-          width: $small-inner-size;
-          height: $small-inner-size;
-        }
-      }
-
-      &.jw-radio-large {
-        height: $large-size;
-        width: $large-size;
-        &:before {
-          left: calc($large-size / 2 - $large-inner-size / 2);
-          top: calc($large-size / 2 - $large-inner-size / 2);
-          width: $large-inner-size;
-          height: $large-inner-size;
-        }
-      }
-
-      &.is-checked {
-        box-shadow: $checked-color 0px 0px 0px 1px;
-
-        &:before {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
+    &.jw-radio-small {
+      height: $small-size;
+      width: $small-size;
       &:before {
-        content: " ";
-        opacity: 0;
-        position: absolute;
-        left: calc($default-size / 2 - $default-inner-size / 2);
-        top: calc($default-size / 2 - $default-inner-size / 2);
-        width: $default-inner-size;
-        height: $default-inner-size;
-        background-color: $checked-color;
-        border-radius: 50%;
-        transform: scale(0.8);
-        transition: opacity 300ms ease-in-out,
-          background-color 300ms ease-in-out, transform 300ms ease-in-out;
-      }
-
-      &.is-disabled {
-        background-color: #fafafc;
-        box-shadow: #e0e0e6 0px 0px 0px 1px;
-
-        &:before {
-          background-color: #c0c4cc;
-        }
-      }
-
-      &:not(.is-disabled):hover {
-        box-shadow: $checked-color 0px 0px 0px 1px;
+        left: calc($small-size / 2 - $small-inner-size / 2);
+        top: calc($small-size / 2 - $small-inner-size / 2);
+        width: $small-inner-size;
+        height: $small-inner-size;
       }
     }
 
-    > .jw-radio__original {
+    &.jw-radio-large {
+      height: $large-size;
+      width: $large-size;
+      &:before {
+        left: calc($large-size / 2 - $large-inner-size / 2);
+        top: calc($large-size / 2 - $large-inner-size / 2);
+        width: $large-inner-size;
+        height: $large-inner-size;
+      }
+    }
+
+    &.is-checked {
+      box-shadow: $checked-color 0px 0px 0px 1px;
+
+      &:before {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &:before {
+      content: " ";
       opacity: 0;
       position: absolute;
-      z-index: -1;
+      left: calc($default-size / 2 - $default-inner-size / 2);
+      top: calc($default-size / 2 - $default-inner-size / 2);
+      width: $default-inner-size;
+      height: $default-inner-size;
+      background-color: $checked-color;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: opacity 300ms ease-in-out, background-color 300ms ease-in-out,
+        transform 300ms ease-in-out;
+    }
+
+    &.is-disabled {
+      background-color: #fafafc;
+      box-shadow: #e0e0e6 0px 0px 0px 1px;
+
+      &:before {
+        background-color: #c0c4cc;
+      }
+    }
+
+    &:not(.is-disabled):hover {
+      box-shadow: $checked-color 0px 0px 0px 1px;
     }
   }
 
