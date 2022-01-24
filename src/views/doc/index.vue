@@ -94,6 +94,7 @@ const mainStyle = computed(() => {
       top: 0;
       z-index: 10;
       transition: all 250ms ease;
+      overflow-y: auto;
 
       .menu,
       .menu-group {

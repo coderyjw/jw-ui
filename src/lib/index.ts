@@ -11,6 +11,7 @@ import JwEllipsis from "./ellipsis/index.vue";
 import JwLink from "./link/index.vue";
 import JwRadio from "./radio/radio.vue";
 import JwRadioGroup from "./radio/radio-group.vue";
+import JwCheckbox from "./checkbox/checkbox.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -25,6 +26,7 @@ export {
   JwRadio,
   openDialog,
   JwRadioGroup,
+  JwCheckbox,
 };
 
 const components = [
@@ -39,6 +41,7 @@ const components = [
   JwLink,
   JwRadio,
   JwRadioGroup,
+  JwCheckbox,
 ];
 
 export function registerJwUi(app: App): void {
