@@ -32,6 +32,5 @@ const propDoc = [
 <style lang="scss">
 .jw-switch {
   margin-right: 8px;
-  margin-top: 8px;
 }
 </style>
