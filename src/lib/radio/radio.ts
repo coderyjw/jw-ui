@@ -11,10 +11,6 @@ export const radioProps = {
   },
   disabled: Boolean,
   size: String,
-  name: {
-    type: String,
-    default: "",
-  },
   border: Boolean,
 };
 
