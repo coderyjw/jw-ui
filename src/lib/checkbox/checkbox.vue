@@ -7,7 +7,8 @@
   >
     <span class="jw-checkbox-input" :class="classes">
       <jw-icon :color="iconColor" :size="iconSize">
-        <Check />
+        <Subtract12Filled v-if="indeterminate" />
+        <Check v-else />
       </jw-icon>
     </span>
     <span class="jw-checkbox-label" :class="classes">
@@ -18,14 +19,22 @@
 
 <script setup lang="ts">
 import { Check } from "@vicons/fa";
+import { Subtract12Filled } from "@vicons/fluent";
 import { checkboxProps, checkboxEmits, useCheckbox } from "./checkbox";
 
 const props = defineProps(checkboxProps);
 const emits = defineEmits(checkboxEmits);
 
-const { modelValue, label, classes, iconSize, disabled, iconColor, isGroup } =
-  useCheckbox(props, emits);
-
+const {
+  modelValue,
+  label,
+  classes,
+  iconSize,
+  disabled,
+  iconColor,
+  isGroup,
+  indeterminate,
+} = useCheckbox(props, emits);
 const handleChange = () => {
   if (!disabled.value) {
     if (isGroup.value) {
@@ -70,20 +79,40 @@ $small-height: 24px;
     cursor: not-allowed;
   }
 
-  &.jw-large-size {
+  &.jw-checkbox-large {
     height: $large-height;
   }
 
-  &.jw-small-size {
+  &.jw-checkbox-small {
     height: $small-height;
   }
 
   &:not(.is-disabled):hover .jw-checkbox-input {
-    border: 1px solid #18a058;
+    border: 1px solid #4b9e5f;
   }
   &:not(.is-disabled):focus .jw-checkbox-input {
     box-shadow: 0 0 0 2px rgba(24, 160, 88, 0.3);
-    border: 1px solid #18a058;
+    border: 1px solid #4b9e5f;
+  }
+
+  &.is-border {
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    padding: 0 8px;
+
+    &.is-checked:not(.is-disabled),
+    &.is-indeterminate:not(.is-disabled) {
+      color: $primary-color;
+      border: 1px solid #18a058;
+    }
+
+    &.jw-checkbox-large {
+      padding: 0 12px;
+    }
+
+    &.jw-checkbox-small {
+      padding: 0 8px;
+    }
   }
 
   > .jw-checkbox-input {
@@ -116,7 +145,13 @@ $small-height: 24px;
     &.is-disabled {
       border: 1px solid rgb(224, 224, 230);
       box-shadow: none;
-      background: #fff;
+      background: #fafafc;
+    }
+
+    &.is-indeterminate {
+      background-color: $primary-color;
+      border: 1px solid #18a058;
+      box-shadow: 0 0 0 2px rgba(24, 160, 88, 0.3);
     }
   }
   > .jw-checkbox-label {

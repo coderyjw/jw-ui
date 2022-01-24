@@ -5,6 +5,8 @@
       <Preview :component="CheckboxPreview1" />
       <Preview :component="CheckboxPreview2" />
       <Preview :component="CheckboxPreview3" />
+      <Preview :component="CheckboxPreview4" />
+      <Preview :component="CheckboxPreview5" />
     </div>
   </div>
 </template>
@@ -14,6 +16,8 @@ import Preview from "@/components/Preview.vue";
 import CheckboxPreview1 from "./CheckboxPreview1.preview.vue";
 import CheckboxPreview2 from "./CheckboxPreview2.preview.vue";
 import CheckboxPreview3 from "./CheckboxPreview3.preview.vue";
+import CheckboxPreview4 from "./CheckboxPreview4.preview.vue";
+import CheckboxPreview5 from "./CheckboxPreview5.preview.vue";
 </script>
 
 <style lang="scss">
