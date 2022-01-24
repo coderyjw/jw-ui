@@ -19,7 +19,7 @@ export const checkboxProps = {
   disabled: {
     type: Boolean,
     default: false,
-  }
+  },
 };
 
 export const checkboxEmits = ["update:modelValue"];
@@ -54,16 +54,16 @@ export const useCheckbox = (props, emits) => {
   });
 
   const iconColor = computed(() => {
-    if(disabled.value) {
-      return '#c2c2c2'
+    if (disabled.value) {
+      return modelValue.value ? "#c2c2c2" : "#fff";
     } else {
-      return '#fff'
+      return "#fff";
     }
-  })
+  });
   const classes = computed(() => ({
     "is-checked": modelValue.value,
     [`jw-checkbox-${size.value}`]: size.value,
-    "is-disabled": disabled.value
+    "is-disabled": disabled.value,
   }));
 
   return {
@@ -73,6 +73,6 @@ export const useCheckbox = (props, emits) => {
     size,
     iconSize,
     disabled,
-    iconColor
+    iconColor,
   };
 };

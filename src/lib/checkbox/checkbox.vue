@@ -1,5 +1,10 @@
 <template>
-  <label class="jw-checkbox" :class="classes" @click="handleChange">
+  <label
+    class="jw-checkbox"
+    :class="classes"
+    @click="handleChange"
+    tabindex="0"
+  >
     <span class="jw-checkbox-input" :class="classes">
       <jw-icon :color="iconColor" :size="iconSize">
         <Check />
@@ -18,13 +23,13 @@ import { checkboxProps, checkboxEmits, useCheckbox } from "./checkbox";
 const props = defineProps(checkboxProps);
 const emits = defineEmits(checkboxEmits);
 
-const { modelValue, label, classes, iconSize, disabled, iconColor } = useCheckbox(
-  props,
-  emits
-);
+const { modelValue, label, classes, iconSize, disabled, iconColor } =
+  useCheckbox(props, emits);
 
 const handleChange = () => {
-  modelValue.value = !modelValue.value;
+  if (!disabled.value) {
+    modelValue.value = !modelValue.value;
+  }
 };
 </script>
 
@@ -62,6 +67,15 @@ $small-height: 24px;
   &.jw-small-size {
     height: $small-height;
   }
+
+  &:not(.is-disabled):hover .jw-checkbox-input {
+    border: 1px solid #18a058;
+  }
+  &:not(.is-disabled):focus .jw-checkbox-input {
+    box-shadow: 0 0 0 2px rgba(24, 160, 88, 0.3);
+    border: 1px solid #18a058;
+  }
+
   > .jw-checkbox-input {
     display: inline-flex;
     align-items: center;
@@ -107,6 +121,10 @@ $small-height: 24px;
 
     &.jw-checkbox-small {
       font-size: $small-size;
+    }
+
+    &.is-disabled {
+      color: #c2c2c2ff;
     }
   }
 }
