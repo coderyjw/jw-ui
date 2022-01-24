@@ -4,6 +4,7 @@
     <div class="preview-wrapper">
       <Preview :component="CheckboxPreview1" />
       <Preview :component="CheckboxPreview2" />
+      <Preview :component="CheckboxPreview3" />
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import Preview from "@/components/Preview.vue";
 import CheckboxPreview1 from "./CheckboxPreview1.preview.vue";
 import CheckboxPreview2 from "./CheckboxPreview2.preview.vue";
+import CheckboxPreview3 from "./CheckboxPreview3.preview.vue";
 </script>
 
 <style lang="scss">

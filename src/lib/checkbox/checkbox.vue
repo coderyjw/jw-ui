@@ -23,12 +23,22 @@ import { checkboxProps, checkboxEmits, useCheckbox } from "./checkbox";
 const props = defineProps(checkboxProps);
 const emits = defineEmits(checkboxEmits);
 
-const { modelValue, label, classes, iconSize, disabled, iconColor } =
+const { modelValue, label, classes, iconSize, disabled, iconColor, isGroup } =
   useCheckbox(props, emits);
 
 const handleChange = () => {
   if (!disabled.value) {
-    modelValue.value = !modelValue.value;
+    if (isGroup.value) {
+      const index = modelValue.value.indexOf(label.value);
+      if (index > -1) {
+        modelValue.value.splice(index, 1);
+      } else {
+        modelValue.value.push(label.value);
+      }
+      modelValue.value = [...modelValue.value];
+    } else {
+      modelValue.value = !modelValue.value;
+    }
   }
 };
 </script>

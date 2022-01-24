@@ -13,8 +13,8 @@
     <jw-checkbox v-model="checkbox6" label="选项B" size="small" />
   </div>
   <div style="width: 100%">
-    <jw-checkbox v-model="checkbox7" label="选项A" size="small" disabled/>
-    <jw-checkbox v-model="checkbox8" label="选项B" size="small" disabled/>
+    <jw-checkbox v-model="checkbox7" label="选项A" size="small" disabled />
+    <jw-checkbox v-model="checkbox8" label="选项B" size="small" disabled />
   </div>
 </template>
 

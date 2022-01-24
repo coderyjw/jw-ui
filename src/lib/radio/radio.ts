@@ -25,7 +25,7 @@ export const useRadio = (props, emits) => {
     },
     set(val) {
       if (isGroup.value) {
-        radioGroupProp!.changeEvent(val);
+        radioGroupProp.changeEvent(val);
       } else {
         emits("update:modelValue", val);
         emits("change", val);

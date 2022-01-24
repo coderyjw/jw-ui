@@ -1,4 +1,4 @@
-import { computed } from "vue";
+import { computed, inject } from "vue";
 export const checkboxProps = {
   modelValue: {
     type: Boolean,
@@ -22,20 +22,30 @@ export const checkboxProps = {
   },
 };
 
-export const checkboxEmits = ["update:modelValue"];
+export const checkboxEmits = ["update:modelValue", "change"];
 
 export const useCheckbox = (props, emits) => {
+  const checkboxGroupProps = inject("checkboxGroupKey", undefined);
+  const isGroup = computed(() => !!checkboxGroupProps);
+
   const label = computed(() => props.label);
-  const modelValue = computed({
+  const modelValue = computed<String[] | Boolean>({
     get() {
-      return props.modelValue;
+      return isGroup.value ? checkboxGroupProps.modelValue : props.modelValue;
     },
     set(value) {
-      emits("update:modelValue", value);
+      if (isGroup.value) {
+        checkboxGroupProps.changeEvent(value);
+      } else {
+        emits("update:modelValue", value);
+        emits("change", value);
+      }
     },
   });
 
-  const size = computed(() => props.size);
+  const size = computed(() =>
+    props.size ? props.size : checkboxGroupProps?.size
+  );
 
   const iconSize = computed(() => {
     if (props.iconSize) {
@@ -49,9 +59,9 @@ export const useCheckbox = (props, emits) => {
     }
   });
 
-  const disabled = computed(() => {
-    return props.disabled;
-  });
+  const disabled = computed(
+    () => props.disabled || checkboxGroupProps?.disabled
+  );
 
   const iconColor = computed(() => {
     if (disabled.value) {
@@ -61,7 +71,9 @@ export const useCheckbox = (props, emits) => {
     }
   });
   const classes = computed(() => ({
-    "is-checked": modelValue.value,
+    "is-checked": isGroup.value
+      ? modelValue.value.indexOf(label.value) > -1
+      : modelValue.value,
     [`jw-checkbox-${size.value}`]: size.value,
     "is-disabled": disabled.value,
   }));
@@ -74,5 +86,6 @@ export const useCheckbox = (props, emits) => {
     iconSize,
     disabled,
     iconColor,
+    isGroup,
   };
 };
