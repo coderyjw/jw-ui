@@ -20,6 +20,14 @@ export const checkboxProps = {
     type: Boolean,
     default: false,
   },
+  indeterminate: {
+    type: Boolean,
+    default: false,
+  },
+  border: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const checkboxEmits = ["update:modelValue", "change"];
@@ -65,19 +73,27 @@ export const useCheckbox = (props, emits) => {
 
   const iconColor = computed(() => {
     if (disabled.value) {
-      return modelValue.value ? "#c2c2c2" : "#fff";
+      if (!isGroup.value) {
+        return modelValue.value ? "#c2c2c2" : "#fff";
+      } else {
+        return modelValue.value.indexOf(label.value) > -1 ? "#c2c2c2" : "#fff";
+      }
     } else {
       return "#fff";
     }
   });
+
+  const indeterminate = computed(() => props.indeterminate);
+  const border = computed(() => props.border);
   const classes = computed(() => ({
     "is-checked": isGroup.value
-      ? modelValue.value.indexOf(label.value) > -1
-      : modelValue.value,
+      ? modelValue.value.indexOf(label.value) > -1 && !indeterminate.value
+      : modelValue.value && !indeterminate.value,
     [`jw-checkbox-${size.value}`]: size.value,
     "is-disabled": disabled.value,
+    "is-indeterminate": indeterminate.value,
+    "is-border": border.value,
   }));
-
   return {
     modelValue,
     label,
@@ -87,5 +103,7 @@ export const useCheckbox = (props, emits) => {
     disabled,
     iconColor,
     isGroup,
+    indeterminate,
+    border,
   };
 };

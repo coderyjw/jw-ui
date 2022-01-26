@@ -21,7 +21,7 @@
       />
 
       <PrevAndNext
-        :prev="{ path: '/doc/link', name: 'Link 链接' }"
+        :prev="{ path: '/doc/checkbox', name: 'Checkbox 多选框' }"
         :next="{ path: '/doc/switch', name: '开关 Switch' }"
       />
     </div>
@@ -40,16 +40,20 @@ import Doc from "@/components/Doc.vue";
 
 const radioPropDoc = [
   ["v-model", "选中项绑定值", "string / number / boolean", "-", "-"],
-  ["label", "单选框对应的值", "string / number / boolean", "-", "-"],
+  ["label", "多选框对应的值", "string / number / boolean", "-", "-"],
   ["disabled", "是否禁用单选框", "boolean", "-", "false"],
   ["border", "是否显示边框", "boolean", "-", "false"],
   ["size", "	Radio 的尺寸", "string", "large / default /small", "-"],
+  [
+    "indeterminate",
+    "设置 indeterminate 状态，只负责样式控制",
+    "boolean",
+    "",
+    "false",
+  ],
 ];
 
-const radioEventDoc = [
-  ["change", "绑定值变化时触发的事件", "选中的 Radio label 值"],
-  ,
-];
+const radioEventDoc = [["change", "当绑定值变化时触发的事件", "value"], ,];
 const radioSlotDoc = [["default", "自定义默认内容"]];
 
 const radioGroupPropDoc = [
