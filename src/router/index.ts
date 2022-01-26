@@ -1,20 +1,12 @@
-import {
-  createRouter,
-  createWebHashHistory,
-} from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 import Home from "@/views/home/index.vue";
 import Doc from "@/views/doc/index.vue";
 import Demo from "@/views/demo.vue";
 
-
 const history = createWebHashHistory();
-import docRoutes from "./doc-routes";
+import { docRoutes } from "./doc-routes";
 
-let docRoutes1 = [];
-for (let i in docRoutes) {
-  docRoutes1 = [...docRoutes1, ...docRoutes[i]];
-}
 const router = createRouter({
   history,
   routes: [
@@ -25,9 +17,7 @@ const router = createRouter({
       path: "/doc",
       redirect: "/doc/intro",
       component: Doc,
-      children: [
-        ...docRoutes1,
-      ],
+      children: docRoutes,
     },
   ],
 });

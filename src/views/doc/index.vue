@@ -6,7 +6,7 @@
         <div class="menu">
           <div
             class="menu-group"
-            v-for="(itemx, index) in docRoutes"
+            v-for="(itemx, index) in docMenus"
             :key="index"
           >
             <span class="menu-group-title text-overflow">
@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import Topnav from "@/components/Topnav.vue";
 import { inject, type Ref, computed } from "vue";
-import docRoutes from "@/router/doc-routes.ts";
+import { docMenus } from "@/router/doc-routes.ts";
 const asideVisible = inject<Ref<boolean>>("asideVisible");
 const clientWidth = inject<Ref<number>>("clientWidth");
 

@@ -21,7 +21,7 @@ import LinkDoc from "@/views/doc/link/index.vue";
 import RadioDoc from "@/views/doc/radio/index.vue";
 import CheckboxDoc from "@/views/doc/checkbox/index.vue";
 
-export default {
+const docMenus = {
   文档: [
     { path: "intro", component: IntroDoc, name: "介绍" },
     { path: "install", component: InstallDoc, name: "安装" },
@@ -42,3 +42,10 @@ export default {
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
   导航组件: [{ path: "tabs", component: TabsDoc, name: "标签页 Tabs" }],
 };
+
+let docRoutes = [];
+for (let i in docMenus) {
+  docRoutes = [...docRoutes, ...docMenus[i]];
+}
+
+export { docRoutes, docMenus };
