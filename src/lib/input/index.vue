@@ -9,19 +9,29 @@
       @input="handleChange"
       :placeholder="placeholder"
     />
+    <div
+      class="circle-close"
+      v-if="clearable && nativeInputValue.length > 0"
+      @click="hanldeClear"
+    >
+      <jw-icon :size="18">
+        <CloseCircleOutline />
+      </jw-icon>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import { inputEmit, inputProps, useInput } from "./input";
+import { CloseCircleOutline } from "@vicons/ionicons5";
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 
 const props = defineProps(inputProps);
 const emits = defineEmits(inputEmit);
 
-const { disabled, classes } = useInput(props, emits);
+const { disabled, classes, clearable } = useInput(props, emits);
 
 const nativeInputValue = computed(() =>
   props.modelValue === null || props.modelValue === undefined
@@ -32,9 +42,13 @@ const nativeInputValue = computed(() =>
 const handleChange = (e: Event) => {
   const { value } = e.target as TargetElement;
   if (value === nativeInputValue.value) return;
-
   emits("update:modelValue", value);
   emits("input", value);
+};
+
+const hanldeClear = () => {
+  emits("update:modelValue", "");
+  emits("input", "");
 };
 </script>
 <script lang="ts">
@@ -48,8 +62,10 @@ $active-color: #18a058;
 .jw-input {
   width: 180px;
   cursor: pointer;
+  position: relative;
 
   &-inner {
+    position: relative;
     cursor: pointer;
     width: 100%;
     height: 40px;
@@ -94,6 +110,29 @@ $active-color: #18a058;
       &:active {
         border: 1px solid #dcdfe6;
         box-shadow: none;
+      }
+    }
+  }
+  .circle-close {
+    display: none;
+  }
+  &:hover .circle-close,
+  &:focus .circle-close,
+  &:active .circle-close {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+
+    .jw-icon {
+      color: #dcdfe6;
+
+      &:hover {
+        color: #c0c4cc;
       }
     }
   }
