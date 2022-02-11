@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .jw-checkbox-group {
 }
 </style>
