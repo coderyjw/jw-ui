@@ -1,6 +1,7 @@
 <template>
-  <div class="jw-input">
+  <div class="jw-input" :class="classes">
     <input
+      :disabled="disabled"
       type="text"
       class="jw-input-inner"
       autocomplete="off"
@@ -13,16 +14,14 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { inputEmit, inputProps, useInput } from "./input";
+
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
-const props = defineProps({
-  modelValue: {
-    type: [Number, String],
-  },
-  placeholder: {
-    type: String,
-  },
-});
-const emit = defineEmits(["update:modelValue", "input"]);
+
+const props = defineProps(inputProps);
+const emits = defineEmits(inputEmit);
+
+const { disabled, classes } = useInput(props, emits);
 
 const nativeInputValue = computed(() =>
   props.modelValue === null || props.modelValue === undefined
@@ -34,8 +33,8 @@ const handleChange = (e: Event) => {
   const { value } = e.target as TargetElement;
   if (value === nativeInputValue.value) return;
 
-  emit("update:modelValue", value);
-  emit("input", value);
+  emits("update:modelValue", value);
+  emits("input", value);
 };
 </script>
 <script lang="ts">
@@ -69,7 +68,6 @@ $active-color: #18a058;
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     &:hover {
-      /* border-color: $active-color; */
       border-color: #c0c4cc;
     }
     &:active,
@@ -82,6 +80,21 @@ $active-color: #18a058;
     &::placeholder {
       color: rgb(213, 215, 220);
       font-size: inherit;
+    }
+  }
+
+  &.is-disabled {
+    .jw-input-inner {
+      cursor: not-allowed;
+      background-color: #fafafc;
+      color: rgba(194, 194, 194, 1);
+
+      &:hover,
+      &:focus,
+      &:active {
+        border: 1px solid #dcdfe6;
+        box-shadow: none;
+      }
     }
   }
 }
