@@ -2,13 +2,15 @@
   <div class="jw-input" :class="classes">
     <input
       :disabled="disabled"
-      type="text"
+      :type="type"
       class="jw-input-inner"
       autocomplete="off"
       :value="nativeInputValue"
       @input="handleChange"
       :placeholder="placeholder"
     />
+
+    <!-- 可清空 -->
     <div
       class="circle-close"
       v-if="clearable && nativeInputValue.length > 0"
@@ -18,6 +20,17 @@
         <CloseCircleOutline />
       </jw-icon>
     </div>
+    
+    <!-- 密码框 -->
+    <div
+      class="password-icon"
+      v-if="showPassword"
+      @click="handlePasswordVisible"
+    >
+      <jw-icon :size="18">
+        <Eye />
+      </jw-icon>
+    </div>
   </div>
 </template>
 
@@ -25,13 +38,16 @@
 import { computed } from "vue";
 import { inputEmit, inputProps, useInput } from "./input";
 import { CloseCircleOutline } from "@vicons/ionicons5";
-
+import { Eye } from "@vicons/fa";
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 
 const props = defineProps(inputProps);
 const emits = defineEmits(inputEmit);
 
-const { disabled, classes, clearable } = useInput(props, emits);
+const { disabled, classes, clearable, type, passwordVisible } = useInput(
+  props,
+  emits
+);
 
 const nativeInputValue = computed(() =>
   props.modelValue === null || props.modelValue === undefined
@@ -49,6 +65,10 @@ const handleChange = (e: Event) => {
 const hanldeClear = () => {
   emits("update:modelValue", "");
   emits("input", "");
+};
+
+const handlePasswordVisible = () => {
+  passwordVisible.value = !passwordVisible.value;
 };
 </script>
 <script lang="ts">
@@ -113,12 +133,17 @@ $active-color: #18a058;
       }
     }
   }
-  .circle-close {
+
+  .circle-close,
+  .password-icon {
     display: none;
   }
   &:hover .circle-close,
   &:focus .circle-close,
-  &:active .circle-close {
+  &:active .circle-close,
+  &:hover .password-icon,
+  &:focus .password-icon,
+  &:active .password-icon {
     position: absolute;
     right: 0;
     bottom: 0;

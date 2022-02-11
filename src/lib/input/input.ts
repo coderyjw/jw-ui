@@ -1,4 +1,4 @@
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 export const inputProps = {
   modelValue: {
@@ -15,6 +15,10 @@ export const inputProps = {
     type: Boolean,
     default: false,
   },
+  showPassword: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const inputEmit = ["update:modelValue", "input"];
@@ -24,14 +28,29 @@ export const useInput = (props, emits) => {
 
   const clearable = computed(() => props.clearable);
 
+  const showPassword = computed(() => props.showPassword);
+  const passwordVisible = ref(false);
+
+  const type = computed(() => {
+    return showPassword.value
+      ? passwordVisible.value
+        ? "text"
+        : "password"
+      : "text";
+  });
+
   const classes = computed(() => ({
     "is-disabled": disabled.value,
-    "is-clearable": clearable.value
+    "is-clearable": clearable.value,
+    "show-password": showPassword.value,
   }));
 
   return {
     disabled,
     classes,
-    clearable
+    clearable,
+    showPassword,
+    type,
+    passwordVisible
   };
 };
