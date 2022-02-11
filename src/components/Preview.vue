@@ -72,7 +72,7 @@ $border-color: #d9d9d9;
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
-      background-color: #fff;
+      background-color: rgb(250, 250, 250);
     }
   }
 }

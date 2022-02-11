@@ -31,7 +31,7 @@ export const inputProps = {
   },
 };
 
-export const inputEmit = ["update:modelValue", "input"];
+export const inputEmit = ["update:modelValue", "input", "clear"];
 
 export const useInput = (props, emits) => {
   const disabled = computed(() => props.disabled);

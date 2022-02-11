@@ -107,6 +107,7 @@ const handleChange = (e: Event) => {
 const hanldeClear = () => {
   emits("update:modelValue", "");
   emits("input", "");
+  emits("clear", "");
 };
 
 const handlePasswordVisible = () => {

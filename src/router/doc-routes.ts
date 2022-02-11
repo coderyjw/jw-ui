@@ -10,17 +10,20 @@ const IntroDoc = md(Intro);
 const GetStartedDoc = md(GetStarted);
 const InstallDoc = md(Install);
 
-import SwitchDoc from "@/views/doc/switch/index.vue";
-import ButtonDoc from "@/views/doc/button/index.vue";
-import DialogDoc from "@/views/doc/dialog/index.vue";
-import TabsDoc from "@/views/doc/tabs/index.vue";
 import AvatarDoc from "@/views/doc/avatar/index.vue";
-import IconDoc from "@/views/doc/icon/index.vue";
+import ButtonDoc from "@/views/doc/button/index.vue";
 import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
+import IconDoc from "@/views/doc/icon/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
-import RadioDoc from "@/views/doc/radio/index.vue";
+
 import CheckboxDoc from "@/views/doc/checkbox/index.vue";
-import InputDoc from "@/views/doc/input/index.vue"
+import InputDoc from "@/views/doc/input/index.vue";
+import RadioDoc from "@/views/doc/radio/index.vue";
+import SwitchDoc from "@/views/doc/switch/index.vue";
+
+import DialogDoc from "@/views/doc/dialog/index.vue";
+
+import TabsDoc from "@/views/doc/tabs/index.vue";
 
 const docMenus = {
   文档: [
@@ -37,9 +40,9 @@ const docMenus = {
   ],
   数据录入组件: [
     { path: "checkbox", component: CheckboxDoc, name: "复选框 Checkbox" },
+    { path: "input", component: InputDoc, name: "输入框 Input" },
     { path: "radio", component: RadioDoc, name: "单选框 Radio" },
     { path: "switch", component: SwitchDoc, name: "开关 Switch" },
-    { path: "input", component: InputDoc, name: "输入框 Input" },
   ],
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
   导航组件: [{ path: "tabs", component: TabsDoc, name: "标签页 Tabs" }],

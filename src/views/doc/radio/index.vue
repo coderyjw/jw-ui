@@ -21,7 +21,7 @@
       />
 
       <PrevAndNext
-        :prev="{ path: '/doc/checkbox', name: 'Checkbox 多选框' }"
+        :prev="{ path: '/doc/input', name: 'Input 输入框' }"
         :next="{ path: '/doc/switch', name: '开关 Switch' }"
       />
     </div>
