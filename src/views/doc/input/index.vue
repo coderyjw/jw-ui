@@ -1,5 +1,5 @@
 <template>
-  <div class="inpyt-doc-wrapper">
+  <div class="input-doc-wrapper">
     <h1>Input 输入框</h1>
     <div class="preview-wrapper">
       <Preview :component="InputPreview1" />
@@ -52,7 +52,7 @@ const eventDoc = [
 </script>
 
 <style lang="scss">
-.inpyt-doc-wrapper {
+.input-doc-wrapper {
   .jw-input {
     margin-right: 8px;
   }

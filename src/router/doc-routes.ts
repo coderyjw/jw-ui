@@ -19,6 +19,7 @@ import LinkDoc from "@/views/doc/link/index.vue";
 import CheckboxDoc from "@/views/doc/checkbox/index.vue";
 import InputDoc from "@/views/doc/input/index.vue";
 import RadioDoc from "@/views/doc/radio/index.vue";
+import SelectDoc from "@/views/doc/select/index.vue";
 import SwitchDoc from "@/views/doc/switch/index.vue";
 
 import DialogDoc from "@/views/doc/dialog/index.vue";
@@ -42,6 +43,7 @@ const docMenus = {
     { path: "checkbox", component: CheckboxDoc, name: "复选框 Checkbox" },
     { path: "input", component: InputDoc, name: "输入框 Input" },
     { path: "radio", component: RadioDoc, name: "单选框 Radio" },
+    { path: "select", component: SelectDoc, name: "选择器 Select" },
     { path: "switch", component: SwitchDoc, name: "开关 Switch" },
   ],
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
