@@ -1,5 +1,6 @@
 <template>
   <div :class="classes">
+    <!-- input -->
     <template v-if="type !== 'textarea'">
       <input
         :disabled="disabled"
@@ -11,28 +12,41 @@
         :placeholder="placeholder"
       />
 
-      <!-- 可清空 -->
-      <div
-        class="circle-close"
-        v-if="clearable && nativeInputValue.length > 0"
-        @click="hanldeClear"
-      >
-        <jw-icon :size="18">
-          <CloseCircleOutline />
+      <!-- suffix slot -->
+      <span class="jw-input-suffix-icon">
+        <jw-icon
+          v-if="suffixIcon"
+          class="suffix-icon"
+          :size="18"
+          color="#dcdfe6"
+        >
+          <component :is="suffixIcon" />
         </jw-icon>
-      </div>
+        <!-- clearable -->
+        <div
+          class="close-icon"
+          v-if="clearable && nativeInputValue.length > 0"
+          @click="hanldeClear"
+        >
+          <jw-icon :size="18">
+            <CloseCircleOutline />
+          </jw-icon>
+        </div>
 
-      <!-- 密码框 -->
-      <div
-        class="password-icon"
-        v-if="showPassword"
-        @click="handlePasswordVisible"
-      >
-        <jw-icon :size="18">
-          <Eye />
-        </jw-icon>
-      </div>
+        <!-- password -->
+        <div
+          class="password-icon"
+          v-if="showPassword"
+          @click="handlePasswordVisible"
+        >
+          <jw-icon :size="18">
+            <Eye />
+          </jw-icon>
+        </div>
+      </span>
     </template>
+
+    <!-- textarea -->
     <template v-else>
       <textarea
         class="jw-textarea-inner"
@@ -56,8 +70,16 @@ type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 const props = defineProps(inputProps);
 const emits = defineEmits(inputEmit);
 
-const { disabled, classes, clearable, type, passwordVisible, placeholder } =
-  useInput(props, emits);
+const {
+  disabled,
+  classes,
+  clearable,
+  type,
+  passwordVisible,
+  placeholder,
+  suffixIcon,
+  prefixIcon,
+} = useInput(props, emits);
 
 const nativeInputValue = computed(() =>
   props.modelValue === null || props.modelValue === undefined
@@ -93,6 +115,14 @@ $active-color: #18a058;
   width: 180px;
   cursor: pointer;
   position: relative;
+
+  &.jw-input-prefix .jw-input-inner {
+    padding-left: 30px;
+  }
+
+  &.jw-input-suffix .jw-input-inner {
+    padding-right: 30px;
+  }
 
   &-inner {
     position: relative;
@@ -144,24 +174,30 @@ $active-color: #18a058;
     }
   }
 
-  .circle-close,
-  .password-icon {
-    display: none;
-  }
-  &:hover .circle-close,
-  &:focus .circle-close,
-  &:active .circle-close,
-  &:hover .password-icon,
-  &:focus .password-icon,
-  &:active .password-icon {
+  .jw-input-suffix-icon {
     position: absolute;
-    right: 0;
+    right: 5px;
     bottom: 0;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5px;
+  }
+
+  .close-icon,
+  .password-icon {
+    display: none;
+  }
+  &:hover .close-icon,
+  &:focus .close-icon,
+  &:hover .password-icon,
+  &:focus .password-icon,
+  .suffix-icon {
+    margin: 0 1px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .jw-icon {
       color: #dcdfe6;
@@ -170,6 +206,10 @@ $active-color: #18a058;
         color: #c0c4cc;
       }
     }
+  }
+
+  .suffix-icon .jw-icon:hover {
+    color: #dcdfe6;
   }
 }
 

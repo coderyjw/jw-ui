@@ -23,6 +23,12 @@ export const inputProps = {
     type: String,
     default: "text",
   },
+  suffixIcon: {
+    type: [String, Object],
+  },
+  prefixIcon: {
+    type: [String, Object],
+  },
 };
 
 export const inputEmit = ["update:modelValue", "input"];
@@ -42,14 +48,15 @@ export const useInput = (props, emits) => {
         : "password"
       : props.type;
   });
-  console.log(type.value, placeholder.value);
 
   const classes = computed(() => ({
     "is-disabled": disabled.value,
     "is-clearable": clearable.value,
     "show-password": showPassword.value,
-    "jw-input": type.value !== 'textarea',
-    "jw-textarea": type.value === 'textarea',
+    "jw-input": type.value !== "textarea",
+    "jw-textarea": type.value === "textarea",
+    "jw-input-suffix": showPassword || clearable || props.suffixIcon,
+    "jw-input-prefix": props.prefixIcon,
   }));
 
   return {
@@ -60,5 +67,7 @@ export const useInput = (props, emits) => {
     type,
     passwordVisible,
     placeholder,
+    suffixIcon: props.suffixIcon,
+    prefixIcon: props.prefixIcon,
   };
 };
