@@ -11,7 +11,17 @@
         @input="handleChange"
         :placeholder="placeholder"
       />
-
+      <!-- prefix slot -->
+      <span class="jw-input-prefix-icon">
+        <jw-icon
+          v-if="prefixIcon"
+          class="prefix-icon"
+          :size="18"
+          color="#dcdfe6"
+        >
+          <component :is="prefixIcon" />
+        </jw-icon>
+      </span>
       <!-- suffix slot -->
       <span class="jw-input-suffix-icon">
         <jw-icon
@@ -174,14 +184,20 @@ $active-color: #18a058;
     }
   }
 
-  .jw-input-suffix-icon {
+  .jw-input-suffix-icon,
+  .jw-input-prefix-icon {
     position: absolute;
-    right: 5px;
     bottom: 0;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .jw-input-suffix-icon {
+    right: 5px;
+  }
+  .jw-input-prefix-icon {
+    left: 5px;
   }
 
   .close-icon,

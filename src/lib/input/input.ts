@@ -55,7 +55,8 @@ export const useInput = (props, emits) => {
     "show-password": showPassword.value,
     "jw-input": type.value !== "textarea",
     "jw-textarea": type.value === "textarea",
-    "jw-input-suffix": showPassword || clearable || props.suffixIcon,
+    "jw-input-suffix":
+      showPassword.value || clearable.value || props.suffixIcon,
     "jw-input-prefix": props.prefixIcon,
   }));
 

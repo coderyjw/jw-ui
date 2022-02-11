@@ -24,5 +24,8 @@ import Preview from "@/components/Preview.vue";
 
 <style lang="scss">
 .inpyt-doc-wrapper {
+  .jw-input {
+    margin-right: 8px;
+  }
 }
 </style>
