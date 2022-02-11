@@ -13,6 +13,7 @@ import JwRadio from "./radio/radio.vue";
 import JwRadioGroup from "./radio/radio-group.vue";
 import JwCheckbox from "./checkbox/checkbox.vue";
 import JwCheckboxGroup from "./checkbox/checkbox-group.vue";
+import Input from "./input/index.vue";
 import { openDialog } from "./dialog/openDialog";
 
 export {
@@ -28,7 +29,8 @@ export {
   openDialog,
   JwRadioGroup,
   JwCheckbox,
-  JwCheckboxGroup
+  JwCheckboxGroup,
+  Input,
 };
 
 const components = [
@@ -44,7 +46,8 @@ const components = [
   JwRadio,
   JwRadioGroup,
   JwCheckbox,
-  JwCheckboxGroup
+  JwCheckboxGroup,
+  Input,
 ];
 
 export function registerJwUi(app: App): void {

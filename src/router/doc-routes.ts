@@ -20,6 +20,7 @@ import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
 import RadioDoc from "@/views/doc/radio/index.vue";
 import CheckboxDoc from "@/views/doc/checkbox/index.vue";
+import InputDoc from "@/views/doc/input/index.vue"
 
 const docMenus = {
   文档: [
@@ -38,6 +39,7 @@ const docMenus = {
     { path: "checkbox", component: CheckboxDoc, name: "复选框 Checkbox" },
     { path: "radio", component: RadioDoc, name: "单选框 Radio" },
     { path: "switch", component: SwitchDoc, name: "开关 Switch" },
+    { path: "input", component: InputDoc, name: "输入框 Input" },
   ],
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
   导航组件: [{ path: "tabs", component: TabsDoc, name: "标签页 Tabs" }],
