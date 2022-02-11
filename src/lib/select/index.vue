@@ -1,5 +1,7 @@
 <template>
-  <div class="jw-select">select</div>
+  <div class="jw-select">
+    <jw-input />
+  </div>
 </template>
 
 <script setup lang="ts"></script>

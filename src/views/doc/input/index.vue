@@ -55,6 +55,7 @@ const eventDoc = [
 .input-doc-wrapper {
   .jw-input {
     margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 </style>

@@ -61,7 +61,6 @@
       <textarea
         class="jw-textarea-inner"
         autocomplete="off"
-        rows="2"
         :placeholder="placeholder"
         :value="nativeInputValue"
         @input="handleChange"
@@ -123,7 +122,7 @@ export default {
 <style lang="scss">
 $active-color: #18a058;
 .jw-input {
-  width: 180px;
+  width: 100%;
   cursor: pointer;
   position: relative;
 
@@ -231,6 +230,7 @@ $active-color: #18a058;
 }
 
 .jw-textarea {
+  width: 100%;
   .jw-textarea-inner {
     display: block;
     resize: vertical;
