@@ -43,6 +43,7 @@ const propDoc = [
   ["disabled", "	禁用", "boolean", "-", "false"],
   ["prefix-icon", "输入框头部图标", "Component", "-", "-"],
   ["suffix-icon", "输入框尾部图标", "Component", "-", "-"],
+  ["readonly", "原生属性，是否只读", "	boolean", "-", "false"],
 ];
 
 const eventDoc = [

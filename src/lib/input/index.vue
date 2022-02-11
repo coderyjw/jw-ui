@@ -7,6 +7,7 @@
         :type="type"
         class="jw-input-inner"
         autocomplete="off"
+        :readonly="readonly"
         :value="nativeInputValue"
         @input="handleChange"
         :placeholder="placeholder"
@@ -59,6 +60,7 @@
     <!-- textarea -->
     <template v-else>
       <textarea
+        :readonly="readonly"
         class="jw-textarea-inner"
         autocomplete="off"
         :placeholder="placeholder"
@@ -88,13 +90,9 @@ const {
   placeholder,
   suffixIcon,
   prefixIcon,
+  readonly,
+  nativeInputValue,
 } = useInput(props, emits);
-
-const nativeInputValue = computed(() =>
-  props.modelValue === null || props.modelValue === undefined
-    ? ""
-    : String(props.modelValue)
-);
 
 const handleChange = (e: Event) => {
   const { value } = e.target as TargetElement;

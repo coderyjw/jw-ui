@@ -29,6 +29,10 @@ export const inputProps = {
   prefixIcon: {
     type: [String, Object],
   },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const inputEmit = ["update:modelValue", "input", "clear"];
@@ -40,6 +44,7 @@ export const useInput = (props, emits) => {
 
   const showPassword = computed(() => props.showPassword);
   const passwordVisible = ref(false);
+  const readonly = computed(() => props.readonly);
 
   const type = computed(() => {
     return showPassword.value
@@ -60,6 +65,11 @@ export const useInput = (props, emits) => {
     "jw-input-prefix": props.prefixIcon,
   }));
 
+  const nativeInputValue = computed(() =>
+    props.modelValue === null || props.modelValue === undefined
+      ? ""
+      : String(props.modelValue)
+  );
   return {
     disabled,
     classes,
@@ -70,5 +80,7 @@ export const useInput = (props, emits) => {
     placeholder,
     suffixIcon: props.suffixIcon,
     prefixIcon: props.prefixIcon,
+    readonly,
+    nativeInputValue
   };
 };
