@@ -19,13 +19,17 @@ export const inputProps = {
     type: Boolean,
     default: false,
   },
+  type: {
+    type: String,
+    default: "text",
+  },
 };
 
 export const inputEmit = ["update:modelValue", "input"];
 
 export const useInput = (props, emits) => {
   const disabled = computed(() => props.disabled);
-
+  const placeholder = computed(() => props.placeholder);
   const clearable = computed(() => props.clearable);
 
   const showPassword = computed(() => props.showPassword);
@@ -36,13 +40,16 @@ export const useInput = (props, emits) => {
       ? passwordVisible.value
         ? "text"
         : "password"
-      : "text";
+      : props.type;
   });
+  console.log(type.value, placeholder.value);
 
   const classes = computed(() => ({
     "is-disabled": disabled.value,
     "is-clearable": clearable.value,
     "show-password": showPassword.value,
+    "jw-input": type.value !== 'textarea',
+    "jw-textarea": type.value === 'textarea',
   }));
 
   return {
@@ -51,6 +58,7 @@ export const useInput = (props, emits) => {
     clearable,
     showPassword,
     type,
-    passwordVisible
+    passwordVisible,
+    placeholder,
   };
 };

@@ -1,36 +1,48 @@
 <template>
-  <div class="jw-input" :class="classes">
-    <input
-      :disabled="disabled"
-      :type="type"
-      class="jw-input-inner"
-      autocomplete="off"
-      :value="nativeInputValue"
-      @input="handleChange"
-      :placeholder="placeholder"
-    />
+  <div :class="classes">
+    <template v-if="type !== 'textarea'">
+      <input
+        :disabled="disabled"
+        :type="type"
+        class="jw-input-inner"
+        autocomplete="off"
+        :value="nativeInputValue"
+        @input="handleChange"
+        :placeholder="placeholder"
+      />
 
-    <!-- 可清空 -->
-    <div
-      class="circle-close"
-      v-if="clearable && nativeInputValue.length > 0"
-      @click="hanldeClear"
-    >
-      <jw-icon :size="18">
-        <CloseCircleOutline />
-      </jw-icon>
-    </div>
-    
-    <!-- 密码框 -->
-    <div
-      class="password-icon"
-      v-if="showPassword"
-      @click="handlePasswordVisible"
-    >
-      <jw-icon :size="18">
-        <Eye />
-      </jw-icon>
-    </div>
+      <!-- 可清空 -->
+      <div
+        class="circle-close"
+        v-if="clearable && nativeInputValue.length > 0"
+        @click="hanldeClear"
+      >
+        <jw-icon :size="18">
+          <CloseCircleOutline />
+        </jw-icon>
+      </div>
+
+      <!-- 密码框 -->
+      <div
+        class="password-icon"
+        v-if="showPassword"
+        @click="handlePasswordVisible"
+      >
+        <jw-icon :size="18">
+          <Eye />
+        </jw-icon>
+      </div>
+    </template>
+    <template v-else>
+      <textarea
+        class="jw-textarea-inner"
+        autocomplete="off"
+        rows="2"
+        :placeholder="placeholder"
+        :value="nativeInputValue"
+        @input="handleChange"
+      />
+    </template>
   </div>
 </template>
 
@@ -44,10 +56,8 @@ type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 const props = defineProps(inputProps);
 const emits = defineEmits(inputEmit);
 
-const { disabled, classes, clearable, type, passwordVisible } = useInput(
-  props,
-  emits
-);
+const { disabled, classes, clearable, type, passwordVisible, placeholder } =
+  useInput(props, emits);
 
 const nativeInputValue = computed(() =>
   props.modelValue === null || props.modelValue === undefined
@@ -159,6 +169,39 @@ $active-color: #18a058;
       &:hover {
         color: #c0c4cc;
       }
+    }
+  }
+}
+
+.jw-textarea {
+  .jw-textarea-inner {
+    display: block;
+    resize: vertical;
+    padding: 5px 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    color: #606266;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+      border-color: #c0c4cc;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+      border-color: $active-color;
+      box-shadow: 0 0 0 2px rgba(24, 160, 88, 0.3);
+    }
+
+    &::placeholder {
+      color: rgb(213, 215, 220);
+      font-size: inherit;
     }
   }
 }

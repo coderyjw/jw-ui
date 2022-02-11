@@ -6,6 +6,7 @@
       <Preview :component="InputPreview2" />
       <Preview :component="InputPreview3" />
       <Preview :component="InputPreview4" />
+      <Preview :component="InputPreview5" />
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@ import InputPreview1 from "./InputPreview1.preview.vue";
 import InputPreview2 from "./InputPreview2.preview.vue";
 import InputPreview3 from "./InputPreview3.preview.vue";
 import InputPreview4 from "./InputPreview4.preview.vue";
+import InputPreview5 from "./InputPreview5.preview.vue";
 import Preview from "@/components/Preview.vue";
 </script>
 
