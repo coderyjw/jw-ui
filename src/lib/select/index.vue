@@ -5,7 +5,10 @@
       <div class="no-options" v-show="options.length === 0">无选项</div>
       <span
         class="jw-select-option"
-        :class="{ 'is-active': modelValue === item.value }"
+        :class="{
+          'is-active': modelValue === item.value,
+          'is-disabled': item.disabled,
+        }"
         v-for="item in options"
         :key="item.value"
         @click="handleOptionClick(item)"
@@ -24,9 +27,11 @@ const emits = defineEmits(selectEmits);
 const { options, modelValue, modelLable } = useSelect(props, emits);
 
 const handleOptionClick = (item) => {
-  emits("update:modelValue", item.value);
+  if (!item.disabled) {
+    emits("update:modelValue", item.value);
+    emits("change", item.value);
+  }
 };
-console.log(options, modelValue);
 </script>
 
 <script lang="ts">
@@ -40,6 +45,7 @@ export default {
   position: relative;
 
   .jw-select-dropdown {
+    z-index: 10000;
     position: absolute;
     border-radius: 3px;
     padding: 0;
@@ -48,6 +54,7 @@ export default {
     opacity: 0;
     height: 200px;
     width: 80%;
+    pointer-events: none;
 
     /* opacity: 1;
     height: 300px;
@@ -81,13 +88,22 @@ export default {
         background-color: #f3f3f5;
         color: #25a561;
       }
+      &.is-disabled {
+        cursor: not-allowed;
+        background-color: #fff;
+        color: #c2cddd;
+      }
     }
   }
 
+  &:hover .jw-select-dropdown {
+    pointer-events: auto;
+  }
   &:focus-within .jw-select-dropdown {
     opacity: 1;
     height: 300px;
     width: 100%;
+    pointer-events: auto;
   }
 }
 </style>

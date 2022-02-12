@@ -10,13 +10,12 @@ export const selectProps = {
   },
 };
 
-export const selectEmits = ['update:modelValue'];
+export const selectEmits = ["update:modelValue", "change"];
 
 export const useSelect = (props, emits) => {
   const options = computed(() => props.options);
 
   const modelValue = computed(() => props.modelValue);
-  console.log(props.options.find((v) => v.value === props.modelValue));
 
   const modelLable = computed(() => {
     const item = props.options.find((v) => v.value === props.modelValue);
@@ -25,6 +24,6 @@ export const useSelect = (props, emits) => {
   return {
     options,
     modelValue,
-    modelLable
+    modelLable,
   };
 };

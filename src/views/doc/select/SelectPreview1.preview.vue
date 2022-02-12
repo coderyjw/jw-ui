@@ -1,15 +1,21 @@
 <preview>基础用法</preview>
 <template>
-  <jw-select style="width: 200px" :options="options" v-model="value" />
+  <jw-select
+    id="select"
+    style="width: 200px"
+    :options="options"
+    v-model="value"
+  />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const value = ref("1");
 const options = [
   {
     label: "时间会回答成长",
     value: "1",
+    disabled: true,
   },
   {
     label: "成长会回答梦想",
@@ -18,6 +24,7 @@ const options = [
   {
     label: "梦想会回答生活",
     value: "3",
+    disabled: true,
   },
   {
     label: "生活回答你我的模样",
@@ -26,6 +33,7 @@ const options = [
   {
     label: "海洋会回答江湖",
     value: "5",
+    disabled: true,
   },
   {
     label: "江湖会回答河流",
@@ -34,6 +42,7 @@ const options = [
   {
     label: "河流会回答浪潮",
     value: "7",
+    disabled: true,
   },
   {
     label: "一起跃入人海",
