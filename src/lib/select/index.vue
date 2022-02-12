@@ -1,6 +1,11 @@
 <template>
   <div class="jw-select">
-    <jw-input readonly v-model="modelLable" :suffix-icon="IosArrowDown" />
+    <jw-input
+      readonly
+      v-model="modelLable"
+      :suffix-icon="IosArrowDown"
+      :disabled="disabled"
+    />
     <div class="jw-select-dropdown">
       <div class="no-options" v-show="options.length === 0">无选项</div>
       <span
@@ -24,7 +29,7 @@ import { selectProps, selectEmits, useSelect } from "./index.ts";
 const props = defineProps(selectProps);
 const emits = defineEmits(selectEmits);
 
-const { options, modelValue, modelLable } = useSelect(props, emits);
+const { options, modelValue, modelLable, disabled } = useSelect(props, emits);
 
 const handleOptionClick = (item) => {
   if (!item.disabled) {
@@ -52,13 +57,9 @@ export default {
     top: 48px;
     width: 100%;
     opacity: 0;
-    height: 200px;
-    width: 80%;
+    height: 0px;
+    width: 100%;
     pointer-events: none;
-
-    /* opacity: 1;
-    height: 300px;
-    width: 100%; */
     background-color: #fff;
     transition: all 250ms ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 6px -4px,
@@ -72,7 +73,9 @@ export default {
       align-items: center;
       justify-content: center;
     }
+
     .jw-select-option {
+      z-index: 10000;
       display: inline-block;
       cursor: pointer;
       min-width: 100%;

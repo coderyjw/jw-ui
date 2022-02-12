@@ -8,6 +8,10 @@ export const selectProps = {
     type: Array,
     default: () => [],
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const selectEmits = ["update:modelValue", "change"];
@@ -21,9 +25,13 @@ export const useSelect = (props, emits) => {
     const item = props.options.find((v) => v.value === props.modelValue);
     return item ? item.label : "";
   });
+
+  const disabled = computed(() => props.disabled);
+
   return {
     options,
     modelValue,
     modelLable,
+    disabled,
   };
 };
