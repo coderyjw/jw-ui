@@ -14,6 +14,7 @@ export const selectProps = {
   },
   placeholder: {
     type: String,
+    default: "请选择",
   },
   clearable: {
     type: Boolean,
