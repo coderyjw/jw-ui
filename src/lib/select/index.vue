@@ -5,6 +5,9 @@
       v-model="modelLable"
       :suffix-icon="IosArrowDown"
       :disabled="disabled"
+      :placeholder="placeholder"
+      :clearable="clearable"
+      @clear="handleClear"
     />
     <div class="jw-select-dropdown">
       <div class="no-options" v-show="options.length === 0">无选项</div>
@@ -29,13 +32,19 @@ import { selectProps, selectEmits, useSelect } from "./index.ts";
 const props = defineProps(selectProps);
 const emits = defineEmits(selectEmits);
 
-const { options, modelValue, modelLable, disabled } = useSelect(props, emits);
+const { options, modelValue, modelLable, disabled, placeholder, clearable } =
+  useSelect(props, emits);
 
 const handleOptionClick = (item) => {
   if (!item.disabled) {
     emits("update:modelValue", item.value);
     emits("change", item.value);
   }
+};
+
+const handleClear = (e) => {
+  emits("update:modelValue", "");
+  emits("clear", "");
 };
 </script>
 

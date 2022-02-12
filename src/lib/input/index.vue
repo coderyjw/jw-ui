@@ -36,7 +36,7 @@
         <!-- clearable -->
         <div
           class="close-icon"
-          v-if="clearable && nativeInputValue.length > 0"
+          v-if="clearable && nativeInputValue.length > 0 && !disabled"
           @click="hanldeClear"
         >
           <jw-icon :size="18">
@@ -47,7 +47,7 @@
         <!-- password -->
         <div
           class="password-icon"
-          v-if="showPassword"
+          v-if="showPassword && !disabled"
           @click="handlePasswordVisible"
         >
           <jw-icon :size="18">
