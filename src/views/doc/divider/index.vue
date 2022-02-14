@@ -27,7 +27,7 @@ const propDoc = [
   ["title-placement", "标题的位置", "left | right | center", "left"],
   ["direction", "设置分割线方向", "horizontal | vertical", "horizontal"],
 ];
-const slotDoc = [["default", "()", "分割线的标题"]];
+const slotDoc = [["default", "分割线的标题"]];
 </script>
 
 <style scoped></style>
