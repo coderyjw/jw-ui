@@ -16,4 +16,8 @@
 "[html]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
+
+"path-intellisense.mappings": {
+  "@": "${workspaceRoot}/src"
+}
 }

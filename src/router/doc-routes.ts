@@ -17,6 +17,7 @@ import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 import GradientTextDoc from "@/views/doc/gradient-text/index.vue";
 import IconDoc from "@/views/doc/icon/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
+import TagDoc from "@/views/doc/tag/index.vue";
 
 import CheckboxDoc from "@/views/doc/checkbox/index.vue";
 import InputDoc from "@/views/doc/input/index.vue";
@@ -46,6 +47,7 @@ const docMenus = {
     },
     { path: "icon", component: IconDoc, name: "图标 Icon" },
     { path: "link", component: LinkDoc, name: "链接 Link" },
+    { path: "tag", component: TagDoc, name: "标签 Tag" },
   ],
   数据录入组件: [
     { path: "checkbox", component: CheckboxDoc, name: "复选框 Checkbox" },

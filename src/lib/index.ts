@@ -7,6 +7,7 @@ import JwEllipsis from "./ellipsis/index.vue";
 import JwGradientText from "./gradient-text/index.vue";
 import JwIcon from "./icon/index.vue";
 import JwLink from "./link/index.vue";
+import JwTag from "./tag/index.vue";
 
 import JwCheckbox from "./checkbox/checkbox.vue";
 import JwCheckboxGroup from "./checkbox/checkbox-group.vue";
@@ -31,6 +32,7 @@ export {
   JwGradientText,
   JwIcon,
   JwLink,
+  JwTag,
   /* 数据录入组件 */
   JwCheckbox,
   JwCheckboxGroup,
@@ -55,6 +57,7 @@ const components = [
   JwGradientText,
   JwIcon,
   JwLink,
+  JwTag,
 
   JwCheckbox,
   JwCheckboxGroup,
