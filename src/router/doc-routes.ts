@@ -14,6 +14,7 @@ import AvatarDoc from "@/views/doc/avatar/index.vue";
 import ButtonDoc from "@/views/doc/button/index.vue";
 import DividerDoc from "@/views/doc/divider/index.vue";
 import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
+import GradientTextDoc from "@/views/doc/gradient-text/index.vue";
 import IconDoc from "@/views/doc/icon/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
 
@@ -38,6 +39,11 @@ const docMenus = {
     { path: "button", component: ButtonDoc, name: "按钮 Button" },
     { path: "divider", component: DividerDoc, name: "分割线 Divider" },
     { path: "ellipsis", component: EllipsisDoc, name: "文本省略 Ellipsis" },
+    {
+      path: "gradient-text",
+      component: GradientTextDoc,
+      name: "渐变文字 GradientText",
+    },
     { path: "icon", component: IconDoc, name: "图标 Icon" },
     { path: "link", component: LinkDoc, name: "链接 Link" },
   ],
