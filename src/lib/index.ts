@@ -4,6 +4,7 @@ import JwAvatar from "./avatar/index.vue";
 import JwButton from "./button/index.vue";
 import JwDivider from "./divider/index.vue";
 import JwEllipsis from "./ellipsis/index.vue";
+import JwGradientText from "./gradient-text/index.vue";
 import JwIcon from "./icon/index.vue";
 import JwLink from "./link/index.vue";
 
@@ -27,6 +28,7 @@ export {
   JwButton,
   JwDivider,
   JwEllipsis,
+  JwGradientText,
   JwIcon,
   JwLink,
   /* 数据录入组件 */
@@ -50,6 +52,7 @@ const components = [
   JwButton,
   JwDivider,
   JwEllipsis,
+  JwGradientText,
   JwIcon,
   JwLink,
 
