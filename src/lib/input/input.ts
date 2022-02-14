@@ -35,7 +35,13 @@ export const inputProps = {
   },
 };
 
-export const inputEmit = ["update:modelValue", "input", "clear"];
+export const inputEmit = [
+  "update:modelValue",
+  "input",
+  "clear",
+  "blur",
+  "focus",
+];
 
 export const useInput = (props, emits) => {
   const disabled = computed(() => props.disabled);
@@ -81,6 +87,6 @@ export const useInput = (props, emits) => {
     suffixIcon: props.suffixIcon,
     prefixIcon: props.prefixIcon,
     readonly,
-    nativeInputValue
+    nativeInputValue,
   };
 };

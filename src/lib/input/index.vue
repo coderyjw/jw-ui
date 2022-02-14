@@ -10,6 +10,8 @@
         :readonly="readonly"
         :value="nativeInputValue"
         @input="handleChange"
+        @blur="handleBlur"
+        @focus="handleFocus"
         :placeholder="placeholder"
       />
       <!-- prefix slot -->
@@ -66,6 +68,8 @@
         :placeholder="placeholder"
         :value="nativeInputValue"
         @input="handleChange"
+        @blur="handleBlur"
+        @focus="handleFocus"
       />
     </template>
   </div>
@@ -105,6 +109,14 @@ const hanldeClear = () => {
   emits("update:modelValue", "");
   emits("input", "");
   emits("clear", "");
+};
+
+const handleBlur = (e) => {
+  emits("blur", e);
+};
+
+const handleFocus = (e) => {
+  emits("focus", e);
 };
 
 const handlePasswordVisible = () => {
