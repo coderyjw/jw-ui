@@ -1,4 +1,4 @@
-<preview>基础用法</preview>
+<preview>标题</preview>
 <template>
   嘿嘿
   <jw-divider title-placement="left"> 左 </jw-divider>
