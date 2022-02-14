@@ -3,6 +3,7 @@
     <!-- input -->
     <template v-if="type !== 'textarea'">
       <input
+        ref="input"
         :disabled="disabled"
         :type="type"
         class="jw-input-inner"
@@ -62,6 +63,7 @@
     <!-- textarea -->
     <template v-else>
       <textarea
+        ref="textarea"
         :readonly="readonly"
         class="jw-textarea-inner"
         autocomplete="off"
@@ -76,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted, ref, nextTick } from "vue";
 import { inputEmit, inputProps, useInput } from "./input";
 import { CloseCircleOutline } from "@vicons/ionicons5";
 import { Eye } from "@vicons/fa";
@@ -97,6 +99,10 @@ const {
   readonly,
   nativeInputValue,
 } = useInput(props, emits);
+
+const input = ref<HTMLInputElement>();
+const textarea = ref<HTMLTextAreaElement>();
+const inputOrTextarea = computed(() => input.value || textarea.value);
 
 const handleChange = (e: Event) => {
   const { value } = e.target as TargetElement;
@@ -119,9 +125,29 @@ const handleFocus = (e) => {
   emits("focus", e);
 };
 
+const focus = () => {
+  nextTick(() => {
+    inputOrTextarea.value?.focus();
+  });
+};
+
+const blur = () => {
+  nextTick(() => {
+    inputOrTextarea.value?.blur();
+  });
+};
+
 const handlePasswordVisible = () => {
   passwordVisible.value = !passwordVisible.value;
 };
+
+defineExpose({
+  input,
+  inputOrTextarea,
+  textarea,
+  blur,
+  focus,
+});
 </script>
 <script lang="ts">
 export default {

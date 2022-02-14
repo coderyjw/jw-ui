@@ -6,6 +6,7 @@
       <Preview :component="TagPreview2" />
       <Preview :component="TagPreview3" />
       <Preview :component="TagPreview4" />
+      <Preview :component="TagPreview5" />
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ import TagPreview1 from "./TagPreview1.preview.vue";
 import TagPreview2 from "./TagPreview2.preview.vue";
 import TagPreview3 from "./TagPreview3.preview.vue";
 import TagPreview4 from "./TagPreview4.preview.vue";
+import TagPreview5 from "./TagPreview5.preview.vue";
 </script>
 
 <style lang="scss">

@@ -11,7 +11,7 @@ import JwTag from "./tag/index.vue";
 
 import JwCheckbox from "./checkbox/checkbox.vue";
 import JwCheckboxGroup from "./checkbox/checkbox-group.vue";
-import Input from "./input/index.vue";
+import JwInput from "./input/index.vue";
 import JwRadio from "./radio/radio.vue";
 import JwSelect from "./select/index.vue";
 import JwSwitch from "./switch/index.vue";
@@ -36,7 +36,7 @@ export {
   /* 数据录入组件 */
   JwCheckbox,
   JwCheckboxGroup,
-  Input,
+  JwInput,
   JwRadio,
   JwSelect,
   JwSwitch,
@@ -61,7 +61,7 @@ const components = [
 
   JwCheckbox,
   JwCheckboxGroup,
-  Input,
+  JwInput,
   JwRadio,
   JwSelect,
   JwSwitch,

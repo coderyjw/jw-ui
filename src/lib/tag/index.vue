@@ -1,7 +1,7 @@
 <template>
   <div class="jw-tag" :class="classes" :style="style">
     <slot></slot>
-    <jw-icon :size="18" v-if="closeable">
+    <jw-icon :size="18" v-if="closeable" @click="handleClose">
       <Close />
     </jw-icon>
   </div>
@@ -27,6 +27,8 @@ const props = defineProps({
   },
 });
 
+const emits = defineEmits(["close"]);
+
 const classes = computed(() => ({
   [`is-${props.type}`]: props.type,
   [`is-${props.size}`]: props.size,
@@ -42,6 +44,10 @@ const style = computed(() => {
       }
     : "";
 });
+
+const handleClose = () => {
+  emits("close");
+};
 </script>
 <script lang="ts">
 export default {
@@ -113,7 +119,7 @@ export default {
   }
 
   &.is-closeable {
-    padding-right: 5x;
+    padding-right: 3px;
   }
 }
 </style>

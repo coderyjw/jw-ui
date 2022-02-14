@@ -992,6 +992,18 @@ yjw-ui@0.0.7:
     vue-router "4"
     yjw-ui "0.0.6"
 
+yjw-ui@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.14.tgz#bb832c00e2619edb9eeb219ee55a7fb6fd30a72e"
+  integrity sha512-TUbLN7taidtULr+Sf0CNwvHH4itrmxR/TDxR+4yvSy5+FIr2rZgGatESIZv33z7GSz306A+Y0z4etyde95QqfQ==
+  dependencies:
+    github-markdown-css "^5.1.0"
+    prismjs "^1.26.0"
+    vite-plugin-markdown "^2.0.2"
+    vue "^3.2.25"
+    vue-router "4"
+    yjw-ui "0.0.12"
+
 yjw-ui@^0.0.4:
   version "0.0.4"
   resolved "https://registry.npmjs.org/yjw-ui/-/yjw-ui-0.0.4.tgz"

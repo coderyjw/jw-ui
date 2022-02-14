@@ -17,7 +17,7 @@
     "vite-plugin-markdown": "^2.0.2",
     "vue": "^3.2.25",
     "vue-router": "4",
-    "yjw-ui": "0.0.12"
+    "yjw-ui": "^0.0.14"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
