@@ -8,6 +8,7 @@
       <Preview :component="InputPreview4" />
       <Preview :component="InputPreview5" />
       <Preview :component="InputPreview6" />
+      <Preview :component="InputPreview7" />
       <Doc title="属性" type="prop" :body="propDoc" />
       <Doc title="事件" type="event" :body="eventDoc" />
       <PrevAndNext
@@ -25,6 +26,7 @@ import InputPreview3 from "./InputPreview3.preview.vue";
 import InputPreview4 from "./InputPreview4.preview.vue";
 import InputPreview5 from "./InputPreview5.preview.vue";
 import InputPreview6 from "./InputPreview6.preview.vue";
+import InputPreview7 from "./InputPreview7.preview.vue";
 import Preview from "@/components/Preview.vue";
 import PrevAndNext from "@/components/PrevAndNext.vue";
 import Doc from "@/components/Doc.vue";
@@ -57,6 +59,10 @@ const eventDoc = [
 <style lang="scss">
 .input-doc-wrapper {
   .jw-input {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  .jw-button {
     margin-right: 8px;
     margin-bottom: 8px;
   }

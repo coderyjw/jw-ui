@@ -134,11 +134,27 @@ const focus = () => {
 const blur = () => {
   nextTick(() => {
     inputOrTextarea.value?.blur();
+    var selection = document.getSelection();
+    var range = document.createRange();
+    range.selectNode(inputOrTextarea.value);
+    selection.removeAllRanges();
   });
 };
 
 const handlePasswordVisible = () => {
   passwordVisible.value = !passwordVisible.value;
+};
+
+const select = () => {
+  nextTick(() => {
+    inputOrTextarea.value?.focus();
+
+    var selection = document.getSelection();
+    var range = document.createRange();
+    range.selectNode(inputOrTextarea.value);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  });
 };
 
 defineExpose({
@@ -147,6 +163,7 @@ defineExpose({
   textarea,
   blur,
   focus,
+  select,
 });
 </script>
 <script lang="ts">
