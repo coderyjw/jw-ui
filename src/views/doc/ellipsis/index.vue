@@ -25,7 +25,7 @@ import EllipsisPreview3 from "./EllipsisPreview3.preview.vue";
 
 const propDoc = [
   ["expand-trigger", "展开的触发方式", "string", "click", "-"],
-  ["line-clamp", "	最大行数", "number | string", "-", "-"],
+  ["line-clamp", "	最大行数", "number / string", "-", "-"],
 ];
 
 const slotDoc = [["default", "	文本省略的内容"]];

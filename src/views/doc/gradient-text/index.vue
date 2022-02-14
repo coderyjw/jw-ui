@@ -27,7 +27,7 @@ const propDoc = [
   [
     "gradient",
     "文字渐变色参数",
-    "{ from: string, to: string, deg: number | string }",
+    "{ from: string, to: string, deg: number / string }",
     "-",
     "{}",
   ],
@@ -36,7 +36,7 @@ const propDoc = [
     "type",
     "渐变文字的类型",
     "string",
-    "info | success | warning | error",
+    "info / success / warning / error",
     "primary",
   ],
 ];
