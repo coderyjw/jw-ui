@@ -2,6 +2,7 @@ import { App } from "vue";
 
 import JwAvatar from "./avatar/index.vue";
 import JwButton from "./button/index.vue";
+import JwDivider from "./divider/index.vue";
 import JwEllipsis from "./ellipsis/index.vue";
 import JwIcon from "./icon/index.vue";
 import JwLink from "./link/index.vue";
@@ -24,6 +25,7 @@ export {
   /* 通用组件 */
   JwAvatar,
   JwButton,
+  JwDivider,
   JwEllipsis,
   JwIcon,
   JwLink,
@@ -46,6 +48,7 @@ export {
 const components = [
   JwAvatar,
   JwButton,
+  JwDivider,
   JwEllipsis,
   JwIcon,
   JwLink,

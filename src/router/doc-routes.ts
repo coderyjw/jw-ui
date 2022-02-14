@@ -12,6 +12,7 @@ const InstallDoc = md(Install);
 
 import AvatarDoc from "@/views/doc/avatar/index.vue";
 import ButtonDoc from "@/views/doc/button/index.vue";
+import DividerDoc from "@/views/doc/divider/index.vue";
 import EllipsisDoc from "@/views/doc/ellipsis/index.vue";
 import IconDoc from "@/views/doc/icon/index.vue";
 import LinkDoc from "@/views/doc/link/index.vue";
@@ -35,6 +36,7 @@ const docMenus = {
   通用组件: [
     { path: "avatar", component: AvatarDoc, name: "头像 Avatar" },
     { path: "button", component: ButtonDoc, name: "按钮 Button" },
+    { path: "divider", component: DividerDoc, name: "分割线 Divider" },
     { path: "ellipsis", component: EllipsisDoc, name: "文本省略 Ellipsis" },
     { path: "icon", component: IconDoc, name: "图标 Icon" },
     { path: "link", component: LinkDoc, name: "链接 Link" },
