@@ -1,0 +1,19 @@
+{
+// 粘贴时格式化代码
+"editor.formatOnPaste": true,
+// 保存时格式化代码
+"editor.formatOnSave": true,
+"eslint.alwaysShowStatus": true,
+"[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[vue]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[javascript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[html]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+}
