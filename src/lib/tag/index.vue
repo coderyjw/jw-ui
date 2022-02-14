@@ -13,7 +13,7 @@ import { Close } from "@vicons/ionicons5";
 const props = defineProps({
   type: {
     type: String,
-    deafult: "default",
+    default: "default",
   },
   size: {
     type: String,
@@ -29,7 +29,7 @@ const props = defineProps({
 });
 
 const emits = defineEmits(["close"]);
-
+console.log(props.type);
 const classes = computed(() => ({
   [`is-${props.type}`]: props.type,
   [`is-${props.size}`]: props.size,
@@ -70,6 +70,9 @@ export default {
   font-size: 14px;
   line-height: 1;
   border-radius: 2px;
+  border: 1px solid rgb(239, 239, 245);
+  background-color: rgb(250, 250, 252);
+  color: rgb(51, 54, 57);
 
   &.is-default {
     border: 1px solid rgb(239, 239, 245);
