@@ -8,7 +8,7 @@
       <Doc title="属性" type="prop" :body="propDoc" />
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
-        :prev="{ path: '/doc/button', name: 'Button 按钮' }"
+        :prev="{ path: '/doc/divider', name: 'Divider 分割线' }"
         :next="{ path: '/doc/icon', name: '图标 Icon' }"
       />
     </div>
