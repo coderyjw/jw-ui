@@ -5,7 +5,7 @@
     <br /><br />
     <jw-gradient-text type="warning" :size="22">警告你了</jw-gradient-text
     ><br /><br />
-    <jw-gradient-text type="error" :size="18">坏起来了</jw-gradient-text
+    <jw-gradient-text type="error" :size="18">危险危险</jw-gradient-text
     ><br /><br />
     <jw-gradient-text type="success" :size="14">一切正常</jw-gradient-text
     ><br /><br />
