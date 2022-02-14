@@ -1,8 +1,19 @@
 <template>
-  <div class="jw-tag">标签</div>
+  <div class="jw-tag" :class="classes">爱在西元前</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from "vue";
+const props = defineProps({
+  type: {
+    type: String,
+  },
+});
+
+const classes = computed(() => ({
+  [`is-${props.type}`]: props.type,
+}));
+</script>
 <script lang="ts">
 export default {
   name: "JwTag",
@@ -11,5 +22,49 @@ export default {
 
 <style scoped lang="scss">
 .jw-tag {
+  white-space: nowrap;
+  position: relative;
+  box-sizing: border-box;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0 7px;
+  height: 28px;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 2px;
+
+  border: 1px solid rgb(239, 239, 245);
+  background-color: rgb(250, 250, 252);
+  color: rgb(51, 54, 57);
+
+  &.is-success {
+    color: rgb(24, 160, 88);
+    background-color: rgba(24, 160, 88, 0.1);
+    border: 1px solid rgb(168, 219, 193);
+  }
+
+  &.is-success {
+    color: rgb(24, 160, 88);
+    background-color: rgba(24, 160, 88, 0.1);
+    border: 1px solid rgb(168, 219, 193);
+  }
+
+  &.is-warning {
+    color: rgb(240, 160, 32);
+    background-color: rgba(240, 160, 32, 0.12);
+    border: 1px solid rgb(249, 214, 159);
+  }
+  &.is-info {
+    color: rgb(32, 128, 240);
+    background-color: rgba(32, 128, 240, 0.1);
+    border: 1px solid rgb(172, 208, 249);
+  }
+  &.is-error {
+    color: rgb(208, 48, 80);
+    background-color: rgba(208, 48, 80, 0.08);
+    border: 1px solid rgb(241, 195, 204);
+  }
 }
 </style>

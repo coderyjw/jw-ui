@@ -12,4 +12,8 @@ import Preview from "@/components/Preview.vue";
 import TagPreview1 from "./TagPreview1.preview.vue";
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.jw-tag {
+  margin-right: 8px;
+}
+</style>
