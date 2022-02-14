@@ -6,7 +6,3 @@
   <jw-tag type="error">自己</jw-tag>
   <jw-tag type="info">看着办</jw-tag>
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped></style>

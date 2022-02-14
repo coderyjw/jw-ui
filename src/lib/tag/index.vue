@@ -8,10 +8,14 @@ const props = defineProps({
   type: {
     type: String,
   },
+  size: {
+    type: String,
+  },
 });
 
 const classes = computed(() => ({
   [`is-${props.type}`]: props.type,
+  [`is-${props.size}`]: props.size,
 }));
 </script>
 <script lang="ts">
@@ -65,6 +69,18 @@ export default {
     color: rgb(208, 48, 80);
     background-color: rgba(208, 48, 80, 0.08);
     border: 1px solid rgb(241, 195, 204);
+  }
+
+  &.is-small {
+    font-size: 12px;
+    line-height: 12px;
+    height: 22px;
+  }
+
+  &.is-large {
+    height: 34px;
+    font-size: 16px;
+    line-height: 16px;
   }
 }
 </style>
