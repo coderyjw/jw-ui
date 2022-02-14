@@ -1,5 +1,5 @@
 <template>
-  <div class="jw-tag" :class="classes">
+  <div class="jw-tag" :class="classes" :style="style">
     <slot></slot>
     <jw-icon :size="18" v-if="closeable">
       <Close />
@@ -21,6 +21,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  color: {
+    type: Object,
+    default: undefined,
+  },
 });
 
 const classes = computed(() => ({
@@ -28,6 +32,16 @@ const classes = computed(() => ({
   [`is-${props.size}`]: props.size,
   [`is-closeable`]: props.closeable,
 }));
+
+const style = computed(() => {
+  return props.color
+    ? {
+        color: props.color.color,
+        backgroundColor: props.color.backgroundColor,
+        borderColor: props.color.borderColor,
+      }
+    : "";
+});
 </script>
 <script lang="ts">
 export default {
