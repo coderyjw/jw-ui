@@ -18,7 +18,7 @@
       <Doc title="属性" type="prop" :body="propDoc" />
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
-        :prev="{ path: '/doc/ellipsis', name: '文本省略 Ellipsis' }"
+        :prev="{ path: '/doc/gradient-text', name: '渐变文字 GradientText' }"
         :next="{ path: '/doc/link', name: '链接 Link' }"
       />
     </div>

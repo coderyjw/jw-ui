@@ -1,7 +1,7 @@
 <template>
   <div class="divider-doc-wrapper">
     <h1>分割线 Divider</h1>
-    <div class="preiver-wrapper">
+    <div class="preview-wrapper">
       <Preview :component="DividerPreview1" />
       <Preview :component="DividerPreview2" />
       <Preview :component="DividerPreview3" />

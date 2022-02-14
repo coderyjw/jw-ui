@@ -13,6 +13,7 @@ import { Close } from "@vicons/ionicons5";
 const props = defineProps({
   type: {
     type: String,
+    deafult: "default",
   },
   size: {
     type: String,
@@ -70,9 +71,11 @@ export default {
   line-height: 1;
   border-radius: 2px;
 
-  border: 1px solid rgb(239, 239, 245);
-  background-color: rgb(250, 250, 252);
-  color: rgb(51, 54, 57);
+  &.is-default {
+    border: 1px solid rgb(239, 239, 245);
+    background-color: rgb(250, 250, 252);
+    color: rgb(51, 54, 57);
+  }
 
   &.is-success {
     color: rgb(24, 160, 88);

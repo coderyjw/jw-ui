@@ -10,7 +10,7 @@
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/icon', name: 'Icon 图标' }"
-        :next="{ path: '/doc/checkbox', name: '多选框 Checkbox' }"
+        :next="{ path: '/doc/tag', name: '标签 Tag' }"
       />
     </div>
   </div>

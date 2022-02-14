@@ -30,7 +30,7 @@
       />
 
       <PrevAndNext
-        :prev="{ path: '/doc/link', name: 'Link 链接' }"
+        :prev="{ path: '/doc/tag', name: 'Tag 标签' }"
         :next="{ path: '/doc/input', name: '输入框 Input' }"
       />
     </div>
