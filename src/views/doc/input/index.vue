@@ -9,8 +9,9 @@
       <Preview :component="InputPreview5" />
       <Preview :component="InputPreview6" />
       <Preview :component="InputPreview7" />
-      <Doc title="属性" type="prop" :body="propDoc" />
-      <Doc title="事件" type="event" :body="eventDoc" />
+      <Doc title="Input 属性" type="prop" :body="propDoc" />
+      <Doc title="Input 事件" type="event" :body="eventDoc" />
+      <Doc title="Input 方法" type="methods" :body="methodsDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/checkbox', name: '复选框 Checkbox' }"
         :next="{ path: '/doc/radio', name: '单选框 Radio' }"
@@ -53,6 +54,12 @@ const eventDoc = [
   ["clear", "在点击由 clearable 属性生成的清空按钮时触发", "-"],
   ["blur", "在 Input 失去焦点时触发", "(event: Event)"],
   ["focus", "在 Input 获得焦点时触发", "(event: Event)"],
+];
+
+const methodsDoc = [
+  ["input", "使 input 获取焦点", "-"],
+  ["blur", "使 input 失去焦点", "-"],
+  ["select", "选中 input 中的文字", "-"],
 ];
 </script>
 
