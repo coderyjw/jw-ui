@@ -1,9 +1,15 @@
 <template>
-  <div class="jw-tag" :class="classes">爱在西元前</div>
+  <div class="jw-tag" :class="classes">
+    <slot></slot>
+    <jw-icon :size="18" v-if="closeable">
+      <Close />
+    </jw-icon>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { Close } from "@vicons/ionicons5";
 const props = defineProps({
   type: {
     type: String,
@@ -11,11 +17,16 @@ const props = defineProps({
   size: {
     type: String,
   },
+  closeable: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const classes = computed(() => ({
   [`is-${props.type}`]: props.type,
   [`is-${props.size}`]: props.size,
+  [`is-closeable`]: props.closeable,
 }));
 </script>
 <script lang="ts">
@@ -81,6 +92,14 @@ export default {
     height: 34px;
     font-size: 16px;
     line-height: 16px;
+  }
+
+  .jw-icon {
+    cursor: pointer;
+  }
+
+  &.is-closeable {
+    padding-right: 5x;
   }
 }
 </style>
