@@ -1,5 +1,9 @@
 <template>
-  <div class="jw-gradient-text" :class="classes">
+  <div
+    class="jw-gradient-text"
+    :class="classes"
+    :style="{ fontSize: `${size}px` }"
+  >
     <slot></slot>
   </div>
 </template>
@@ -10,6 +14,10 @@ const props = defineProps({
   type: {
     type: String,
     default: "primary",
+  },
+  size: {
+    type: Number,
+    default: 16,
   },
 });
 
