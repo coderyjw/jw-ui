@@ -33,6 +33,7 @@ const propDoc = [
   ["clearable", "是否可以清空选项", "boolean", "-", "false"],
   ["disabled", "是否禁用", "boolean", "-", "false"],
   ["options", "配置选项内容", "Array", "-", "[]"],
+  ["multilple", "是否为多选", "boolean", "-", "false"],
 ];
 
 const eventDoc = [
