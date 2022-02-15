@@ -1,0 +1,15 @@
+<template>
+  <div class="affix-doc-wrapper">
+    <h1>固钉 Affix</h1>
+    <div class="preview-wrapper">
+      <Preview :component="AffixPreview1" />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import Preview from "@/components/Preview.vue";
+import AffixPreview1 from "./AffixPreview1.preview.vue";
+</script>
+
+<style scoped></style>

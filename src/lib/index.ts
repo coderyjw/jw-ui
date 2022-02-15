@@ -20,6 +20,7 @@ import JwDialog from "./dialog/index.vue";
 import JwRadioGroup from "./radio/radio-group.vue";
 import { openDialog } from "./dialog/openDialog";
 
+import JwAffix from "./affix/index.vue";
 import JwTabs from "./tabs/index.vue";
 import JwTab from "./tab/index.vue";
 
@@ -38,13 +39,14 @@ export {
   JwCheckboxGroup,
   JwInput,
   JwRadio,
+  JwRadioGroup,
   JwSelect,
   JwSwitch,
   /* 反馈组件 */
   JwDialog,
   openDialog,
-  JwRadioGroup,
   /* 导航组件 */
+  JwAffix,
   JwTabs,
   JwTab,
 };
@@ -63,13 +65,15 @@ const components = [
   JwCheckboxGroup,
   JwInput,
   JwRadio,
+  JwRadioGroup,
   JwSelect,
   JwSwitch,
 
+  JwDialog,
+
+  JwAffix,
   JwTabs,
   JwTab,
-  JwDialog,
-  JwRadioGroup,
 ];
 
 export function registerJwUi(app: App): void {
