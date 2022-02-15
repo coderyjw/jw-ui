@@ -1,6 +1,8 @@
 <template>
   <div class="jw-tag" :class="classes" :style="style">
-    <slot></slot>
+    <jw-ellipsis>
+      <slot></slot>
+    </jw-ellipsis>
     <jw-icon :size="18" v-if="closeable" @click="handleClose">
       <Close />
     </jw-icon>
@@ -29,7 +31,6 @@ const props = defineProps({
 });
 
 const emits = defineEmits(["close"]);
-console.log(props.type);
 const classes = computed(() => ({
   [`is-${props.type}`]: props.type,
   [`is-${props.size}`]: props.size,
@@ -73,6 +74,7 @@ export default {
   border: 1px solid rgb(239, 239, 245);
   background-color: rgb(250, 250, 252);
   color: rgb(51, 54, 57);
+  max-width: 100%;
 
   &.is-default {
     border: 1px solid rgb(239, 239, 245);

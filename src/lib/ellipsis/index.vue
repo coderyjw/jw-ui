@@ -45,6 +45,7 @@ export default {
 .jw-ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;
+  max-width: 100%;
 
   &:not(.jw-ellipsis-line-clamp) {
     white-space: nowrap;

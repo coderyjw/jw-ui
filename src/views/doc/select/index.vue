@@ -6,6 +6,7 @@
       <Preview :component="SelectPreview2" />
       <Preview :component="SelectPreview3" />
       <Preview :component="SelectPreview4" />
+      <Preview :component="SelectPreview5" />
       <Doc title="属性" type="prop" :body="propDoc" />
       <Doc title="事件" type="event" :body="eventDoc" />
       <PrevAndNext
@@ -22,6 +23,7 @@ import SelectPreview1 from "./SelectPreview1.preview.vue";
 import SelectPreview2 from "./SelectPreview2.preview.vue";
 import SelectPreview3 from "./SelectPreview3.preview.vue";
 import SelectPreview4 from "./SelectPreview4.preview.vue";
+import SelectPreview5 from "./SelectPreview5.preview.vue";
 import PrevAndNext from "@/components/PrevAndNext.vue";
 import Doc from "@/components/Doc.vue";
 

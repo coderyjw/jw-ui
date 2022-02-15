@@ -1,4 +1,4 @@
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 export const selectProps = {
   modelValue: {
@@ -20,6 +20,10 @@ export const selectProps = {
     type: Boolean,
     default: false,
   },
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const selectEmits = ["update:modelValue", "change", "clear"];
@@ -27,12 +31,22 @@ export const selectEmits = ["update:modelValue", "change", "clear"];
 export const useSelect = (props, emits) => {
   const options = computed(() => props.options);
 
-  const modelValue = computed(() => props.modelValue);
+  const clearable = computed(() => props.clearable);
+  const closeVisible = ref(false);
 
-  const modelLable = computed({
+  const multiple = computed(() => props.multiple);
+
+  const modelValue = computed(() => props.modelValue);
+  const modelLabel = computed({
     get() {
-      const item = props.options.find((v) => v.value === props.modelValue);
-      return item ? item.label : "";
+      if (!multiple.value) {
+        const item = props.options.find((v) => v.value === props.modelValue);
+        return item ? item.label : "";
+      } else {
+        return props.options
+          .filter((v) => modelValue.value.includes(v.value))
+          .map((v) => v.label);
+      }
     },
     set() {},
   });
@@ -41,14 +55,14 @@ export const useSelect = (props, emits) => {
 
   const placeholder = computed(() => props.placeholder);
 
-  const clearable = computed(() => props.clearable);
-
   return {
     options,
     modelValue,
-    modelLable,
+    modelLabel,
     disabled,
     placeholder,
     clearable,
+    closeVisible,
+    multiple,
   };
 };
