@@ -63,7 +63,7 @@ export default {
   }
 
   .jw-divider-line {
-    background-color: rgb(239, 239, 245);
+    background-color: #dcdfe6;
 
     &.horizontal {
       height: 1px;
