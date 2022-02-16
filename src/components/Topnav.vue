@@ -58,7 +58,7 @@ const getHome = () => {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 0;
 
   .logo {
     height: 100%;
