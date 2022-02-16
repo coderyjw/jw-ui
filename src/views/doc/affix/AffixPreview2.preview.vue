@@ -9,7 +9,7 @@
 <style scoped>
 .affix-container {
   text-align: center;
-  height: 400px;
+  height: 800px;
   border-radius: 4px;
   background-color: #edf5ef;
   width: 100%;

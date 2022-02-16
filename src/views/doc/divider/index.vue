@@ -22,7 +22,7 @@ import DividerPreview1 from "./DividerPreview1.preview.vue";
 import DividerPreview2 from "./DividerPreview2.preview.vue";
 import DividerPreview3 from "./DividerPreview3.preview.vue";
 import Doc from "@/components/Doc.vue";
-import PrevAndNext from "@/components/PrevAndNext";
+import PrevAndNext from "@/components/PrevAndNext.vue";
 
 const propDoc = [
   ["title-placement", "标题的位置", "string", "left / right / center", "left"],

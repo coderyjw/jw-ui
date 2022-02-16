@@ -67,7 +67,7 @@ export default {
   align-items: center;
   flex-wrap: nowrap;
   padding: 0 7px;
-  height: 28px;
+  height: 30px;
   font-size: 14px;
   line-height: 1;
   border-radius: 2px;
@@ -100,8 +100,8 @@ export default {
     border: 1px solid rgb(249, 214, 159);
   }
   &.is-info {
-    color: rgb(32, 128, 240);
-    background-color: rgba(32, 128, 240, 0.1);
+    color: rgb(32, 130, 240);
+    background-color: rgba(32, 130, 240, 0.1);
     border: 1px solid rgb(172, 208, 249);
   }
   &.is-error {
@@ -112,8 +112,8 @@ export default {
 
   &.is-small {
     font-size: 12px;
-    line-height: 12px;
-    height: 22px;
+    line-height: 14px;
+    height: 24px;
   }
 
   &.is-large {
