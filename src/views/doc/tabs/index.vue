@@ -4,7 +4,7 @@
     <Preview :component="TabsPreview1" />
     <Preview :component="TabsPreview2" />
     <Doc title="属性" type="prop" :body="propDoc" />
-    <PrevAndNext :prev="{ path: '/doc/affix', name: 'Affix 标签页' }" />
+    <PrevAndNext :prev="{ path: '/doc/backtop', name: '回到顶部 Backtop' }" />
   </div>
 </template>
 

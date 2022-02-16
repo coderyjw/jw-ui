@@ -11,7 +11,7 @@
     <Doc title="方法" type="methods" :body="methodsDoc" />
     <PrevAndNext
       :prev="{ path: '/doc/dialog', name: '对话框 Dialog' }"
-      :next="{ path: '/doc/tabs', name: '标签页 Tabs' }"
+      :next="{ path: '/doc/backtop', name: '回到顶部 Backtop' }"
     />
   </div>
 </template>
