@@ -31,8 +31,8 @@ const props = defineProps({
 const emits = defineEmits(["back"]);
 
 const handleBack = () => {
-  emits('back')
-}
+  emits("back");
+};
 </script>
 <script lang="ts">
 export default {
@@ -60,6 +60,7 @@ export default {
       height: 100%;
       display: flex;
       align-items: center;
+      margin-right: 5px;
     }
   }
 
