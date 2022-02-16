@@ -8,9 +8,11 @@
     }"
     @click.stop="handleClick"
   >
-    <jw-icon :size="26">
-      <BackToTop />
-    </jw-icon>
+    <slot>
+      <jw-icon :size="26">
+        <BackToTop />
+      </jw-icon>
+    </slot>
   </div>
 </template>
 
