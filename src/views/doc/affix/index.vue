@@ -1,6 +1,7 @@
 <template>
   <div class="affix-doc-wrapper">
     <h1>固钉 Affix</h1>
+    <p>将页面元素固定在特定可视区域。</p>
     <div class="preview-wrapper">
       <Preview :component="AffixPreview1" />
       <Preview :component="AffixPreview2" />

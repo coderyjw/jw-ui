@@ -1,6 +1,7 @@
 <template>
   <div class="radio-doc-wrapper">
     <h1>Radio 单选框</h1>
+    <p>在一组备选项中进行单选</p>
     <div class="preview-wrapper">
       <Preview :component="RaidoPreview1" />
       <Preview :component="RaidoPreview2" />

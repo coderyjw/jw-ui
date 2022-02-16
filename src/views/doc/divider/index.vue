@@ -1,6 +1,7 @@
 <template>
   <div class="divider-doc-wrapper">
     <h1>分割线 Divider</h1>
+    <p>区隔内容的分割线。</p>
     <div class="preview-wrapper">
       <Preview :component="DividerPreview1" />
       <Preview :component="DividerPreview2" />

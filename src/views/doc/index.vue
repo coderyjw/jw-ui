@@ -144,6 +144,15 @@ const mainStyle = computed(() => {
       transition: all 250ms ease;
       overflow: auto;
 
+      h1 {
+        margin: 28px 0 20px 0;
+      }
+
+      p {
+        margin: 16px 0;
+        color: rgb(51, 54, 57);
+        font-size: 14px;
+      }
       .preview-wrapper {
         width: 80%;
 

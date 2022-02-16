@@ -1,6 +1,7 @@
 <template>
   <div class="input-doc-wrapper">
     <h1>Input 输入框</h1>
+    <p>通过鼠标或键盘输入字符</p>
     <div class="preview-wrapper">
       <Preview :component="InputPreview1" />
       <Preview :component="InputPreview2" />

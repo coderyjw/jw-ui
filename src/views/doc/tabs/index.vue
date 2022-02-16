@@ -1,10 +1,13 @@
 <template>
   <h1>Tabs 标签页</h1>
+  <p>在同一块区域切换内容。</p>
   <div class="preview-wrapper">
     <Preview :component="TabsPreview1" />
     <Preview :component="TabsPreview2" />
     <Doc title="属性" type="prop" :body="propDoc" />
-    <PrevAndNext :prev="{ path: '/doc/breadcrumb', name: '面包屑 Breadcrumb' }" />
+    <PrevAndNext
+      :prev="{ path: '/doc/breadcrumb', name: '面包屑 Breadcrumb' }"
+    />
   </div>
 </template>
 

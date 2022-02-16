@@ -1,6 +1,9 @@
 <template>
   <div class="breadcrumb-doc-wrapper">
     <h1>面包屑 Breadcrumb</h1>
+    <p>
+      显示当前页面的路径，快速返回之前的任意页面。
+    </p>
     <div class="preview-wrapper">
       <Preview :component="BreadcrumbPreview1" />
       <Preview :component="BreadcrumbPreview2" />

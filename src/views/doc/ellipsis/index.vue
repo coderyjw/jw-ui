@@ -1,6 +1,8 @@
 <template>
   <div class="ellipsis-doc-wrapper">
     <h1>Ellipsis 文本省略</h1>
+    <p>复杂度不会消失，只会转移。</p>
+    <p>当你听到一些人对于精致的概念模型侃侃而谈，请保持清醒。</p>
     <div class="preview-wrapper">
       <Preview :component="EllipsisPreview1" />
       <Preview :component="EllipsisPreview2" />

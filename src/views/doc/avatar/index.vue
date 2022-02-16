@@ -1,6 +1,7 @@
 <template>
   <div class="avatar-doc-wrapper">
     <h1>Avatar 头像</h1>
+    <p>Avatar 组件可以用来代表人物或对象</p>
     <div class="preview-wrapper">
       <Preview :component="AvatarPreview1" />
       <Preview :component="AvatarPreview2" />

@@ -1,6 +1,7 @@
 <template>
   <div class="link-doc-wrapper">
     <h1>Link 链接</h1>
+    <p>文字超链接</p>
     <div class="preview-wrapper">
       <Preview :component="LinkPreview1" />
       <Preview :component="LinkPreview2" />

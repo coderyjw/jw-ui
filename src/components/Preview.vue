@@ -41,7 +41,7 @@ $border-color: #d9d9d9;
 
 .preview-container {
   border: 1px solid $border-color;
-  margin: 16px 0px 32px;
+  margin: 32px 0px 32px;
   min-width: 300px;
   > h2 {
     font-size: 20px;

@@ -1,6 +1,7 @@
 <template>
   <div class="backtop-doc-wrapper">
     <h1>回到顶部 Backtop</h1>
+    <p>返回页面顶部的操作按钮</p>
     <div class="preview-wrapper">
       <Preview :component="BacktopPreview1" />
       <Preview :component="BacktopPreview2" />

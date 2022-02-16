@@ -1,5 +1,6 @@
 <template>
   <h1>Switch 开关</h1>
+  <p>表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
   <div class="preview-wrapper">
     <Preview :component="SwitchPreview1" />
     <Preview :component="SwitchPreview2" />

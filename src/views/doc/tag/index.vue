@@ -1,6 +1,7 @@
 <template>
   <div class="tag-doc-wrapper">
     <h1>标签 Tag</h1>
+    <p>用于标记和选择。</p>
     <div class="preview-wrapper">
       <Preview :component="TagPreview1" />
       <Preview :component="TagPreview2" />

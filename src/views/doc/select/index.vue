@@ -1,6 +1,7 @@
 <template>
   <div class="select-doc-wrapper">
     <h1>Select 选择器</h1>
+    <p>选点啥！</p>
     <div class="preview-wrapper">
       <Preview :component="SelectPreview1" />
       <Preview :component="SelectPreview2" />

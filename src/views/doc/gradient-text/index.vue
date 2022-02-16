@@ -1,6 +1,7 @@
 <template>
   <div class="gradient-text-doc-wrapper">
     <h1>渐变文字 Gradient Text</h1>
+    <p>这个东西看起来没啥用，实际上确实没啥用。</p>
     <div class="preview-wrapper">
       <Preview :component="GradientTextPreview1" />
       <Preview :component="GradientTextPreview2" />

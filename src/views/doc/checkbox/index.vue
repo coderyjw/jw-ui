@@ -1,6 +1,7 @@
 <template>
   <div class="checkbox-doc-wrapper">
     <h1>Checkbox 单选框</h1>
+    <p>一组备选项中进行多选</p>
     <div class="preview-wrapper">
       <Preview :component="CheckboxPreview1" />
       <Preview :component="CheckboxPreview2" />
