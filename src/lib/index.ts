@@ -22,6 +22,8 @@ import { openDialog } from "./dialog/openDialog";
 
 import JwAffix from "./affix/index.vue";
 import JwBacktop from "./backtop/index.vue";
+import JwBreadcrumb from "./breadcrumb/breadcrumb.vue";
+import JwBreadcrumbItem from "./breadcrumb/breadcrumb-item.vue";
 import JwTabs from "./tabs/index.vue";
 import JwTab from "./tab/index.vue";
 
@@ -49,6 +51,8 @@ export {
   /* 导航组件 */
   JwAffix,
   JwBacktop,
+  JwBreadcrumb,
+  JwBreadcrumbItem,
   JwTabs,
   JwTab,
 };
@@ -75,6 +79,8 @@ const components = [
 
   JwAffix,
   JwBacktop,
+  JwBreadcrumb,
+  JwBreadcrumbItem,
   JwTabs,
   JwTab,
 ];
