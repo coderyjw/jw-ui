@@ -8,8 +8,8 @@
       <Doc title="事件" type="event" :body="eventDoc" />
       <Doc title="插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
-        :prev="{ path: '/doc/affix', name: '回到顶部 Backtop' }"
-        :next="{ path: '/doc/tabs', name: '标签页 Tabs' }"
+        :prev="{ path: '/doc/affix', name: '固钉 Affix' }"
+        :next="{ path: '/doc/breadcrumb', name: '面包屑 Breadcrumb' }"
       />
     </div>
   </div>

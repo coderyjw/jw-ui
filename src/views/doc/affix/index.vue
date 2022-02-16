@@ -5,14 +5,14 @@
       <Preview :component="AffixPreview1" />
       <Preview :component="AffixPreview2" />
       <Preview :component="AffixPreview3" />
+      <Doc title="属性" type="prop" :body="propsDoc" />
+      <Doc title="事件" type="event" :body="eventDoc" />
+      <Doc title="方法" type="methods" :body="methodsDoc" />
+      <PrevAndNext
+        :prev="{ path: '/doc/dialog', name: '对话框 Dialog' }"
+        :next="{ path: '/doc/backtop', name: '回到顶部 Backtop' }"
+      />
     </div>
-    <Doc title="属性" type="prop" :body="propsDoc" />
-    <Doc title="事件" type="event" :body="eventDoc" />
-    <Doc title="方法" type="methods" :body="methodsDoc" />
-    <PrevAndNext
-      :prev="{ path: '/doc/dialog', name: '对话框 Dialog' }"
-      :next="{ path: '/doc/backtop', name: '回到顶部 Backtop' }"
-    />
   </div>
 </template>
 
