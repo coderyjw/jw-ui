@@ -1,7 +1,7 @@
 <template>
   <div class="backtop-doc-wrapper">
     <h1>回到顶部 Backtop</h1>
-    <div class="preview-wrapper">
+    <div class="preview-wrapper" style="height: 3000px">
       <Preview :component="BacktopPreview1" />
     </div>
   </div>

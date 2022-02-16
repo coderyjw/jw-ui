@@ -27,7 +27,7 @@
           <use xlink:href="#icon-arrow-right"></use>
         </svg>
       </div>
-      <main :style="mainStyle">
+      <main :style="mainStyle" id="doc-content-container">
         <router-view />
       </main>
     </div>
