@@ -24,6 +24,7 @@ import JwAffix from "./affix/index.vue";
 import JwBacktop from "./backtop/index.vue";
 import JwBreadcrumb from "./breadcrumb/breadcrumb.vue";
 import JwBreadcrumbItem from "./breadcrumb/breadcrumb-item.vue";
+import jwPageHeader from "./page-header/index.vue";
 import JwTabs from "./tabs/index.vue";
 import JwTab from "./tab/index.vue";
 
@@ -53,6 +54,7 @@ export {
   JwBacktop,
   JwBreadcrumb,
   JwBreadcrumbItem,
+  jwPageHeader,
   JwTabs,
   JwTab,
 };
@@ -81,6 +83,7 @@ const components = [
   JwBacktop,
   JwBreadcrumb,
   JwBreadcrumbItem,
+  jwPageHeader,
   JwTabs,
   JwTab,
 ];

@@ -30,6 +30,7 @@ import DialogDoc from "@/views/doc/dialog/index.vue";
 import AffixDoc from "@/views/doc/affix/index.vue";
 import BacktopDoc from "@/views/doc/backtop/index.vue";
 import BreadcrumbDoc from "@/views/doc/breadcrumb/index.vue";
+import PageHeaderDoc from "@/views/doc/page-header/index.vue";
 import TabsDoc from "@/views/doc/tabs/index.vue";
 
 const docMenus = {
@@ -64,6 +65,7 @@ const docMenus = {
     { path: "affix", component: AffixDoc, name: "固钉 Affix" },
     { path: "backtop", component: BacktopDoc, name: "回到顶部 Backtop" },
     { path: "breadcrumb", component: BreadcrumbDoc, name: "面包屑 Breadcrumb" },
+    { path: "page-header", component: PageHeaderDoc, name: "页头 PageHeader" },
     { path: "tabs", component: TabsDoc, name: "标签页 Tabs" },
   ],
 };
