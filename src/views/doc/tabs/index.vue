@@ -6,7 +6,7 @@
     <Preview :component="TabsPreview2" />
     <Doc title="属性" type="prop" :body="propDoc" />
     <PrevAndNext
-      :prev="{ path: '/doc/breadcrumb', name: '面包屑 Breadcrumb' }"
+      :prev="{ path: '/doc/page-header', name: '页头 PggeHeader' }"
     />
   </div>
 </template>

@@ -1,9 +1,7 @@
 <template>
   <div class="breadcrumb-doc-wrapper">
     <h1>面包屑 Breadcrumb</h1>
-    <p>
-      显示当前页面的路径，快速返回之前的任意页面。
-    </p>
+    <p>显示当前页面的路径，快速返回之前的任意页面。</p>
     <div class="preview-wrapper">
       <Preview :component="BreadcrumbPreview1" />
       <Preview :component="BreadcrumbPreview2" />
@@ -13,7 +11,7 @@
       <Doc title="Breadcrumb Item 插槽" type="slot" :body="slotDoc" />
       <PrevAndNext
         :prev="{ path: '/doc/backtop', name: '回到顶部 Backtop' }"
-        :next="{ path: '/doc/tabs', name: '标签页 Tabs' }"
+        :next="{ path: '/doc/page-header', name: '页头 PggeHeader' }"
       />
     </div>
   </div>
