@@ -1,13 +1,19 @@
 <template>
   <div class="jw-page-header">
     <div class="jw-page-header-left">
-      <jw-icon class="jw-page-header-icon" :size="18" @click="handleBack">
-        <component :is="icon" />
-      </jw-icon>
-      <div class="jw-page-header-title">{{ title }}</div>
+      <slot name="icon">
+        <jw-icon class="jw-page-header-icon" :size="18" @click="handleBack">
+          <component :is="icon" />
+        </jw-icon>
+      </slot>
+      <slot name="title">
+        <div class="jw-page-header-title">{{ title }}</div>
+      </slot>
     </div>
     <jw-divider direction="vertical" />
-    <div class="jw-page-header-content">{{ content }}</div>
+    <slot name="content">
+      <div class="jw-page-header-content">{{ content }}</div>
+    </slot>
   </div>
 </template>
 
