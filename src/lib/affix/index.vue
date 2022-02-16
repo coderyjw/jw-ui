@@ -109,10 +109,10 @@ const update = () => {
   }
 };
 
-const onScroll = () => {
+const onScroll = (e) => {
   update();
 
-  emits("scroll", state.fixed);
+  emits("scroll", e);
 };
 
 watch(
