@@ -28,6 +28,7 @@ import SwitchDoc from "@/views/doc/switch/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
 
 import AffixDoc from "@/views/doc/affix/index.vue";
+import BacktopDoc from "@/views/doc/backtop/index.vue";
 import TabsDoc from "@/views/doc/tabs/index.vue";
 
 const docMenus = {
@@ -60,6 +61,7 @@ const docMenus = {
   反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
   导航组件: [
     { path: "affix", component: AffixDoc, name: "固钉 Affix" },
+    { path: "backtop", component: BacktopDoc, name: "回到顶部 Backtop" },
     { path: "tabs", component: TabsDoc, name: "标签页 Tabs" },
   ],
 };

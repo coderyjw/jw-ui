@@ -21,6 +21,7 @@ import JwRadioGroup from "./radio/radio-group.vue";
 import { openDialog } from "./dialog/openDialog";
 
 import JwAffix from "./affix/index.vue";
+import JwBacktop from "./backtop/index.vue";
 import JwTabs from "./tabs/index.vue";
 import JwTab from "./tab/index.vue";
 
@@ -47,6 +48,7 @@ export {
   openDialog,
   /* 导航组件 */
   JwAffix,
+  JwBacktop,
   JwTabs,
   JwTab,
 };
@@ -72,6 +74,7 @@ const components = [
   JwDialog,
 
   JwAffix,
+  JwBacktop,
   JwTabs,
   JwTab,
 ];

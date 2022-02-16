@@ -1,10 +1,6 @@
 <template>
   <div ref="root" class="jw-affix" :style="rootStyle">
-    <div
-      ref="targetRect"
-      :class="{ 'jw-affix-fixed': state.fixed }"
-      :style="affixStyle"
-    >
+    <div :class="{ 'jw-affix-fixed': state.fixed }" :style="affixStyle">
       <slot></slot>
     </div>
   </div>
@@ -85,7 +81,6 @@ const update = () => {
   state.height = rootRect.height;
   state.width = rootRect.width;
   state.scrollTop = document.documentElement.scrollTop;
-
   state.clientHeight = document.documentElement.clientHeight;
   if (props.position === "top") {
     if (props.target) {
