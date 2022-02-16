@@ -956,85 +956,14 @@ vue@^3.2.25:
     "@vue/server-renderer" "3.2.26"
     "@vue/shared" "3.2.26"
 
-yjw-ui@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.12.tgz#dc2b265d64989a7e509b366838a53c2321706c12"
-  integrity sha512-pFmaRuDNRUBDxsGx7MB3blpeBWYNzgkuq2yiTGELOab6Indco/4AcPOnzRpqX8GTSuy1jXxDvV2yBWJg0q9sJQ==
+yjw-ui@0.0.16, yjw-ui@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.16.tgz#919f73f427c3f1cac967b9c85ea03a20babd53d5"
+  integrity sha512-pubPe3wOzcQP2owa9dKUs0JGEHHHby3DgmEWwQ8giDIprCWTXadLH9ZPY3DP3G+3U8i8/lZN1pks/vUSR8m5og==
   dependencies:
     github-markdown-css "^5.1.0"
     prismjs "^1.26.0"
     vite-plugin-markdown "^2.0.2"
     vue "^3.2.25"
     vue-router "4"
-    yjw-ui "0.0.7"
-
-yjw-ui@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/yjw-ui/-/yjw-ui-0.0.6.tgz"
-  integrity sha512-O6LxfEAsm1mQ9IvlYTfkC6GNehPvV5atJsqRkmpVZuTPQ++000Hh/qKTLG/fz3V1/23fOl1KRZfbMw79qaKMxA==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-    yjw-ui "^0.0.5"
-
-yjw-ui@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/yjw-ui/-/yjw-ui-0.0.7.tgz"
-  integrity sha512-iMxsdGRUe6FCXORxzjuXLgazN71Wf5/hZRCrxuFawGBxZQgv9W5sk6bnTqqbYPD0Yy4Vb4xDyeLQTmJyKdFOTg==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-    yjw-ui "0.0.6"
-
-yjw-ui@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.14.tgz#bb832c00e2619edb9eeb219ee55a7fb6fd30a72e"
-  integrity sha512-TUbLN7taidtULr+Sf0CNwvHH4itrmxR/TDxR+4yvSy5+FIr2rZgGatESIZv33z7GSz306A+Y0z4etyde95QqfQ==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-    yjw-ui "0.0.12"
-
-yjw-ui@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.15.tgz#2ae4e29683f728f6e2c3f267aa48b9e1fe1d4d23"
-  integrity sha512-6xJX7FjLn73ShsJ9hJKtzrs1YQ6JC2Oq5OKveIiML67Rm346QqDJGN2Jh0QPFu9meVUpSOqLZjP3zeSHpFnkqg==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-    yjw-ui "^0.0.14"
-
-yjw-ui@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/yjw-ui/-/yjw-ui-0.0.4.tgz"
-  integrity sha512-oWF33pePVU6cQeg7IYgIPbF5bCwKsA/lv41epekHfS4YwCthBcgOMhVXLcbM6p0otR/rEBt2dcq1Swc4TqQziQ==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-
-yjw-ui@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/yjw-ui/-/yjw-ui-0.0.5.tgz"
-  integrity sha512-8P/pogS3y3gPz08f+b1M0LuJkaztqGDRTf3In8ZG2RiuwlpvHDGNQRftDVquqSKuZtChUdPKEP9DYt/y142+Ug==
-  dependencies:
-    github-markdown-css "^5.1.0"
-    prismjs "^1.26.0"
-    vite-plugin-markdown "^2.0.2"
-    vue "^3.2.25"
-    vue-router "4"
-    yjw-ui "^0.0.4"
+    yjw-ui "^0.0.16"
