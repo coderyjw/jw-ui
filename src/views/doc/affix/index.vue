@@ -12,4 +12,8 @@ import Preview from "@/components/Preview.vue";
 import AffixPreview1 from "./AffixPreview1.preview.vue";
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.jw-affix {
+  margin-right: 8px;
+}
+</style>
