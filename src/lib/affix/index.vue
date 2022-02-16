@@ -11,7 +11,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, shallowRef, computed, reactive } from "vue";
+import {
+  ref,
+  onMounted,
+  onBeforeUnmount,
+  shallowRef,
+  computed,
+  reactive,
+  watch,
+  defineExpose,
+} from "vue";
 
 const props = defineProps({
   offset: {
@@ -30,6 +39,8 @@ const props = defineProps({
     default: 100,
   },
 });
+
+const emits = defineEmits(["change", "scroll"]);
 
 const target = shallowRef<HTMLElement>();
 const root = shallowRef<HTMLDivElement>();
@@ -66,7 +77,7 @@ const affixStyle = computed(() => {
   };
 });
 
-const onScroll = function (e) {
+const update = () => {
   if (!root.value || !target.value) return;
 
   const rootRect = root.value.getBoundingClientRect();
@@ -96,8 +107,20 @@ const onScroll = function (e) {
       state.fixed = state.clientHeight - props.offset < rootRect.bottom;
     }
   }
-  console.log(props.offset, rootRect.top);
 };
+
+const onScroll = () => {
+  update();
+
+  emits("scroll", state.fixed);
+};
+
+watch(
+  () => state.fixed,
+  () => {
+    emits("change", state.fixed);
+  }
+);
 
 onMounted(() => {
   if (props.target) {
@@ -110,6 +133,16 @@ onMounted(() => {
     target.value = document.documentElement;
   }
   window.addEventListener("scroll", onScroll, true);
+  window.addEventListener("resize", onScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  window.removeEventListener("resize", onScroll);
+});
+
+defineExpose({
+  update,
 });
 </script>
 <script lang="ts">
