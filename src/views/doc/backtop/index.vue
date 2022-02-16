@@ -1,7 +1,7 @@
 <template>
   <div class="backtop-doc-wrapper">
     <h1>回到顶部 Backtop</h1>
-    <div class="preview-wrapper" style="height: 3000px">
+    <div class="preview-wrapper">
       <Preview :component="BacktopPreview1" />
       <Preview :component="BacktopPreview2" />
       <Doc title="属性" type="prop" :body="propsDoc" />
@@ -22,7 +22,7 @@ import BacktopPreview2 from "./BacktopPreview2.preview.vue";
 import PrevAndNext from "@/components/PrevAndNext.vue";
 import Doc from "@/components/Doc.vue";
 const propsDoc = [
-  ["target", "触发滚动的对象	", "	string	", "-", "-"],
+  ["target", "触发滚动的对象	", "	string	", "-", "document.documentElement"],
   ["visibility-height", "滚动高度达到此参数值才出现", "number", "-", "200"],
   ["right", "控制其显示位置，距离页面右边距", "number", "-", "40"],
   ["bottom", "控制其显示位置，距离页面底部距离", "number", "-", "40"],
