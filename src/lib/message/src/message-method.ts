@@ -1,4 +1,4 @@
-import { createVNode, render, ref } from "vue";
+import { createVNode, render, ref, VNode } from "vue";
 import type { MessageQueue } from "./message";
 import MessageConstructor from "./message.vue";
 let seed = 1;
@@ -12,11 +12,15 @@ const message = function (options = {}) {
   });
 
   const id = `message_${seed++}`;
+  const userOnClose = (options as any).onClose;
   const props = {
     id,
     offset: verticalOffset,
     zIndex: zIndex.value++,
     ...options,
+    onClose: () => {
+      close(id, userOnClose);
+    },
   };
 
   let appendTo: HTMLElement | null = document.body;
@@ -36,6 +40,33 @@ const message = function (options = {}) {
   render(vm, container);
   instances.push({ vm });
   appendTo.appendChild(container.firstElementChild!);
+
+  return {
+    // instead of calling the onClose function directly, setting this value so that we can have the full lifecycle
+    // for out component, so that all closing steps will not be skipped.
+    close: () => ((vm.component!.proxy as any).visible = false),
+  };
 };
 
+export function close(id: string, userOnClose?: (vm: VNode) => void): void {
+  const idx = instances.findIndex(({ vm }) => id === vm.component!.props.id);
+  if (idx === -1) return;
+
+  const { vm } = instances[idx];
+  if (!vm) return;
+  userOnClose?.(vm);
+
+  const removedHeight = vm.el!.offsetHeight;
+  instances.splice(idx, 1);
+
+  // adjust other instances vertical offset
+  const len = instances.length;
+  if (len < 1) return;
+  for (let i = idx; i < len; i++) {
+    const pos =
+      parseInt(instances[i].vm.el!.style["top"], 10) - removedHeight - 16;
+
+    instances[i].vm.component!.props.offset = pos;
+  }
+}
 export default message;

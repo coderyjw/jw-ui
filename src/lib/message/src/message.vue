@@ -3,6 +3,8 @@
     :duration="300"
     leave-active-class="animate__zoomOut"
     enter-active-class="animate__zoomIn"
+    @before-leave="onClose"
+    @after-leave="$emit('destory')"
   >
     <div
       class="jw-message animate__animated"
@@ -16,36 +18,12 @@
 </template>
 
 <script setup lang="ts">
-import {
-  ref,
-  onMounted,
-  computed,
-  watch,
-  getCurrentInstance,
-  nextTick,
-} from "vue";
-const props = defineProps({
-  duration: {
-    type: Number,
-    default: 3000,
-  },
-  id: {
-    type: String,
-    default: "",
-  },
-  offset: {
-    type: Number,
-    default: 100,
-  },
-  zIndex: {
-    type: Number,
-    default: 0,
-  },
-});
+import { ref, onMounted, computed } from "vue";
+import { messageProps, messageEmits } from "./message";
+const props = defineProps(messageProps);
+const emits = defineEmits(messageEmits);
 
 const visible = ref(false);
-
-const internalInstance = getCurrentInstance();
 const customStyle = computed(() => ({
   top: `${props.offset}px`,
   zIndex: props.zIndex,
@@ -66,15 +44,6 @@ function close() {
 onMounted(() => {
   startTimer();
   visible.value = true;
-});
-
-watch(visible, () => {
-  if (!visible.value) {
-    setTimeout(() => {
-      const el = internalInstance.vnode.el;
-      el.parentNode.removeChild(el);
-    }, 300);
-  }
 });
 </script>
 <script lang="ts">
@@ -102,6 +71,7 @@ export default {
     0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   transition: color 0.3s var(--jw-bezier), box-shadow 0.3s var(--jw-bezier),
     background-color 0.3s var(--jw-bezier), opacity 0.3s var(--jw-bezier),
-    transform 0.3s var(--jw-bezier), margin-bottom 0.3s var(--jw-bezier);
+    transform 0.3s var(--jw-bezier), margin-bottom 0.3s var(--jw-bezier),
+    top 0.3s var(--jw-bezier);
 }
 </style>
