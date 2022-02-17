@@ -25,6 +25,7 @@ import RadioDoc from "@/views/doc/radio/index.vue";
 import SelectDoc from "@/views/doc/select/index.vue";
 import SwitchDoc from "@/views/doc/switch/index.vue";
 
+import AlertDoc from "@/views/doc/alert/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
 
 import AffixDoc from "@/views/doc/affix/index.vue";
@@ -60,7 +61,10 @@ const docMenus = {
     { path: "select", component: SelectDoc, name: "选择器 Select" },
     { path: "switch", component: SwitchDoc, name: "开关 Switch" },
   ],
-  反馈组件: [{ path: "dialog", component: DialogDoc, name: "对话框 Dialog" }],
+  反馈组件: [
+    { path: "alert", component: AlertDoc, name: "提示 Alert" },
+    { path: "dialog", component: DialogDoc, name: "对话框 Dialog" },
+  ],
   导航组件: [
     { path: "affix", component: AffixDoc, name: "固钉 Affix" },
     { path: "backtop", component: BacktopDoc, name: "回到顶部 Backtop" },

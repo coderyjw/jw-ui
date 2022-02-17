@@ -13,11 +13,12 @@ import JwCheckbox from "./checkbox/checkbox.vue";
 import JwCheckboxGroup from "./checkbox/checkbox-group.vue";
 import JwInput from "./input/index.vue";
 import JwRadio from "./radio/radio.vue";
+import JwRadioGroup from "./radio/radio-group.vue";
 import JwSelect from "./select/index.vue";
 import JwSwitch from "./switch/index.vue";
 
+import JwAlert from "./alert/index.vue";
 import JwDialog from "./dialog/index.vue";
-import JwRadioGroup from "./radio/radio-group.vue";
 import { openDialog } from "./dialog/openDialog";
 
 import JwAffix from "./affix/index.vue";
@@ -47,6 +48,7 @@ export {
   JwSelect,
   JwSwitch,
   /* 反馈组件 */
+  JwAlert,
   JwDialog,
   openDialog,
   /* 导航组件 */
@@ -77,6 +79,7 @@ const components = [
   JwSelect,
   JwSwitch,
 
+  JwAlert,
   JwDialog,
 
   JwAffix,
