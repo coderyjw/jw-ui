@@ -19,6 +19,7 @@ import JwSwitch from "./switch/index.vue";
 
 import JwAlert from "./alert/index.vue";
 import JwDialog from "./dialog/index.vue";
+import JwMessage from "./message/index.ts";
 import { openDialog } from "./dialog/openDialog";
 
 import JwAffix from "./affix/index.vue";
@@ -50,6 +51,7 @@ export {
   /* 反馈组件 */
   JwAlert,
   JwDialog,
+  JwMessage,
   openDialog,
   /* 导航组件 */
   JwAffix,
@@ -80,6 +82,7 @@ const components = [
   JwSwitch,
 
   JwAlert,
+  JwMessage,
   JwDialog,
 
   JwAffix,
