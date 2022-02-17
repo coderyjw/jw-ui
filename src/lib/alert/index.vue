@@ -1,5 +1,42 @@
 <template>
   <div class="jw-alert" :class="classes">
+    <slot name="icon">
+      <template v-if="showIcon">
+        <jw-icon
+          class="jw-alert-icon"
+          :size="22"
+          v-if="type === 'info'"
+          color="#3f7ee8"
+        >
+          <Info24Filled />
+        </jw-icon>
+        <jw-icon
+          class="jw-alert-icon"
+          :size="22"
+          v-if="type === 'success'"
+          color="#4b9e5f"
+        >
+          <IosCheckmarkCircle />
+        </jw-icon>
+        <jw-icon
+          class="jw-alert-icon"
+          :size="22"
+          v-if="type === 'warning'"
+          color="#e4a341"
+        >
+          <WarningFilled />
+        </jw-icon>
+        <jw-icon
+          class="jw-alert-icon"
+          :size="22"
+          v-if="type === 'error'"
+          color="#bf3f53"
+        >
+          <CloseCircle />
+        </jw-icon>
+      </template>
+    </slot>
+
     <div class="jw-alert-body">
       <div class="jw-alert-body-title">{{ title }}</div>
       <div class="jw-alert-body-content"></div>
@@ -9,6 +46,10 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { Info24Filled } from "@vicons/fluent";
+import { IosCheckmarkCircle } from "@vicons/ionicons4";
+import { WarningFilled } from "@vicons/carbon";
+import { CloseCircle } from "@vicons/ionicons5";
 const props = defineProps({
   title: {
     type: String,
@@ -53,6 +94,9 @@ export default {
   align-items: center;
   transition: opacity 0.2s;
 
+  .jw-alert-icon {
+    margin-right: 10px;
+  }
   .jw-alert-body {
     .jw-alert-body-title {
       transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
