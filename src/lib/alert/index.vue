@@ -39,7 +39,9 @@
 
     <div class="jw-alert-body">
       <div class="jw-alert-body-title">{{ title }}</div>
-      <div class="jw-alert-body-content"></div>
+      <div class="jw-alert-body-content" v-if="description">
+        {{ description }}
+      </div>
     </div>
   </div>
 </template>
@@ -53,7 +55,7 @@ import { CloseCircle } from "@vicons/ionicons5";
 const props = defineProps({
   title: {
     type: String,
-    default: "",
+    default: "Title",
   },
   description: {
     type: String,
@@ -93,6 +95,7 @@ export default {
   opacity: 1;
   display: flex;
   align-items: center;
+  align-items: flex-start;
   transition: opacity 0.2s;
 
   &.is-center {
@@ -101,6 +104,8 @@ export default {
 
   .jw-alert-icon {
     margin-right: 10px;
+    height: 100%;
+    display: flex;
   }
   .jw-alert-body {
     .jw-alert-body-title {
@@ -109,6 +114,12 @@ export default {
       line-height: 19px;
       font-weight: 500;
       color: rgb(31, 34, 37);
+    }
+    .jw-alert-body-content {
+      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 9px;
+      font-size: 14px;
+      color: rgb(51, 54, 57);
     }
   }
 
