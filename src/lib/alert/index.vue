@@ -73,6 +73,7 @@ const props = defineProps({
 
 const classes = computed(() => ({
   [`jw-alert-${props.type}`]: props.type,
+  "is-center": props.center,
 }));
 </script>
 <script lang="ts">
@@ -93,6 +94,10 @@ export default {
   display: flex;
   align-items: center;
   transition: opacity 0.2s;
+
+  &.is-center {
+    justify-content: center;
+  }
 
   .jw-alert-icon {
     margin-right: 10px;
