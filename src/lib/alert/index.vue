@@ -48,9 +48,13 @@
       </slot>
 
       <div class="jw-alert-body">
-        <div class="jw-alert-body-title">{{ title }}</div>
+        <div class="jw-alert-body-title">
+          <slot name="title">
+            {{ title }}
+          </slot>
+        </div>
         <div class="jw-alert-body-content" v-if="description">
-          {{ description }}
+          <slot>{{ description }}</slot>
         </div>
       </div>
     </div>
@@ -84,6 +88,7 @@ const props = defineProps({
   center: Boolean,
 });
 
+const emits = defineEmits(['close'])
 const classes = computed(() => ({
   [`jw-alert-${props.type}`]: props.type,
   "is-center": props.center,
@@ -94,6 +99,7 @@ const visible = ref(true);
 
 const close = () => {
   visible.value = false;
+  emits('close')
 };
 </script>
 <script lang="ts">

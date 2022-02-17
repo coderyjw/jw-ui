@@ -8,7 +8,7 @@
     <Doc title="属性" type="prop" :body="propDoc" />
     <PrevAndNext
       :prev="{ path: '/doc/select', name: 'Select 选择器' }"
-      :next="{ path: '/doc/dialog', name: '对话框 Dialog' }"
+      :next="{ path: '/doc/alert', name: '提示 Alert' }"
     />
   </div>
 </template>

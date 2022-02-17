@@ -9,7 +9,7 @@
     <Doc title="插槽" type="slot" :body="slotDoc" />
     <Doc title="事件" type="event" :body="eventDoc" />
     <PrevAndNext
-      :prev="{ path: '/doc/switch', name: 'Switch 开关 ' }"
+      :prev="{ path: '/doc/alert', name: 'Alert 提示' }"
       :next="{ path: '/doc/Affix', name: '固钉 Affix' }"
     />
   </div>
