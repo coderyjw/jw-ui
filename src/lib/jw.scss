@@ -1,3 +1,5 @@
+@import "animate.css";
+
 [class^="jw-"],
 [class*=" jw-"] {
   margin: 0;
@@ -43,4 +45,12 @@
   height: 50px;
   background-color: #9f9f9f;
   -webkit-border-radius: 4px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "github-markdown-css": "^5.1.0",
     "prismjs": "^1.26.0",
     "vite-plugin-markdown": "^2.0.2",

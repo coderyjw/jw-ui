@@ -1,57 +1,68 @@
 <template>
-  <div class="jw-alert" :class="classes">
-    <slot name="icon">
-      <template v-if="showIcon">
-        <jw-icon
-          class="jw-alert-icon"
-          :size="22"
-          v-if="type === 'info'"
-          color="#3f7ee8"
-        >
-          <Info24Filled />
-        </jw-icon>
-        <jw-icon
-          class="jw-alert-icon"
-          :size="22"
-          v-if="type === 'success'"
-          color="#4b9e5f"
-        >
-          <IosCheckmarkCircle />
-        </jw-icon>
-        <jw-icon
-          class="jw-alert-icon"
-          :size="22"
-          v-if="type === 'warning'"
-          color="#e4a341"
-        >
-          <WarningFilled />
-        </jw-icon>
-        <jw-icon
-          class="jw-alert-icon"
-          :size="22"
-          v-if="type === 'error'"
-          color="#bf3f53"
-        >
-          <CloseCircle />
-        </jw-icon>
-      </template>
-    </slot>
+  <transition leave-active-class="animate__fadeOutUp" :duration="300">
+    <div class="jw-alert animate__animated" :class="classes" v-if="visible">
+      <jw-icon
+        class="jw-alert-close-icon"
+        :size="18"
+        color="#7a7a7a"
+        v-if="closeable"
+        @click="close"
+      >
+        <Close />
+      </jw-icon>
+      <slot name="icon">
+        <template v-if="showIcon">
+          <jw-icon
+            class="jw-alert-icon"
+            :size="22"
+            v-if="type === 'info'"
+            color="#3f7ee8"
+          >
+            <Info24Filled />
+          </jw-icon>
+          <jw-icon
+            class="jw-alert-icon"
+            :size="22"
+            v-if="type === 'success'"
+            color="#4b9e5f"
+          >
+            <IosCheckmarkCircle />
+          </jw-icon>
+          <jw-icon
+            class="jw-alert-icon"
+            :size="22"
+            v-if="type === 'warning'"
+            color="#e4a341"
+          >
+            <WarningFilled />
+          </jw-icon>
+          <jw-icon
+            class="jw-alert-icon"
+            :size="22"
+            v-if="type === 'error'"
+            color="#bf3f53"
+          >
+            <CloseCircle />
+          </jw-icon>
+        </template>
+      </slot>
 
-    <div class="jw-alert-body">
-      <div class="jw-alert-body-title">{{ title }}</div>
-      <div class="jw-alert-body-content" v-if="description">
-        {{ description }}
+      <div class="jw-alert-body">
+        <div class="jw-alert-body-title">{{ title }}</div>
+        <div class="jw-alert-body-content" v-if="description">
+          {{ description }}
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { Info24Filled } from "@vicons/fluent";
 import { IosCheckmarkCircle } from "@vicons/ionicons4";
 import { WarningFilled } from "@vicons/carbon";
-import { CloseCircle } from "@vicons/ionicons5";
+import { CloseCircle, Close } from "@vicons/ionicons5";
 const props = defineProps({
   title: {
     type: String,
@@ -65,9 +76,9 @@ const props = defineProps({
     type: String,
     default: "default",
   },
-  closable: {
+  closeable: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   showIcon: Boolean,
   center: Boolean,
@@ -76,7 +87,14 @@ const props = defineProps({
 const classes = computed(() => ({
   [`jw-alert-${props.type}`]: props.type,
   "is-center": props.center,
+  "show-close": props.closeable,
 }));
+
+const visible = ref(true);
+
+const close = () => {
+  visible.value = false;
+};
 </script>
 <script lang="ts">
 export default {
@@ -85,6 +103,13 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .jw-alert {
   width: 100%;
   line-height: 1.6;
@@ -98,10 +123,18 @@ export default {
   align-items: flex-start;
   transition: opacity 0.2s;
 
+  &.show-close {
+    padding-right: 32px;
+  }
   &.is-center {
     justify-content: center;
   }
-
+  .jw-alert-close-icon {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    cursor: pointer;
+  }
   .jw-alert-icon {
     margin-right: 10px;
     height: 100%;
