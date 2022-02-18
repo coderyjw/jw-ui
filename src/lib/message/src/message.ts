@@ -36,6 +36,10 @@ export const messageProps = {
     type: Boolean,
     default: false,
   },
+  center: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export const messageEmits = ["destory"];

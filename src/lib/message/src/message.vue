@@ -11,6 +11,10 @@
       v-show="visible"
       :style="customStyle"
       :id="id"
+      :class="{
+        'is-close': close,
+        'is-center': center,
+      }"
     >
       <jw-icon
         class="jw-message-icon"
@@ -47,7 +51,12 @@
       <slot>
         {{ message }}
       </slot>
-      <jw-icon v-if="showClose" :size="18" class="jw-close-icon" @click.stop="close">
+      <jw-icon
+        v-if="showClose"
+        :size="18"
+        class="jw-close-icon"
+        @click.stop="close"
+      >
         <Close />
       </jw-icon>
     </div>
@@ -116,6 +125,12 @@ export default {
     transform 0.3s var(--jw-bezier), margin-bottom 0.3s var(--jw-bezier),
     top 0.3s var(--jw-bezier);
 
+  &.is-close {
+    padding-right: 38px;
+  }
+  &.is-center {
+    justify-content: center;
+  }
   .jw-message-icon {
     margin-right: 10px;
   }
