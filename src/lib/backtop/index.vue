@@ -1,19 +1,24 @@
 <template>
-  <div
-    v-if="visible"
-    class="jw-backtop"
-    :style="{
-      right: right + 'px',
-      bottom: bottom + 'px',
-    }"
-    @click.stop="handleClick"
+  <transition
+    leave-active-class="animate__bounceOut"
+    enter-active-class="animate__bounceIn"
   >
-    <slot>
-      <jw-icon :size="26">
-        <BackToTop />
-      </jw-icon>
-    </slot>
-  </div>
+    <div
+      v-if="visible"
+      class="jw-backtop animate__animated"
+      :style="{
+        right: right + 'px',
+        bottom: bottom + 'px',
+      }"
+      @click.stop="handleClick"
+    >
+      <slot>
+        <jw-icon :size="26">
+          <BackToTop />
+        </jw-icon>
+      </slot>
+    </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
