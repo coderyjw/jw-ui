@@ -4,6 +4,7 @@
     <p>（一般是）从浏览器顶部降下来的神谕。</p>
     <div class="preview-wrapper">
       <Preview :component="MessagePreview1" />
+      <Preview :component="MessagePreview2" />
     </div>
   </div>
 </template>
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import Preview from "@/components/Preview.vue";
 import MessagePreview1 from "./MessagePreview1.preview.vue";
+import MessagePreview2 from "./MessagePreview2.preview.vue";
 </script>
 
 <style lang="scss">

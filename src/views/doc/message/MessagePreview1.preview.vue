@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, h } from "vue";
+import { h } from "vue";
 import JwMessage from "@/lib/message/index.ts";
 
 const open = () => {

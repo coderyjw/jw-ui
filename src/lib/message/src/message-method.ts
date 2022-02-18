@@ -1,6 +1,7 @@
 import { createVNode, render, ref, VNode, isVNode } from "vue";
 import type { MessageQueue } from "./message";
 import MessageConstructor from "./message.vue";
+import { messageTypes } from "./message";
 let seed = 1;
 const zIndex = ref(2000);
 const instances: MessageQueue = [];
@@ -64,6 +65,20 @@ const message = function (options = {}) {
     close: () => ((vm.component!.proxy as any).visible = false),
   };
 };
+
+messageTypes.forEach((type) => {
+  message[type] = (options = {}) => {
+    if (typeof options === "string" || isVNode(options)) {
+      options = {
+        message: options,
+      };
+    }
+    return message({
+      ...options,
+      type,
+    });
+  };
+});
 
 export function close(id: string, userOnClose?: (vm: VNode) => void): void {
   const idx = instances.findIndex(({ vm }) => id === vm.component!.props.id);
