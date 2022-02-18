@@ -5,6 +5,7 @@
     <div class="preview-wrapper">
       <Preview :component="MessagePreview1" />
       <Preview :component="MessagePreview2" />
+      <Preview :component="MessagePreview3" />
     </div>
   </div>
 </template>
@@ -13,6 +14,7 @@
 import Preview from "@/components/Preview.vue";
 import MessagePreview1 from "./MessagePreview1.preview.vue";
 import MessagePreview2 from "./MessagePreview2.preview.vue";
+import MessagePreview3 from "./MessagePreview3.preview.vue";
 </script>
 
 <style lang="scss">

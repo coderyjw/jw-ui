@@ -47,6 +47,9 @@
       <slot>
         {{ message }}
       </slot>
+      <jw-icon v-if="showClose" :size="18" class="jw-close-icon" @click.stop="close">
+        <Close />
+      </jw-icon>
     </div>
   </transition>
 </template>
@@ -58,7 +61,7 @@ import JwIcon from "@/lib/icon/index.vue";
 import { Info24Filled } from "@vicons/fluent";
 import { IosCheckmarkCircle } from "@vicons/ionicons4";
 import { WarningFilled } from "@vicons/carbon";
-import { CloseCircle } from "@vicons/ionicons5";
+import { CloseCircle, Close } from "@vicons/ionicons5";
 const props = defineProps(messageProps);
 const emits = defineEmits(messageEmits);
 
@@ -113,8 +116,14 @@ export default {
     transform 0.3s var(--jw-bezier), margin-bottom 0.3s var(--jw-bezier),
     top 0.3s var(--jw-bezier);
 
-  & .jw-message-icon {
+  .jw-message-icon {
     margin-right: 10px;
+  }
+  .jw-close-icon {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 10px);
+    cursor: pointer;
   }
 }
 </style>
