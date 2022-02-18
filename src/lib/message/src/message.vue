@@ -15,6 +15,8 @@
         'is-close': close,
         'is-center': center,
       }"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
     >
       <jw-icon
         class="jw-message-icon"
@@ -75,6 +77,8 @@ const props = defineProps(messageProps);
 const emits = defineEmits(messageEmits);
 
 const visible = ref(false);
+let stopTimer = undefined;
+
 const customStyle = computed(() => ({
   top: `${props.offset}px`,
   zIndex: props.zIndex,
@@ -82,10 +86,15 @@ const customStyle = computed(() => ({
 
 function startTimer() {
   if (props.duration > 0) {
-    setTimeout(() => {
+    stopTimer = setTimeout(() => {
       if (visible.value) close();
     }, props.duration);
   }
+}
+
+function clearTimer() {
+  clearTimeout(stopTimer);
+  stopTimer = undefined;
 }
 
 function close() {
