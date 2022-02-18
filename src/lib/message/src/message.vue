@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, onUnmounted } from "vue";
 import { messageProps, messageEmits } from "./message";
 import JwIcon from "@/lib/icon/index.vue";
 import { Info24Filled } from "@vicons/fluent";
@@ -101,9 +101,26 @@ function close() {
   visible.value = false;
 }
 
+function keydown({ code }: KeyboardEvent) {
+  if (code === "Escape") {
+    // press esc to close the message
+    if (visible.value) {
+      close();
+    }
+  } else {
+    startTimer(); // resume timer
+  }
+}
+
 onMounted(() => {
   startTimer();
   visible.value = true;
+
+  document.addEventListener("keydown", keydown);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("keydown", keydown);
 });
 </script>
 <script lang="ts">
