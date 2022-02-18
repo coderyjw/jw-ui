@@ -1,4 +1,4 @@
-import { createVNode, render, ref, VNode } from "vue";
+import { createVNode, render, ref, VNode, isVNode } from "vue";
 import type { MessageQueue } from "./message";
 import MessageConstructor from "./message.vue";
 let seed = 1;
@@ -6,6 +6,10 @@ const zIndex = ref(2000);
 const instances: MessageQueue = [];
 
 const message = function (options = {}) {
+  if (typeof options === "string" || isVNode(options)) {
+    options = { message: options };
+  }
+
   let verticalOffset = 20;
   instances.forEach(({ vm }) => {
     verticalOffset += (vm.el?.offsetHeight || 0) + 16;
@@ -21,20 +25,34 @@ const message = function (options = {}) {
     onClose: () => {
       close(id, userOnClose);
     },
-  };
+  } as any;
 
   let appendTo: HTMLElement | null = document.body;
+  if (options.appendTo instanceof HTMLElement) {
+    appendTo = options.appendTo;
+  } else if (typeof options.appendTo === "string") {
+    appendTo = document.querySelector(options.appendTo);
+  }
+  // should fallback to default value with a warning
+  if (!(appendTo instanceof HTMLElement)) {
+    throw new Error(
+      "JwMessage the appendTo option is not an HTMLElement. Falling back to document.body."
+    );
+    appendTo = document.body;
+  }
 
   const container = document.createElement("div");
   container.className = `container_${id}`;
-  const vm = createVNode(MessageConstructor, props, null);
 
-  // clean message element preventing mem leak
+  const message = props.message;
+  const vm = createVNode(
+    MessageConstructor,
+    props,
+    isVNode(props.message) ? { default: () => message } : null
+  );
+  // 清除消息元素以防止内存泄漏
   vm.props!.onDestroy = () => {
     render(null, container);
-    // since the element is destroy, then the VNode should be collected by GC as well
-    // we do not want cause any mem leak because we have returned vm as a reference to users
-    // so that we manually set it to false.
   };
 
   render(vm, container);
@@ -42,8 +60,7 @@ const message = function (options = {}) {
   appendTo.appendChild(container.firstElementChild!);
 
   return {
-    // instead of calling the onClose function directly, setting this value so that we can have the full lifecycle
-    // for out component, so that all closing steps will not be skipped.
+    // 不是直接调用 onClose 函数，而是设置这个值，这样我们就可以拥有完整的生命周期
     close: () => ((vm.component!.proxy as any).visible = false),
   };
 };

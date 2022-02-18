@@ -1,5 +1,7 @@
 import type { VNode } from "vue";
 
+export const messageTypes = ["success", "info", "warning", "error"] as const;
+
 export const messageProps = {
   duration: {
     type: Number,
@@ -20,6 +22,15 @@ export const messageProps = {
   onClose: {
     type: Function,
     required: false,
+  },
+  type: {
+    type: String,
+    values: messageTypes,
+    default: "info",
+  },
+  message: {
+    type: [String, Object],
+    default: "",
   },
 };
 

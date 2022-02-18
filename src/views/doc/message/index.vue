@@ -9,8 +9,14 @@
 </template>
 
 <script setup lang="ts">
-import Preview from "@/components/Preview";
+import Preview from "@/components/Preview.vue";
 import MessagePreview1 from "./MessagePreview1.preview.vue";
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.message-doc-wrapper {
+  .jw-button {
+    margin-right: 8px;
+  }
+}
+</style>

@@ -12,7 +12,41 @@
       :style="customStyle"
       :id="id"
     >
-      1 + 1 = ?
+      <jw-icon
+        class="jw-message-icon"
+        :size="22"
+        v-if="type === 'info'"
+        color="#3f7ee8"
+      >
+        <Info24Filled />
+      </jw-icon>
+      <jw-icon
+        class="jw-message-icon"
+        :size="22"
+        v-if="type === 'success'"
+        color="#4b9e5f"
+      >
+        <IosCheckmarkCircle />
+      </jw-icon>
+      <jw-icon
+        class="jw-message-icon"
+        :size="22"
+        v-if="type === 'warning'"
+        color="#e4a341"
+      >
+        <WarningFilled />
+      </jw-icon>
+      <jw-icon
+        class="jw-message-icon"
+        :size="22"
+        v-if="type === 'error'"
+        color="#bf3f53"
+      >
+        <CloseCircle />
+      </jw-icon>
+      <slot>
+        {{ message }}
+      </slot>
     </div>
   </transition>
 </template>
@@ -20,6 +54,11 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { messageProps, messageEmits } from "./message";
+import JwIcon from "@/lib/icon/index.vue";
+import { Info24Filled } from "@vicons/fluent";
+import { IosCheckmarkCircle } from "@vicons/ionicons4";
+import { WarningFilled } from "@vicons/carbon";
+import { CloseCircle } from "@vicons/ionicons5";
 const props = defineProps(messageProps);
 const emits = defineEmits(messageEmits);
 
@@ -73,5 +112,9 @@ export default {
     background-color 0.3s var(--jw-bezier), opacity 0.3s var(--jw-bezier),
     transform 0.3s var(--jw-bezier), margin-bottom 0.3s var(--jw-bezier),
     top 0.3s var(--jw-bezier);
+
+  & .jw-message-icon {
+    margin-right: 10px;
+  }
 }
 </style>

@@ -82,7 +82,6 @@ const components = [
   JwSwitch,
 
   JwAlert,
-  JwMessage,
   JwDialog,
 
   JwAffix,
