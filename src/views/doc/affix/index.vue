@@ -10,7 +10,7 @@
       <Doc title="事件" type="event" :body="eventDoc" />
       <Doc title="方法" type="methods" :body="methodsDoc" />
       <PrevAndNext
-        :prev="{ path: '/doc/dialog', name: '对话框 Dialog' }"
+        :prev="{ path: '/doc/message', name: '信息 Message' }"
         :next="{ path: '/doc/backtop', name: '回到顶部 Backtop' }"
       />
     </div>

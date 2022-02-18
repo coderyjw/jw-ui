@@ -42,7 +42,7 @@ export const messageProps = {
   },
 };
 
-export const messageEmits = ["destory"];
+export const messageEmits = ["destroy"];
 
 type MessageQueueItem = {
   vm: VNode;

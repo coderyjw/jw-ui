@@ -22,6 +22,7 @@ const props = defineProps({
   },
   type: {
     type: String,
+    values: ["prop", "slot", "event", "methods"],
     default: "prop",
   },
   body: {

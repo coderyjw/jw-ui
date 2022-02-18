@@ -11,7 +11,7 @@ const message = function (options = {}) {
     options = { message: options };
   }
 
-  let verticalOffset = 20;
+  let verticalOffset = options.offset || 20;
   instances.forEach(({ vm }) => {
     verticalOffset += (vm.el?.offsetHeight || 0) + 16;
   });
@@ -90,7 +90,6 @@ export function close(id: string, userOnClose?: (vm: VNode) => void): void {
 
   const removedHeight = vm.el!.offsetHeight;
   instances.splice(idx, 1);
-  console.log(userOnClose, vm);
 
   // adjust other instances vertical offset
   const len = instances.length;

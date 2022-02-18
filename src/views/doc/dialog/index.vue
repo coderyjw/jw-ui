@@ -10,7 +10,7 @@
     <Doc title="事件" type="event" :body="eventDoc" />
     <PrevAndNext
       :prev="{ path: '/doc/alert', name: 'Alert 提示' }"
-      :next="{ path: '/doc/Affix', name: '固钉 Affix' }"
+      :next="{ path: '/doc/message', name: '信息 Message' }"
     />
   </div>
 </template>
