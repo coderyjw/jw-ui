@@ -27,6 +27,7 @@ import SwitchDoc from "@/views/doc/switch/index.vue";
 
 import AlertDoc from "@/views/doc/alert/index.vue";
 import DialogDoc from "@/views/doc/dialog/index.vue";
+import DrawerDoc from "@/views/doc/drawer/index.vue";
 import MessageDoc from "@/views/doc/message/index.vue";
 
 import AffixDoc from "@/views/doc/affix/index.vue";
@@ -65,6 +66,7 @@ const docMenus = {
   反馈组件: [
     { path: "alert", component: AlertDoc, name: "提示 Alert" },
     { path: "dialog", component: DialogDoc, name: "对话框 Dialog" },
+    { path: "drawer", component: DrawerDoc, name: "抽屉 Drawer" },
     { path: "message", component: MessageDoc, name: "信息 Message" },
   ],
   导航组件: [
