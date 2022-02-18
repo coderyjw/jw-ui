@@ -4,7 +4,7 @@
     leave-active-class="animate__zoomOut"
     enter-active-class="animate__zoomIn"
     @before-leave="onClose"
-    @after-leave="$emit('destory')"
+    @after-leave="$emit('destroy')"
   >
     <div
       class="jw-message animate__animated"

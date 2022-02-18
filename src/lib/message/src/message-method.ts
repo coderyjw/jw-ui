@@ -90,6 +90,7 @@ export function close(id: string, userOnClose?: (vm: VNode) => void): void {
 
   const removedHeight = vm.el!.offsetHeight;
   instances.splice(idx, 1);
+  console.log(userOnClose, vm);
 
   // adjust other instances vertical offset
   const len = instances.length;
@@ -101,4 +102,13 @@ export function close(id: string, userOnClose?: (vm: VNode) => void): void {
     instances[i].vm.component!.props.offset = pos;
   }
 }
+
+export function closeAll(): void {
+  for (let i = instances.length - 1; i >= 0; i--) {
+    const instance = instances[i].vm.component;
+    (instance?.proxy as any)?.close();
+  }
+}
+
+message.closeAll = closeAll;
 export default message;
