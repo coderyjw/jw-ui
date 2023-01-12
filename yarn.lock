@@ -961,9 +961,9 @@ vue@^3.2.25:
     "@vue/server-renderer" "3.2.26"
     "@vue/shared" "3.2.26"
 
-yjw-ui@0.0.16, yjw-ui@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.16.tgz#919f73f427c3f1cac967b9c85ea03a20babd53d5"
+yjw-ui@0.0.17, yjw-ui@^0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.17.tgz#919f73f427c3f1cac967b9c85ea03a20babd53d5"
   integrity sha512-pubPe3wOzcQP2owa9dKUs0JGEHHHby3DgmEWwQ8giDIprCWTXadLH9ZPY3DP3G+3U8i8/lZN1pks/vUSR8m5og==
   dependencies:
     github-markdown-css "^5.1.0"
@@ -971,4 +971,4 @@ yjw-ui@0.0.16, yjw-ui@^0.0.16:
     vite-plugin-markdown "^2.0.2"
     vue "^3.2.25"
     vue-router "4"
-    yjw-ui "^0.0.16"
+    yjw-ui "^0.0.17"

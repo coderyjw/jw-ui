@@ -1,4 +1,4 @@
-<preview>基础用法</preview>
+<preview>尺寸</preview>
 <template>
   <div>
     <jw-gradient-text type="info" :size="26">消息来了</jw-gradient-text>

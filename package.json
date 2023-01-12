@@ -1,6 +1,6 @@
 {
   "name": "yjw-ui",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "files": [
     "dist/lib/*"
   ],
@@ -18,7 +18,7 @@
     "vite-plugin-markdown": "^2.0.2",
     "vue": "^3.2.25",
     "vue-router": "4",
-    "yjw-ui": "0.0.16"
+    "yjw-ui": "0.0.17"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",

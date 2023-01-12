@@ -24,7 +24,7 @@ Trace:
 npm manifest: 
   {
     "name": "yjw-ui",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "files": [
       "dist/lib/*"
     ],
@@ -1075,9 +1075,9 @@ Lockfile:
       vue-router "4"
       yjw-ui "0.0.12"
   
-  yjw-ui@^0.0.16:
-    version "0.0.16"
-    resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.16.tgz#2ae4e29683f728f6e2c3f267aa48b9e1fe1d4d23"
+  yjw-ui@^0.0.17:
+    version "0.0.17"
+    resolved "https://registry.yarnpkg.com/yjw-ui/-/yjw-ui-0.0.17.tgz#2ae4e29683f728f6e2c3f267aa48b9e1fe1d4d23"
     integrity sha512-6xJX7FjLn73ShsJ9hJKtzrs1YQ6JC2Oq5OKveIiML67Rm346QqDJGN2Jh0QPFu9meVUpSOqLZjP3zeSHpFnkqg==
     dependencies:
       github-markdown-css "^5.1.0"
